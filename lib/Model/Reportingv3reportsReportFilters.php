@@ -46,7 +46,7 @@ class Reportingv3reportsReportFilters implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingv3reports_reportFilters';
+    protected static $swaggerModelName = 'Reportingv3reportsReportFilters';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

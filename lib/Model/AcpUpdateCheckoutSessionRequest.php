@@ -56,7 +56,7 @@ class AcpUpdateCheckoutSessionRequest implements ArrayAccess
     protected static $swaggerTypes = [
         'items' => '\CyberSource\Model\Iccv1checkoutSessionsItems[]',
         'buyer' => '\CyberSource\Model\AcpUpdateCheckoutSessionBuyer',
-        'fulfillmentAddress' => '\CyberSource\Model\Iccv1checkoutSessionssessionIdFulfillmentAddress',
+        'fulfillmentAddress' => '\CyberSource\Model\Iccv1UpdateCheckoutSessionsFulfillmentAddress',
         'fulfillmentOptionId' => 'string'
     ];
 
@@ -222,7 +222,7 @@ class AcpUpdateCheckoutSessionRequest implements ArrayAccess
 
     /**
      * Gets fulfillmentAddress
-     * @return \CyberSource\Model\Iccv1checkoutSessionssessionIdFulfillmentAddress
+     * @return \CyberSource\Model\Iccv1UpdateCheckoutSessionsFulfillmentAddress
      */
     public function getFulfillmentAddress()
     {
@@ -231,7 +231,7 @@ class AcpUpdateCheckoutSessionRequest implements ArrayAccess
 
     /**
      * Sets fulfillmentAddress
-     * @param \CyberSource\Model\Iccv1checkoutSessionssessionIdFulfillmentAddress $fulfillmentAddress
+     * @param \CyberSource\Model\Iccv1UpdateCheckoutSessionsFulfillmentAddress $fulfillmentAddress
      * @return $this
      */
     public function setFulfillmentAddress($fulfillmentAddress)

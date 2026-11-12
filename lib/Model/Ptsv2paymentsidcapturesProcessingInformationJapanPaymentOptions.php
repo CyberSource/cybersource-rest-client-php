@@ -46,7 +46,7 @@ class Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions implements
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentsidcaptures_processingInformation_japanPaymentOptions';
+    protected static $swaggerModelName = 'Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

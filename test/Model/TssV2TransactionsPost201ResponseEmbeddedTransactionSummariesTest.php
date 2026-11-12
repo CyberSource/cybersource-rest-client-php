@@ -210,6 +210,13 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummariesTest extends \
     }
 
     /**
+     * Test attribute "travelInformation"
+     */
+    public function testPropertyTravelInformation()
+    {
+    }
+
+    /**
      * Test attribute "links"
      */
     public function testPropertyLinks()

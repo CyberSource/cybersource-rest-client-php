@@ -47,7 +47,7 @@ class Ptsv2paymentsHostedPaymentInformationUserAgent implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_hostedPaymentInformation_userAgent';
+    protected static $swaggerModelName = 'Ptsv2paymentsHostedPaymentInformationUserAgent';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

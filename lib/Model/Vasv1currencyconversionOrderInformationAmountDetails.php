@@ -46,7 +46,7 @@ class Vasv1currencyconversionOrderInformationAmountDetails implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'vasv1currencyconversion_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'Vasv1currencyconversionOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

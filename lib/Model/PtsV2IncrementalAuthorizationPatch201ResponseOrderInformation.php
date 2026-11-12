@@ -46,7 +46,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2IncrementalAuthorizationPatch201Response_orderInformation';
+    protected static $swaggerModelName = 'PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

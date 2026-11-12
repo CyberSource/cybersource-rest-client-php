@@ -46,7 +46,7 @@ class Ptsv1pullfundstransferSenderInformationPaymentInformationInstrumentIdentif
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pullfundstransfer_senderInformation_paymentInformation_instrumentIdentifier';
+    protected static $swaggerModelName = 'Ptsv1pullfundstransferSenderInformationPaymentInformationInstrumentIdentifier';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -47,7 +47,7 @@ class Iccv1tokensDeviceInformationDeviceData implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1tokens_deviceInformation_deviceData';
+    protected static $swaggerModelName = 'Iccv1tokensDeviceInformationDeviceData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

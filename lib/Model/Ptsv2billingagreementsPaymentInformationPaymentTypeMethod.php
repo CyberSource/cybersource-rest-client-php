@@ -46,7 +46,7 @@ class Ptsv2billingagreementsPaymentInformationPaymentTypeMethod implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2billingagreements_paymentInformation_paymentType_method';
+    protected static $swaggerModelName = 'Ptsv2billingagreementsPaymentInformationPaymentTypeMethod';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

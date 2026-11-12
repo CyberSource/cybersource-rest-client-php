@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification implements
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_processorInformation_achVerification';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponseProcessorInformationAchVerification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

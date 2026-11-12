@@ -46,7 +46,7 @@ class Upv1capturecontextsDataBuyerInformationPersonalIdentification implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_data_buyerInformation_personalIdentification';
+    protected static $swaggerModelName = 'Upv1capturecontextsDataBuyerInformationPersonalIdentification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

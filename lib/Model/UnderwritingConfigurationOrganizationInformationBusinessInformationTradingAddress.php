@@ -46,7 +46,7 @@ class UnderwritingConfigurationOrganizationInformationBusinessInformationTrading
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'underwritingConfiguration_organizationInformation_businessInformation_tradingAddress';
+    protected static $swaggerModelName = 'UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

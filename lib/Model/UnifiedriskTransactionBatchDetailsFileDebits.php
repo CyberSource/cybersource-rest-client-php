@@ -47,7 +47,7 @@ class UnifiedriskTransactionBatchDetailsFileDebits implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_transaction_batchDetails_fileDebits';
+    protected static $swaggerModelName = 'UnifiedriskTransactionBatchDetailsFileDebits';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

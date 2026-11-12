@@ -46,7 +46,7 @@ class PaymentsProductsMicroformConfigurationInformationConfigurations implements
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_microform_configurationInformation_configurations';
+    protected static $swaggerModelName = 'PaymentsProductsMicroformConfigurationInformationConfigurations';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

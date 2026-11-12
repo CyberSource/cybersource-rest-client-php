@@ -46,7 +46,7 @@ class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet implements Arra
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsOrderPost201Response_paymentInformation_eWallet';
+    protected static $swaggerModelName = 'PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

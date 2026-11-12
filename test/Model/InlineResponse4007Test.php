@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse4007Test Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse4007
+// * @description Standard error response returned for all 4xx and 5xx status codes.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,23 +77,9 @@ class InlineResponse4007Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "error"
      */
-    public function testPropertySubmitTimeUtc()
-    {
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-    }
-
-    /**
-     * Test attribute "reason"
-     */
-    public function testPropertyReason()
+    public function testPropertyError()
     {
     }
 
@@ -105,9 +91,23 @@ class InlineResponse4007Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "details"
+     * Test attribute "status"
      */
-    public function testPropertyDetails()
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "timestamp"
+     */
+    public function testPropertyTimestamp()
+    {
+    }
+
+    /**
+     * Test attribute "path"
+     */
+    public function testPropertyPath()
     {
     }
 }

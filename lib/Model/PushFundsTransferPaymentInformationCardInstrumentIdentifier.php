@@ -46,7 +46,7 @@ class PushFundsTransferPaymentInformationCardInstrumentIdentifier implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pushFundsTransferPaymentInformation_card_instrumentIdentifier';
+    protected static $swaggerModelName = 'PushFundsTransferPaymentInformationCardInstrumentIdentifier';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

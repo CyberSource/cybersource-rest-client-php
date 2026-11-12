@@ -46,7 +46,7 @@ class PaymentsProductsCardProcessingSubscriptionInformation implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_cardProcessing_subscriptionInformation';
+    protected static $swaggerModelName = 'PaymentsProductsCardProcessingSubscriptionInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,7 +55,7 @@ class PaymentsProductsCardProcessingSubscriptionInformation implements ArrayAcce
     protected static $swaggerTypes = [
         'enabled' => 'bool',
         'selfServiceability' => 'string',
-        'features' => 'map[string,\CyberSource\Model\PaymentsProductsCardProcessingSubscriptionInformationFeatures]'
+        'features' => 'map[string,\CyberSource\Model\CardProessingFeatureSubscriptionItem]'
     ];
 
     /**
@@ -215,7 +215,7 @@ class PaymentsProductsCardProcessingSubscriptionInformation implements ArrayAcce
 
     /**
      * Gets features
-     * @return map[string,\CyberSource\Model\PaymentsProductsCardProcessingSubscriptionInformationFeatures]
+     * @return map[string,\CyberSource\Model\CardProessingFeatureSubscriptionItem]
      */
     public function getFeatures()
     {
@@ -224,7 +224,7 @@ class PaymentsProductsCardProcessingSubscriptionInformation implements ArrayAcce
 
     /**
      * Sets features
-     * @param map[string,\CyberSource\Model\PaymentsProductsCardProcessingSubscriptionInformationFeatures] $features This is a map. The allowed keys are below. Value should be an object containing a sole boolean property - enabled. <table>    <tr>       <td>cardPresent</td>    </tr>    <tr>       <td>cardNotPresent</td>    </tr> </table>
+     * @param map[string,\CyberSource\Model\CardProessingFeatureSubscriptionItem] $features This is a map. The allowed keys are below. Value should be an object containing a sole boolean property - enabled. <table>    <tr>       <td>cardPresent</td>    </tr>    <tr>       <td>cardNotPresent</td>    </tr> </table>
      * @return $this
      */
     public function setFeatures($features)

@@ -46,7 +46,7 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'invoicingv2invoiceSettings_invoiceSettingsInformation';
+    protected static $swaggerModelName = 'Invoicingv2invoiceSettingsInvoiceSettingsInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

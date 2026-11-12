@@ -46,7 +46,7 @@ class TmsEmbeddedInstrumentIdentifierLinks implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsEmbeddedInstrumentIdentifier__links';
+    protected static $swaggerModelName = 'TmsEmbeddedInstrumentIdentifierLinks';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

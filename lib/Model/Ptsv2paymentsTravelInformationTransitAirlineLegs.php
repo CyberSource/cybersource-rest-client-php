@@ -46,7 +46,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_travelInformation_transit_airline_legs';
+    protected static $swaggerModelName = 'Ptsv2paymentsTravelInformationTransitAirlineLegs';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

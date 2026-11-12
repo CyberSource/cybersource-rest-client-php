@@ -46,7 +46,7 @@ class Ucv1sessionsDataDeviceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_deviceInformation';
+    protected static $swaggerModelName = 'Ucv1sessionsDataDeviceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

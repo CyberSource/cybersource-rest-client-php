@@ -46,7 +46,7 @@ class UnifiedriskPaymentVerificationCardSecurityCvv implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_payment_verification_cardSecurity_cvv';
+    protected static $swaggerModelName = 'UnifiedriskPaymentVerificationCardSecurityCvv';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

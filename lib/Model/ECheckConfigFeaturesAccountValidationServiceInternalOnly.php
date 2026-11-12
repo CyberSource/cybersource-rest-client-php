@@ -46,7 +46,7 @@ class ECheckConfigFeaturesAccountValidationServiceInternalOnly implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ECheckConfig_features_accountValidationService_internalOnly';
+    protected static $swaggerModelName = 'ECheckConfigFeaturesAccountValidationServiceInternalOnly';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

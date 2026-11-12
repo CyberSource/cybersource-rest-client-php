@@ -46,7 +46,7 @@ class Binv1binlookupPaymentInformationCard implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'binv1binlookup_paymentInformation_card';
+    protected static $swaggerModelName = 'Binv1binlookupPaymentInformationCard';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

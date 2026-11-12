@@ -124,4 +124,11 @@ class Riskv1decisionsTravelInformationTest extends \PHPUnit\Framework\TestCase
     public function testPropertyPassengers()
     {
     }
+
+    /**
+     * Test attribute "lodging"
+     */
+    public function testPropertyLodging()
+    {
+    }
 }

@@ -46,7 +46,7 @@ class RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation implements 
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskV1ExportComplianceInquiriesPost201Response_errorInformation';
+    protected static $swaggerModelName = 'RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

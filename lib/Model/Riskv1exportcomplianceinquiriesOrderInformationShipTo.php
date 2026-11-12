@@ -46,7 +46,7 @@ class Riskv1exportcomplianceinquiriesOrderInformationShipTo implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1exportcomplianceinquiries_orderInformation_shipTo';
+    protected static $swaggerModelName = 'Riskv1exportcomplianceinquiriesOrderInformationShipTo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class Notificationsubscriptionsv2webhooksProducts implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'notificationsubscriptionsv2webhooks_products';
+    protected static $swaggerModelName = 'Notificationsubscriptionsv2webhooksProducts';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

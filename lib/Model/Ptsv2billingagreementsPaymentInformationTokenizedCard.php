@@ -46,7 +46,7 @@ class Ptsv2billingagreementsPaymentInformationTokenizedCard implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2billingagreements_paymentInformation_tokenizedCard';
+    protected static $swaggerModelName = 'Ptsv2billingagreementsPaymentInformationTokenizedCard';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

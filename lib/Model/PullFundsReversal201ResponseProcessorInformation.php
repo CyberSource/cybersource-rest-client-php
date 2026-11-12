@@ -46,7 +46,7 @@ class PullFundsReversal201ResponseProcessorInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pullFundsReversal201Response_processorInformation';
+    protected static $swaggerModelName = 'PullFundsReversal201ResponseProcessorInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

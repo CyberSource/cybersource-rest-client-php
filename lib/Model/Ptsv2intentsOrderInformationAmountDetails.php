@@ -46,7 +46,7 @@ class Ptsv2intentsOrderInformationAmountDetails implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2intents_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'Ptsv2intentsOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

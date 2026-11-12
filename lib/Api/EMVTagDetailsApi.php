@@ -135,7 +135,8 @@ class EMVTagDetailsApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         if ('GET' == 'POST') {
             $_tempBody = '{}';
@@ -144,6 +145,14 @@ class EMVTagDetailsApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -152,7 +161,7 @@ class EMVTagDetailsApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getEmvTags,getEmvTagsWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -211,14 +220,14 @@ class EMVTagDetailsApi
      *
      * Parse an EMV String
      *
-     * @param \CyberSource\Model\Body2 $body  (required)
+     * @param \CyberSource\Model\ParseEmvTagsRequest $parseEmvTagsRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\TssV2PostEmvTags200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function parseEmvTags($body)
+    public function parseEmvTags($parseEmvTagsRequest)
     {
         self::$logger->info('CALL TO METHOD parseEmvTags STARTED');
-        list($response, $statusCode, $httpHeader) = $this->parseEmvTagsWithHttpInfo($body);
+        list($response, $statusCode, $httpHeader) = $this->parseEmvTagsWithHttpInfo($parseEmvTagsRequest);
         self::$logger->info('CALL TO METHOD parseEmvTags ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -229,16 +238,16 @@ class EMVTagDetailsApi
      *
      * Parse an EMV String
      *
-     * @param \CyberSource\Model\Body2 $body  (required)
+     * @param \CyberSource\Model\ParseEmvTagsRequest $parseEmvTagsRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\TssV2PostEmvTags200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function parseEmvTagsWithHttpInfo($body)
+    public function parseEmvTagsWithHttpInfo($parseEmvTagsRequest)
     {
-        // verify the required parameter 'body' is set
-        if ($body === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $body when calling parseEmvTags");
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling parseEmvTags');
+        // verify the required parameter 'parseEmvTagsRequest' is set
+        if ($parseEmvTagsRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $parseEmvTagsRequest when calling parseEmvTags");
+            throw new \InvalidArgumentException('Missing the required parameter $parseEmvTagsRequest when calling parseEmvTags');
         }
         // parse inputs
         $resourcePath = "/tss/v2/transactions/emvTagDetails";
@@ -252,22 +261,31 @@ class EMVTagDetailsApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // body params
         $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
+        if (isset($parseEmvTagsRequest)) {
+            $_tempBody = $parseEmvTagsRequest;
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $modelClassLocation = explode('\\', '\CyberSource\Model\Body2');
+        $modelClassLocation = explode('\\', '\CyberSource\Model\ParseEmvTagsRequest');
 
         $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -276,7 +294,7 @@ class EMVTagDetailsApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "parseEmvTags,parseEmvTagsWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());

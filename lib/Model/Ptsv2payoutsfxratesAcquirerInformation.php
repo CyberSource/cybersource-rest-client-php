@@ -46,7 +46,7 @@ class Ptsv2payoutsfxratesAcquirerInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payoutsfxrates_acquirerInformation';
+    protected static $swaggerModelName = 'Ptsv2payoutsfxratesAcquirerInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

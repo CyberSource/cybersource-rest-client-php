@@ -46,7 +46,7 @@ class PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv implements 
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsReversalsPost201Response_pointOfSaleInformation_emv';
+    protected static $swaggerModelName = 'PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

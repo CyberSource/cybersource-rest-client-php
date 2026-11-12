@@ -46,7 +46,7 @@ class Ucv1sessionsDataBuyerInformationPersonalIdentification implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_buyerInformation_personalIdentification';
+    protected static $swaggerModelName = 'Ucv1sessionsDataBuyerInformationPersonalIdentification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

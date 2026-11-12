@@ -46,7 +46,7 @@ class Ptsv2paymentsWatchlistScreeningInformationWeights implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_watchlistScreeningInformation_weights';
+    protected static $swaggerModelName = 'Ptsv2paymentsWatchlistScreeningInformationWeights';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

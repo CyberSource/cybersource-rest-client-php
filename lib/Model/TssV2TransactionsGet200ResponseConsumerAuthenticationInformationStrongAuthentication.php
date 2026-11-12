@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuth
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_consumerAuthenticationInformation_strongAuthentication';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuthentication';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

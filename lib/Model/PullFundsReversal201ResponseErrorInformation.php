@@ -46,7 +46,7 @@ class PullFundsReversal201ResponseErrorInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pullFundsReversal201Response_errorInformation';
+    protected static $swaggerModelName = 'PullFundsReversal201ResponseErrorInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

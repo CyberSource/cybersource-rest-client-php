@@ -46,7 +46,7 @@ class Upv1capturecontextsDataMerchantInformationMerchantDescriptor implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_data_merchantInformation_merchantDescriptor';
+    protected static $swaggerModelName = 'Upv1capturecontextsDataMerchantInformationMerchantDescriptor';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

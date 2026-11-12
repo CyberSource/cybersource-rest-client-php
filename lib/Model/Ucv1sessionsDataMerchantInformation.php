@@ -46,7 +46,7 @@ class Ucv1sessionsDataMerchantInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_merchantInformation';
+    protected static $swaggerModelName = 'Ucv1sessionsDataMerchantInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -197,7 +197,7 @@ class Ucv1sessionsDataMerchantInformation implements ArrayAccess
 
     /**
      * Sets vatRegistrationNumber
-     * @param string $vatRegistrationNumber Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.  #### CyberSource through VisaNet For CtV processors, the maximum length is 20.
+     * @param string $vatRegistrationNumber Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.
      * @return $this
      */
     public function setVatRegistrationNumber($vatRegistrationNumber)

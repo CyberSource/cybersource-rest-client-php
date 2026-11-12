@@ -46,7 +46,7 @@ class SAConfigNotifications implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'SAConfig_notifications';
+    protected static $swaggerModelName = 'SAConfigNotifications';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

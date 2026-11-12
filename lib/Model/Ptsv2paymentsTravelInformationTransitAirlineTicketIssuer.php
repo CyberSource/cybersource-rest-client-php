@@ -46,7 +46,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_travelInformation_transit_airline_ticketIssuer';
+    protected static $swaggerModelName = 'Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

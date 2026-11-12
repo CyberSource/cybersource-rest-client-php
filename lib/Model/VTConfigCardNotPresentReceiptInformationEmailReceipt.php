@@ -46,7 +46,7 @@ class VTConfigCardNotPresentReceiptInformationEmailReceipt implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'VTConfig_cardNotPresent_receiptInformation_emailReceipt';
+    protected static $swaggerModelName = 'VTConfigCardNotPresentReceiptInformationEmailReceipt';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

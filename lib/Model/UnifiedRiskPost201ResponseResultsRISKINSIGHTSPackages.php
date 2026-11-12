@@ -47,7 +47,7 @@ class UnifiedRiskPost201ResponseResultsRISKINSIGHTSPackages implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedRiskPost201Response_results_RISK_INSIGHTS_packages';
+    protected static $swaggerModelName = 'UnifiedRiskPost201ResponseResultsRISKINSIGHTSPackages';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

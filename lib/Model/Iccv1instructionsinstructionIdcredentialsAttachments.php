@@ -47,7 +47,7 @@ class Iccv1instructionsinstructionIdcredentialsAttachments implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1instructionsinstructionIdcredentials_attachments';
+    protected static $swaggerModelName = 'Iccv1instructionsinstructionIdcredentialsAttachments';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

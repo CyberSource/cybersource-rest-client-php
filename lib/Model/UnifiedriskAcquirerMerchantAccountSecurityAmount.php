@@ -47,7 +47,7 @@ class UnifiedriskAcquirerMerchantAccountSecurityAmount implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_acquirer_merchantAccount_securityAmount';
+    protected static $swaggerModelName = 'UnifiedriskAcquirerMerchantAccountSecurityAmount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

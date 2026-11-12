@@ -47,7 +47,7 @@ class Ucv1sessionsPaymentConfigurationsTMSTOKENCustomer implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_paymentConfigurations_TMS_TOKEN_customer';
+    protected static $swaggerModelName = 'Ucv1sessionsPaymentConfigurationsTMSTOKENCustomer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

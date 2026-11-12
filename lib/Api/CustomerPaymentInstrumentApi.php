@@ -151,7 +151,8 @@ class CustomerPaymentInstrumentApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // header params
         if ($profileId !== null) {
@@ -180,6 +181,14 @@ class CustomerPaymentInstrumentApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -188,7 +197,7 @@ class CustomerPaymentInstrumentApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "deleteCustomerPaymentInstrument,deleteCustomerPaymentInstrumentWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -232,31 +241,31 @@ class CustomerPaymentInstrumentApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms400ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms403ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse404', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms404ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse409', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms409ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse410', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms410ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms424ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms500ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -321,7 +330,8 @@ class CustomerPaymentInstrumentApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // header params
         if ($profileId !== null) {
@@ -350,6 +360,14 @@ class CustomerPaymentInstrumentApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -358,7 +376,7 @@ class CustomerPaymentInstrumentApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getCustomerPaymentInstrument,getCustomerPaymentInstrumentWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -406,27 +424,27 @@ class CustomerPaymentInstrumentApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms400ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms403ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse404', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms404ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse410', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms410ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms424ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms500ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -488,7 +506,8 @@ class CustomerPaymentInstrumentApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // query params
         if ($offset !== null) {
@@ -517,6 +536,14 @@ class CustomerPaymentInstrumentApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -525,7 +552,7 @@ class CustomerPaymentInstrumentApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getCustomerPaymentInstrumentsList,getCustomerPaymentInstrumentsListWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -575,27 +602,27 @@ class CustomerPaymentInstrumentApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms400ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms403ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse404', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms404ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse410', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms410ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms424ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms500ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -669,7 +696,8 @@ class CustomerPaymentInstrumentApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // header params
         if ($profileId !== null) {
@@ -709,6 +737,14 @@ class CustomerPaymentInstrumentApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -717,7 +753,7 @@ class CustomerPaymentInstrumentApi
         $inboundMLEStatus = 'optional';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "patchCustomersPaymentInstrument,patchCustomersPaymentInstrumentWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -765,31 +801,31 @@ class CustomerPaymentInstrumentApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms400ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms403ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse404', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms404ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse410', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms410ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 412:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse412', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms412ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms424ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms500ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -854,7 +890,8 @@ class CustomerPaymentInstrumentApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // header params
         if ($profileId !== null) {
@@ -882,6 +919,14 @@ class CustomerPaymentInstrumentApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -890,7 +935,7 @@ class CustomerPaymentInstrumentApi
         $inboundMLEStatus = 'optional';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "postCustomerPaymentInstrument,postCustomerPaymentInstrumentWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -938,23 +983,23 @@ class CustomerPaymentInstrumentApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms400ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms403ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse409', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms409ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms424ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms500ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

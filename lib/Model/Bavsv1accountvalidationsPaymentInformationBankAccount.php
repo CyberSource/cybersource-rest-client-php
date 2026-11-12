@@ -46,7 +46,7 @@ class Bavsv1accountvalidationsPaymentInformationBankAccount implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'bavsv1accountvalidations_paymentInformation_bank_account';
+    protected static $swaggerModelName = 'Bavsv1accountvalidationsPaymentInformationBankAccount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

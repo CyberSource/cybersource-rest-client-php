@@ -46,7 +46,7 @@ class Ucv1sessionsDataProcessingInformationRecurringOptions implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_processingInformation_recurringOptions';
+    protected static $swaggerModelName = 'Ucv1sessionsDataProcessingInformationRecurringOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -170,7 +170,7 @@ class Ucv1sessionsDataProcessingInformationRecurringOptions implements ArrayAcce
 
     /**
      * Sets firstRecurringPayment
-     * @param bool $firstRecurringPayment Flag that indicates whether this transaction is the first in a series of recurring payments.  This field is supported only for **Atos**, **FDC Nashville Global**, and **OmniPay Direct**.  Possible values:  - `true` Indicates this is the first payment in a series of recurring payments  - `false` (default) Indicates this is not the first payment in a series of recurring payments.
+     * @param bool $firstRecurringPayment Flag that indicates whether this transaction is the first in a series of recurring payments.  Possible values:  - `true` Indicates this is the first payment in a series of recurring payments  - `false` (default) Indicates this is not the first payment in a series of recurring payments.
      * @return $this
      */
     public function setFirstRecurringPayment($firstRecurringPayment)

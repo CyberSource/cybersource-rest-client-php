@@ -46,7 +46,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_orderInformation';
+    protected static $swaggerModelName = 'Ptsv2paymentsOrderInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,9 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'amountDetails' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetails',
         'billTo' => '\CyberSource\Model\Ptsv2paymentsOrderInformationBillTo',
         'shipTo' => '\CyberSource\Model\Ptsv2paymentsOrderInformationShipTo',
-        'lineItems' => '\CyberSource\Model\Ptsv2paymentsOrderInformationLineItems[]',
+        'lineItems' => '\CyberSource\Model\Ptsv2paymentsOrderInformationLineItemsExtended[]',
         'invoiceDetails' => '\CyberSource\Model\Ptsv2paymentsOrderInformationInvoiceDetails',
+        'vouchers' => '\CyberSource\Model\Ptsv2paymentsOrderInformationVouchers[]',
         'shippingDetails' => '\CyberSource\Model\Ptsv2paymentsOrderInformationShippingDetails',
         'digitalCurrency' => '\CyberSource\Model\Ptsv2paymentsOrderInformationDigitalCurrency',
         'returnsAccepted' => 'bool',
@@ -81,6 +82,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'shipTo' => null,
         'lineItems' => null,
         'invoiceDetails' => null,
+        'vouchers' => null,
         'shippingDetails' => null,
         'digitalCurrency' => null,
         'returnsAccepted' => null,
@@ -113,6 +115,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'shipTo' => 'shipTo',
         'lineItems' => 'lineItems',
         'invoiceDetails' => 'invoiceDetails',
+        'vouchers' => 'vouchers',
         'shippingDetails' => 'shippingDetails',
         'digitalCurrency' => 'digitalCurrency',
         'returnsAccepted' => 'returnsAccepted',
@@ -136,6 +139,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'shipTo' => 'setShipTo',
         'lineItems' => 'setLineItems',
         'invoiceDetails' => 'setInvoiceDetails',
+        'vouchers' => 'setVouchers',
         'shippingDetails' => 'setShippingDetails',
         'digitalCurrency' => 'setDigitalCurrency',
         'returnsAccepted' => 'setReturnsAccepted',
@@ -159,6 +163,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'shipTo' => 'getShipTo',
         'lineItems' => 'getLineItems',
         'invoiceDetails' => 'getInvoiceDetails',
+        'vouchers' => 'getVouchers',
         'shippingDetails' => 'getShippingDetails',
         'digitalCurrency' => 'getDigitalCurrency',
         'returnsAccepted' => 'getReturnsAccepted',
@@ -207,6 +212,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         $this->container['shipTo'] = isset($data['shipTo']) ? $data['shipTo'] : null;
         $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
         $this->container['invoiceDetails'] = isset($data['invoiceDetails']) ? $data['invoiceDetails'] : null;
+        $this->container['vouchers'] = isset($data['vouchers']) ? $data['vouchers'] : null;
         $this->container['shippingDetails'] = isset($data['shippingDetails']) ? $data['shippingDetails'] : null;
         $this->container['digitalCurrency'] = isset($data['digitalCurrency']) ? $data['digitalCurrency'] : null;
         $this->container['returnsAccepted'] = isset($data['returnsAccepted']) ? $data['returnsAccepted'] : null;
@@ -329,7 +335,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
 
     /**
      * Gets lineItems
-     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationLineItems[]
+     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationLineItemsExtended[]
      */
     public function getLineItems()
     {
@@ -338,7 +344,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
 
     /**
      * Sets lineItems
-     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationLineItems[] $lineItems
+     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationLineItemsExtended[] $lineItems
      * @return $this
      */
     public function setLineItems($lineItems)
@@ -365,6 +371,27 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
     public function setInvoiceDetails($invoiceDetails)
     {
         $this->container['invoiceDetails'] = $invoiceDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets vouchers
+     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationVouchers[]
+     */
+    public function getVouchers()
+    {
+        return $this->container['vouchers'];
+    }
+
+    /**
+     * Sets vouchers
+     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationVouchers[] $vouchers
+     * @return $this
+     */
+    public function setVouchers($vouchers)
+    {
+        $this->container['vouchers'] = $vouchers;
 
         return $this;
     }

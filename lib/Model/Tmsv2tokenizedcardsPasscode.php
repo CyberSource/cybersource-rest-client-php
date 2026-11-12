@@ -47,7 +47,7 @@ class Tmsv2tokenizedcardsPasscode implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2tokenizedcards_passcode';
+    protected static $swaggerModelName = 'Tmsv2tokenizedcardsPasscode';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

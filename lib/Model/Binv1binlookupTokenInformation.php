@@ -46,7 +46,7 @@ class Binv1binlookupTokenInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'binv1binlookup_tokenInformation';
+    protected static $swaggerModelName = 'Binv1binlookupTokenInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

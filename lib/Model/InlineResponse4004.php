@@ -53,12 +53,11 @@ class InlineResponse4004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'submitTimeStampUtc' => 'string',
-        'status' => 'string',
-        'reason' => 'string',
+        'correlationId' => 'string',
+        'details' => '\CyberSource\Model\Flex400ErrorResponseDetails[]',
+        'informationLink' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\InlineResponse2013ErrorInformationDetails[]'
+        'reason' => 'string'
     ];
 
     /**
@@ -66,12 +65,11 @@ class InlineResponse4004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'submitTimeStampUtc' => null,
-        'status' => null,
-        'reason' => null,
+        'correlationId' => null,
+        'details' => null,
+        'informationLink' => null,
         'message' => null,
-        'details' => null
+        'reason' => null
     ];
 
     public static function swaggerTypes()
@@ -89,12 +87,11 @@ class InlineResponse4004 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'submitTimeStampUtc' => 'submitTimeStampUtc',
-        'status' => 'status',
-        'reason' => 'reason',
+        'correlationId' => 'correlationId',
+        'details' => 'details',
+        'informationLink' => 'informationLink',
         'message' => 'message',
-        'details' => 'details'
+        'reason' => 'reason'
     ];
 
 
@@ -103,12 +100,11 @@ class InlineResponse4004 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'submitTimeStampUtc' => 'setSubmitTimeStampUtc',
-        'status' => 'setStatus',
-        'reason' => 'setReason',
+        'correlationId' => 'setCorrelationId',
+        'details' => 'setDetails',
+        'informationLink' => 'setInformationLink',
         'message' => 'setMessage',
-        'details' => 'setDetails'
+        'reason' => 'setReason'
     ];
 
 
@@ -117,12 +113,11 @@ class InlineResponse4004 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'submitTimeStampUtc' => 'getSubmitTimeStampUtc',
-        'status' => 'getStatus',
-        'reason' => 'getReason',
+        'correlationId' => 'getCorrelationId',
+        'details' => 'getDetails',
+        'informationLink' => 'getInformationLink',
         'message' => 'getMessage',
-        'details' => 'getDetails'
+        'reason' => 'getReason'
     ];
 
     public static function attributeMap()
@@ -156,12 +151,11 @@ class InlineResponse4004 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['submitTimeStampUtc'] = isset($data['submitTimeStampUtc']) ? $data['submitTimeStampUtc'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['correlationId'] = isset($data['correlationId']) ? $data['correlationId'] : null;
         $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['informationLink'] = isset($data['informationLink']) ? $data['informationLink'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
     }
 
     /**
@@ -173,8 +167,11 @@ class InlineResponse4004 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['status'] === null) {
-            $invalid_properties[] = "'status' can't be null";
+        if ($this->container['message'] === null) {
+            $invalid_properties[] = "'message' can't be null";
+        }
+        if ($this->container['reason'] === null) {
+            $invalid_properties[] = "'reason' can't be null";
         }
         return $invalid_properties;
     }
@@ -188,7 +185,10 @@ class InlineResponse4004 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['status'] === null) {
+        if ($this->container['message'] === null) {
+            return false;
+        }
+        if ($this->container['reason'] === null) {
             return false;
         }
         return true;
@@ -196,85 +196,64 @@ class InlineResponse4004 implements ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets correlationId
      * @return string
      */
-    public function getId()
+    public function getCorrelationId()
     {
-        return $this->container['id'];
+        return $this->container['correlationId'];
     }
 
     /**
-     * Sets id
-     * @param string $id A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.
+     * Sets correlationId
+     * @param string $correlationId
      * @return $this
      */
-    public function setId($id)
+    public function setCorrelationId($correlationId)
     {
-        $this->container['id'] = $id;
+        $this->container['correlationId'] = $correlationId;
 
         return $this;
     }
 
     /**
-     * Gets submitTimeStampUtc
-     * @return string
+     * Gets details
+     * @return \CyberSource\Model\Flex400ErrorResponseDetails[]
      */
-    public function getSubmitTimeStampUtc()
+    public function getDetails()
     {
-        return $this->container['submitTimeStampUtc'];
+        return $this->container['details'];
     }
 
     /**
-     * Sets submitTimeStampUtc
-     * @param string $submitTimeStampUtc Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * Sets details
+     * @param \CyberSource\Model\Flex400ErrorResponseDetails[] $details
      * @return $this
      */
-    public function setSubmitTimeStampUtc($submitTimeStampUtc)
+    public function setDetails($details)
     {
-        $this->container['submitTimeStampUtc'] = $submitTimeStampUtc;
+        $this->container['details'] = $details;
 
         return $this;
     }
 
     /**
-     * Gets status
+     * Gets informationLink
      * @return string
      */
-    public function getStatus()
+    public function getInformationLink()
     {
-        return $this->container['status'];
+        return $this->container['informationLink'];
     }
 
     /**
-     * Sets status
-     * @param string $status Possible values: - INVALID_REQUEST
+     * Sets informationLink
+     * @param string $informationLink
      * @return $this
      */
-    public function setStatus($status)
+    public function setInformationLink($informationLink)
     {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets reason
-     * @return string
-     */
-    public function getReason()
-    {
-        return $this->container['reason'];
-    }
-
-    /**
-     * Sets reason
-     * @param string $reason The reason of the status.  Possible values: - INVALID_DATA - MISSING_FIELD
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $this->container['reason'] = $reason;
+        $this->container['informationLink'] = $informationLink;
 
         return $this;
     }
@@ -290,7 +269,7 @@ class InlineResponse4004 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The detail message related to the status and reason listed above.
+     * @param string $message
      * @return $this
      */
     public function setMessage($message)
@@ -301,22 +280,22 @@ class InlineResponse4004 implements ArrayAccess
     }
 
     /**
-     * Gets details
-     * @return \CyberSource\Model\InlineResponse2013ErrorInformationDetails[]
+     * Gets reason
+     * @return string
      */
-    public function getDetails()
+    public function getReason()
     {
-        return $this->container['details'];
+        return $this->container['reason'];
     }
 
     /**
-     * Sets details
-     * @param \CyberSource\Model\InlineResponse2013ErrorInformationDetails[] $details
+     * Sets reason
+     * @param string $reason Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
      * @return $this
      */
-    public function setDetails($details)
+    public function setReason($reason)
     {
-        $this->container['details'] = $details;
+        $this->container['reason'] = $reason;
 
         return $this;
     }

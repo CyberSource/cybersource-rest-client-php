@@ -46,7 +46,7 @@ class CardProcessingConfigFeaturesCardNotPresentPayoutsCurrencies implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CardProcessingConfig_features_cardNotPresent_payouts_currencies';
+    protected static $swaggerModelName = 'CardProcessingConfigFeaturesCardNotPresentPayoutsCurrencies';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

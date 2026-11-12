@@ -47,14 +47,19 @@ class Riskv1decisionsProcessingInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_processingInformation';
+    protected static $swaggerModelName = 'Riskv1decisionsProcessingInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'actionList' => 'string[]'
+        'actionList' => 'string[]',
+        'businessApplicationId' => 'string',
+        'purposeOfPayment' => 'string',
+        'preAuthStatus' => 'string',
+        'preAuthResponseCode' => 'string',
+        'authorizationOptions' => '\CyberSource\Model\Riskv1decisionsProcessingInformationAuthorizationOptions'
     ];
 
     /**
@@ -62,7 +67,12 @@ class Riskv1decisionsProcessingInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'actionList' => null
+        'actionList' => null,
+        'businessApplicationId' => null,
+        'purposeOfPayment' => null,
+        'preAuthStatus' => null,
+        'preAuthResponseCode' => null,
+        'authorizationOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +90,12 @@ class Riskv1decisionsProcessingInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'actionList' => 'actionList'
+        'actionList' => 'actionList',
+        'businessApplicationId' => 'businessApplicationId',
+        'purposeOfPayment' => 'purposeOfPayment',
+        'preAuthStatus' => 'preAuthStatus',
+        'preAuthResponseCode' => 'preAuthResponseCode',
+        'authorizationOptions' => 'authorizationOptions'
     ];
 
 
@@ -89,7 +104,12 @@ class Riskv1decisionsProcessingInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'actionList' => 'setActionList'
+        'actionList' => 'setActionList',
+        'businessApplicationId' => 'setBusinessApplicationId',
+        'purposeOfPayment' => 'setPurposeOfPayment',
+        'preAuthStatus' => 'setPreAuthStatus',
+        'preAuthResponseCode' => 'setPreAuthResponseCode',
+        'authorizationOptions' => 'setAuthorizationOptions'
     ];
 
 
@@ -98,7 +118,12 @@ class Riskv1decisionsProcessingInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'actionList' => 'getActionList'
+        'actionList' => 'getActionList',
+        'businessApplicationId' => 'getBusinessApplicationId',
+        'purposeOfPayment' => 'getPurposeOfPayment',
+        'preAuthStatus' => 'getPreAuthStatus',
+        'preAuthResponseCode' => 'getPreAuthResponseCode',
+        'authorizationOptions' => 'getAuthorizationOptions'
     ];
 
     public static function attributeMap()
@@ -133,6 +158,11 @@ class Riskv1decisionsProcessingInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['actionList'] = isset($data['actionList']) ? $data['actionList'] : null;
+        $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
+        $this->container['purposeOfPayment'] = isset($data['purposeOfPayment']) ? $data['purposeOfPayment'] : null;
+        $this->container['preAuthStatus'] = isset($data['preAuthStatus']) ? $data['preAuthStatus'] : null;
+        $this->container['preAuthResponseCode'] = isset($data['preAuthResponseCode']) ? $data['preAuthResponseCode'] : null;
+        $this->container['authorizationOptions'] = isset($data['authorizationOptions']) ? $data['authorizationOptions'] : null;
     }
 
     /**
@@ -177,6 +207,111 @@ class Riskv1decisionsProcessingInformation implements ArrayAccess
     public function setActionList($actionList)
     {
         $this->container['actionList'] = $actionList;
+
+        return $this;
+    }
+
+    /**
+     * Gets businessApplicationId
+     * @return string
+     */
+    public function getBusinessApplicationId()
+    {
+        return $this->container['businessApplicationId'];
+    }
+
+    /**
+     * Sets businessApplicationId
+     * @param string $businessApplicationId Required for AFT and OCT transactions.  Given below is a list of all the BAI values available. However, the processors may support only few specific BAI values.  - AA : Account-to-account  - BB : Supplier Payments - BI : Bank-Initiated P2P Money Transfer - BP : Non-Card Bill Pay/Bill Pay - CD : Cash Deposit - CP : Credit card Bill Payment - FD : Funds disbursement  - FT : Funds transfer - GD : Government Disbursement - GP : Gambling payout (non-online gambling) - LO : Loyalty credits and rebates - MD : Merchant Settlement - OG : Online Gambling Payout - PD : Payroll and pension disbursement - PP : Person-to-Person or Peer-to-Peer - TU : Top up, prepaid load - WT : Digital wallet
+     * @return $this
+     */
+    public function setBusinessApplicationId($businessApplicationId)
+    {
+        $this->container['businessApplicationId'] = $businessApplicationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets purposeOfPayment
+     * @return string
+     */
+    public function getPurposeOfPayment()
+    {
+        return $this->container['purposeOfPayment'];
+    }
+
+    /**
+     * Sets purposeOfPayment
+     * @param string $purposeOfPayment This field is applicable for AFT and OCT transactions. For list of supported values, please refer to Developer Guide.
+     * @return $this
+     */
+    public function setPurposeOfPayment($purposeOfPayment)
+    {
+        $this->container['purposeOfPayment'] = $purposeOfPayment;
+
+        return $this;
+    }
+
+    /**
+     * Gets preAuthStatus
+     * @return string
+     */
+    public function getPreAuthStatus()
+    {
+        return $this->container['preAuthStatus'];
+    }
+
+    /**
+     * Sets preAuthStatus
+     * @param string $preAuthStatus Outcome of a pre-authorization process. Used when processing payment outside of CyberSource and sent to Decision Manager post-authorisation. Possible values: Approved, Rejected, Hold.
+     * @return $this
+     */
+    public function setPreAuthStatus($preAuthStatus)
+    {
+        $this->container['preAuthStatus'] = $preAuthStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets preAuthResponseCode
+     * @return string
+     */
+    public function getPreAuthResponseCode()
+    {
+        return $this->container['preAuthResponseCode'];
+    }
+
+    /**
+     * Sets preAuthResponseCode
+     * @param string $preAuthResponseCode Alphanumeric code returned by the issuer or payment gateway during the pre-authorization stage of a transaction.
+     * @return $this
+     */
+    public function setPreAuthResponseCode($preAuthResponseCode)
+    {
+        $this->container['preAuthResponseCode'] = $preAuthResponseCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets authorizationOptions
+     * @return \CyberSource\Model\Riskv1decisionsProcessingInformationAuthorizationOptions
+     */
+    public function getAuthorizationOptions()
+    {
+        return $this->container['authorizationOptions'];
+    }
+
+    /**
+     * Sets authorizationOptions
+     * @param \CyberSource\Model\Riskv1decisionsProcessingInformationAuthorizationOptions $authorizationOptions
+     * @return $this
+     */
+    public function setAuthorizationOptions($authorizationOptions)
+    {
+        $this->container['authorizationOptions'] = $authorizationOptions;
 
         return $this;
     }

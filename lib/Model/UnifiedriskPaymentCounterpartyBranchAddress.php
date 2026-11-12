@@ -47,7 +47,7 @@ class UnifiedriskPaymentCounterpartyBranchAddress implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_payment_counterparty_branchAddress';
+    protected static $swaggerModelName = 'UnifiedriskPaymentCounterpartyBranchAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

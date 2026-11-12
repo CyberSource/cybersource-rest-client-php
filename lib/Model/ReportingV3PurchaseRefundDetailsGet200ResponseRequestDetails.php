@@ -47,7 +47,7 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseRequestDetails implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3PurchaseRefundDetailsGet200Response_requestDetails';
+    protected static $swaggerModelName = 'ReportingV3PurchaseRefundDetailsGet200ResponseRequestDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

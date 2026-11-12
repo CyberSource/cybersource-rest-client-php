@@ -46,7 +46,7 @@ class Ucv1sessionsDataOrderInformationBillTo implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_orderInformation_billTo';
+    protected static $swaggerModelName = 'Ucv1sessionsDataOrderInformationBillTo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -656,7 +656,7 @@ class Ucv1sessionsDataOrderInformationBillTo implements ArrayAccess
 
     /**
      * Sets phoneType
-     * @param string $phoneType Customer's phone number type.  #### For Payouts: This field may be sent only for FDC Compass.  Possible Values: * day * home * night * work
+     * @param string $phoneType Customer's phone number type.  Possible Values: * day * home * night * work
      * @return $this
      */
     public function setPhoneType($phoneType)

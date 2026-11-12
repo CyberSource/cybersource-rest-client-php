@@ -46,7 +46,7 @@ class RbsAuthorizationOptionsInitiator implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'rbsAuthorizationOptions_initiator';
+    protected static $swaggerModelName = 'RbsAuthorizationOptionsInitiator';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

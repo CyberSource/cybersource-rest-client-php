@@ -46,7 +46,7 @@ class Flexv2sessionsFieldsOrderInformationShipTo implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'flexv2sessions_fields_orderInformation_shipTo';
+    protected static $swaggerModelName = 'Flexv2sessionsFieldsOrderInformationShipTo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard impleme
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_paymentAccountInformation_tokenizedCard';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponsePaymentAccountInformationTokenizedCard';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

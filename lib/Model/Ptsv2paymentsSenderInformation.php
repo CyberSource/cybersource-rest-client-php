@@ -46,7 +46,7 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_senderInformation';
+    protected static $swaggerModelName = 'Ptsv2paymentsSenderInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -64,7 +64,8 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
         'referenceNumber' => 'string',
         'account' => '\CyberSource\Model\Ptsv2paymentsSenderInformationAccount',
         'postalCode' => 'string',
-        'taxIdNumber' => 'float'
+        'taxIdNumber' => 'float',
+        'email' => 'string'
     ];
 
     /**
@@ -83,7 +84,8 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
         'referenceNumber' => null,
         'account' => null,
         'postalCode' => null,
-        'taxIdNumber' => null
+        'taxIdNumber' => null,
+        'email' => null
     ];
 
     public static function swaggerTypes()
@@ -112,7 +114,8 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
         'referenceNumber' => 'referenceNumber',
         'account' => 'account',
         'postalCode' => 'postalCode',
-        'taxIdNumber' => 'taxIdNumber'
+        'taxIdNumber' => 'taxIdNumber',
+        'email' => 'email'
     ];
 
 
@@ -132,7 +135,8 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
         'referenceNumber' => 'setReferenceNumber',
         'account' => 'setAccount',
         'postalCode' => 'setPostalCode',
-        'taxIdNumber' => 'setTaxIdNumber'
+        'taxIdNumber' => 'setTaxIdNumber',
+        'email' => 'setEmail'
     ];
 
 
@@ -152,7 +156,8 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
         'referenceNumber' => 'getReferenceNumber',
         'account' => 'getAccount',
         'postalCode' => 'getPostalCode',
-        'taxIdNumber' => 'getTaxIdNumber'
+        'taxIdNumber' => 'getTaxIdNumber',
+        'email' => 'getEmail'
     ];
 
     public static function attributeMap()
@@ -198,6 +203,7 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
         $this->container['account'] = isset($data['account']) ? $data['account'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['taxIdNumber'] = isset($data['taxIdNumber']) ? $data['taxIdNumber'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
     }
 
     /**
@@ -473,6 +479,27 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
     public function setTaxIdNumber($taxIdNumber)
     {
         $this->container['taxIdNumber'] = $taxIdNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Sender's email address, including the full domain name.
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
 
         return $this;
     }

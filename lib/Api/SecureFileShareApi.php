@@ -144,7 +144,8 @@ class SecureFileShareApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['*/*;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // query params
         if ($organizationId !== null) {
@@ -165,6 +166,14 @@ class SecureFileShareApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -173,7 +182,7 @@ class SecureFileShareApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getFile,getFileWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -218,7 +227,7 @@ class SecureFileShareApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40010', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -285,7 +294,8 @@ class SecureFileShareApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['*/*;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // query params
         if ($startDate !== null) {
@@ -310,6 +320,14 @@ class SecureFileShareApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -318,7 +336,7 @@ class SecureFileShareApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getFileDetail,getFileDetailWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -370,19 +388,19 @@ class SecureFileShareApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40010', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40010', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40010', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40010', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

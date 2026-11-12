@@ -47,7 +47,7 @@ class Ucv1sessionsAppearanceVariables implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_appearance_variables';
+    protected static $swaggerModelName = 'Ucv1sessionsAppearanceVariables';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

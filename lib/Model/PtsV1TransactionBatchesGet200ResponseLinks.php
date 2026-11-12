@@ -46,7 +46,7 @@ class PtsV1TransactionBatchesGet200ResponseLinks implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV1TransactionBatchesGet200Response__links';
+    protected static $swaggerModelName = 'PtsV1TransactionBatchesGet200ResponseLinks';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

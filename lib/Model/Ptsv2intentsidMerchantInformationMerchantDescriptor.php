@@ -46,7 +46,7 @@ class Ptsv2intentsidMerchantInformationMerchantDescriptor implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2intentsid_merchantInformation_merchantDescriptor';
+    protected static $swaggerModelName = 'Ptsv2intentsidMerchantInformationMerchantDescriptor';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

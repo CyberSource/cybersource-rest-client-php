@@ -47,7 +47,7 @@ class ShippingAddressListForCustomerEmbedded implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ShippingAddressListForCustomer__embedded';
+    protected static $swaggerModelName = 'ShippingAddressListForCustomerEmbedded';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

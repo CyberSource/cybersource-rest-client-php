@@ -82,4 +82,11 @@ class Ucv1sessionsPaymentConfigurationsCLICKTOPAYTest extends \PHPUnit\Framework
     public function testPropertyAutoCheckEnrollment()
     {
     }
+
+    /**
+     * Test attribute "allowedCardNetworks"
+     */
+    public function testPropertyAllowedCardNetworks()
+    {
+    }
 }

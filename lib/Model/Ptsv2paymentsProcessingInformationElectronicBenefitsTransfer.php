@@ -46,7 +46,7 @@ class Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_processingInformation_electronicBenefitsTransfer';
+    protected static $swaggerModelName = 'Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

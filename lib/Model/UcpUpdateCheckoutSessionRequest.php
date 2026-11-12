@@ -58,9 +58,9 @@ class UcpUpdateCheckoutSessionRequest implements ArrayAccess
         'lineItems' => '\CyberSource\Model\Iccv1checkoutsessionsLineItems[]',
         'buyer' => '\CyberSource\Model\UcpUpdateCheckoutSessionBuyer',
         'currency' => 'string',
-        'payment' => '\CyberSource\Model\Iccv1checkoutsessionssessionIdPayment',
-        'fulfillment' => '\CyberSource\Model\Iccv1checkoutsessionssessionIdFulfillment',
-        'discounts' => '\CyberSource\Model\Iccv1checkoutsessionssessionIdDiscounts'
+        'payment' => '\CyberSource\Model\Iccv1UpdateCheckoutsessionsPayment',
+        'fulfillment' => '\CyberSource\Model\Iccv1UpdateCheckoutSessionsFulfillment',
+        'discounts' => '\CyberSource\Model\Iccv1UpdateCheckoutSessionsDiscounts'
     ];
 
     /**
@@ -282,7 +282,7 @@ class UcpUpdateCheckoutSessionRequest implements ArrayAccess
 
     /**
      * Gets payment
-     * @return \CyberSource\Model\Iccv1checkoutsessionssessionIdPayment
+     * @return \CyberSource\Model\Iccv1UpdateCheckoutsessionsPayment
      */
     public function getPayment()
     {
@@ -291,7 +291,7 @@ class UcpUpdateCheckoutSessionRequest implements ArrayAccess
 
     /**
      * Sets payment
-     * @param \CyberSource\Model\Iccv1checkoutsessionssessionIdPayment $payment
+     * @param \CyberSource\Model\Iccv1UpdateCheckoutsessionsPayment $payment
      * @return $this
      */
     public function setPayment($payment)
@@ -303,7 +303,7 @@ class UcpUpdateCheckoutSessionRequest implements ArrayAccess
 
     /**
      * Gets fulfillment
-     * @return \CyberSource\Model\Iccv1checkoutsessionssessionIdFulfillment
+     * @return \CyberSource\Model\Iccv1UpdateCheckoutSessionsFulfillment
      */
     public function getFulfillment()
     {
@@ -312,7 +312,7 @@ class UcpUpdateCheckoutSessionRequest implements ArrayAccess
 
     /**
      * Sets fulfillment
-     * @param \CyberSource\Model\Iccv1checkoutsessionssessionIdFulfillment $fulfillment
+     * @param \CyberSource\Model\Iccv1UpdateCheckoutSessionsFulfillment $fulfillment
      * @return $this
      */
     public function setFulfillment($fulfillment)
@@ -324,7 +324,7 @@ class UcpUpdateCheckoutSessionRequest implements ArrayAccess
 
     /**
      * Gets discounts
-     * @return \CyberSource\Model\Iccv1checkoutsessionssessionIdDiscounts
+     * @return \CyberSource\Model\Iccv1UpdateCheckoutSessionsDiscounts
      */
     public function getDiscounts()
     {
@@ -333,7 +333,7 @@ class UcpUpdateCheckoutSessionRequest implements ArrayAccess
 
     /**
      * Sets discounts
-     * @param \CyberSource\Model\Iccv1checkoutsessionssessionIdDiscounts $discounts
+     * @param \CyberSource\Model\Iccv1UpdateCheckoutSessionsDiscounts $discounts
      * @return $this
      */
     public function setDiscounts($discounts)

@@ -47,7 +47,7 @@ class UcFeatureSubscriptionGooglePay implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucFeatureSubscription_googlePay';
+    protected static $swaggerModelName = 'UcFeatureSubscriptionGooglePay';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

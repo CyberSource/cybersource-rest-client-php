@@ -46,7 +46,7 @@ class UnifiedriskLabelsAuthenticationOutcome implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_labels_authenticationOutcome';
+    protected static $swaggerModelName = 'UnifiedriskLabelsAuthenticationOutcome';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

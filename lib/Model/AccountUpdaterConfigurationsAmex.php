@@ -46,7 +46,7 @@ class AccountUpdaterConfigurationsAmex implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'accountUpdaterConfigurations_amex';
+    protected static $swaggerModelName = 'AccountUpdaterConfigurationsAmex';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

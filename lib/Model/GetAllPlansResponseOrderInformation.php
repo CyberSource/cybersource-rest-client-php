@@ -46,7 +46,7 @@ class GetAllPlansResponseOrderInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'getAllPlansResponse_orderInformation';
+    protected static $swaggerModelName = 'GetAllPlansResponseOrderInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

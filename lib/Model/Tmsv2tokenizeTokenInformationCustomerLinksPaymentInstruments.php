@@ -46,7 +46,7 @@ class Tmsv2tokenizeTokenInformationCustomerLinksPaymentInstruments implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2tokenize_tokenInformation_customer__links_paymentInstruments';
+    protected static $swaggerModelName = 'Tmsv2tokenizeTokenInformationCustomerLinksPaymentInstruments';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

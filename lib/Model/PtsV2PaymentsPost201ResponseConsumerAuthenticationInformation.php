@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_consumerAuthenticationInformation';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

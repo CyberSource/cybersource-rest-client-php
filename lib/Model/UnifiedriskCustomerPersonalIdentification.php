@@ -46,7 +46,7 @@ class UnifiedriskCustomerPersonalIdentification implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_customer_personalIdentification';
+    protected static $swaggerModelName = 'UnifiedriskCustomerPersonalIdentification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

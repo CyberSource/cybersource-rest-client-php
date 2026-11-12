@@ -140,6 +140,27 @@ class CreateBundledDecisionManagerCaseRequestTest extends \PHPUnit\Framework\Tes
     }
 
     /**
+     * Test attribute "recipientInformation"
+     */
+    public function testPropertyRecipientInformation()
+    {
+    }
+
+    /**
+     * Test attribute "senderInformation"
+     */
+    public function testPropertySenderInformation()
+    {
+    }
+
+    /**
+     * Test attribute "aggregatorInformation"
+     */
+    public function testPropertyAggregatorInformation()
+    {
+    }
+
+    /**
      * Test attribute "merchantDefinedInformation"
      */
     public function testPropertyMerchantDefinedInformation()

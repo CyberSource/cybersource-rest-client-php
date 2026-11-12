@@ -46,7 +46,7 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsReversalsPost201Response_authorizationInformation';
+    protected static $swaggerModelName = 'PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

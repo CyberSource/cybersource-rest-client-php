@@ -46,7 +46,7 @@ class UnderwritingConfigurationClientReferenceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'underwritingConfiguration_clientReferenceInformation';
+    protected static $swaggerModelName = 'UnderwritingConfigurationClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

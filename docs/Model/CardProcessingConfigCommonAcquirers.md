@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **allowMultipleBills** | **bool** | Allows multiple captures for a single authorization transaction. | [optional] 
 **enableTransactionReferenceNumber** | **bool** | To enable merchant to send in transaction reference number (unique reconciliation ID). | [optional] 
 **paymentTypes** | [**map[string,\CyberSource\Model\CardProcessingConfigCommonPaymentTypes]**](CardProcessingConfigCommonPaymentTypes.md) | Valid values are: * VISA * MASTERCARD * AMERICAN_EXPRESS * CUP * EFTPOS * DINERS_CLUB * DISCOVER * JCB | [optional] 
-**currencies** | [**map[string,\CyberSource\Model\CardProcessingConfigCommonCurrencies]**](CardProcessingConfigCommonCurrencies.md) | Three-character [ISO 4217 ALPHA-3 Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) | [optional] 
+**currencies** | [**map[string,\CyberSource\Model\CurrencyConfiguration]**](CurrencyConfiguration.md) | Three-character [ISO 4217 ALPHA-3 Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

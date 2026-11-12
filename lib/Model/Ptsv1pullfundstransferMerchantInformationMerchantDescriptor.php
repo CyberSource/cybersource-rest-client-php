@@ -46,7 +46,7 @@ class Ptsv1pullfundstransferMerchantInformationMerchantDescriptor implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pullfundstransfer_merchantInformation_merchantDescriptor';
+    protected static $swaggerModelName = 'Ptsv1pullfundstransferMerchantInformationMerchantDescriptor';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

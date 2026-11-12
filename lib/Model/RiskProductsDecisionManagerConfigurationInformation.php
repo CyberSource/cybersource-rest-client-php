@@ -46,7 +46,7 @@ class RiskProductsDecisionManagerConfigurationInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskProducts_decisionManager_configurationInformation';
+    protected static $swaggerModelName = 'RiskProductsDecisionManagerConfigurationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

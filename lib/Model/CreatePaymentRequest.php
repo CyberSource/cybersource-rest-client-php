@@ -70,7 +70,7 @@ class CreatePaymentRequest implements ArrayAccess
         'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
         'merchantDefinedSecureInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedSecureInformation',
         'installmentInformation' => '\CyberSource\Model\Ptsv2paymentsInstallmentInformation',
-        'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformation',
+        'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformationExtended',
         'healthCareInformation' => '\CyberSource\Model\Ptsv2paymentsHealthCareInformation',
         'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation',
         'tokenInformation' => '\CyberSource\Model\Ptsv2paymentsTokenInformation',
@@ -692,7 +692,7 @@ class CreatePaymentRequest implements ArrayAccess
 
     /**
      * Gets travelInformation
-     * @return \CyberSource\Model\Ptsv2paymentsTravelInformation
+     * @return \CyberSource\Model\Ptsv2paymentsTravelInformationExtended
      */
     public function getTravelInformation()
     {
@@ -701,7 +701,7 @@ class CreatePaymentRequest implements ArrayAccess
 
     /**
      * Sets travelInformation
-     * @param \CyberSource\Model\Ptsv2paymentsTravelInformation $travelInformation
+     * @param \CyberSource\Model\Ptsv2paymentsTravelInformationExtended $travelInformation
      * @return $this
      */
     public function setTravelInformation($travelInformation)

@@ -46,7 +46,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_travelInformation_transit_airline_ancillaryInformation';
+    protected static $swaggerModelName = 'Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
         'passengerName' => 'string',
         'connectedTicketNumber' => 'string',
         'creditReasonIndicator' => 'string',
-        'service' => '\CyberSource\Model\Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService[]',
-        'feeDescription' => 'string'
+        'service' => '\CyberSource\Model\CommonAncillaryInformationServiceItem[]'
     ];
 
     /**
@@ -70,8 +69,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
         'passengerName' => null,
         'connectedTicketNumber' => null,
         'creditReasonIndicator' => null,
-        'service' => null,
-        'feeDescription' => null
+        'service' => null
     ];
 
     public static function swaggerTypes()
@@ -93,8 +91,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
         'passengerName' => 'passengerName',
         'connectedTicketNumber' => 'connectedTicketNumber',
         'creditReasonIndicator' => 'creditReasonIndicator',
-        'service' => 'service',
-        'feeDescription' => 'feeDescription'
+        'service' => 'service'
     ];
 
 
@@ -107,8 +104,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
         'passengerName' => 'setPassengerName',
         'connectedTicketNumber' => 'setConnectedTicketNumber',
         'creditReasonIndicator' => 'setCreditReasonIndicator',
-        'service' => 'setService',
-        'feeDescription' => 'setFeeDescription'
+        'service' => 'setService'
     ];
 
 
@@ -121,8 +117,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
         'passengerName' => 'getPassengerName',
         'connectedTicketNumber' => 'getConnectedTicketNumber',
         'creditReasonIndicator' => 'getCreditReasonIndicator',
-        'service' => 'getService',
-        'feeDescription' => 'getFeeDescription'
+        'service' => 'getService'
     ];
 
     public static function attributeMap()
@@ -161,7 +156,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
         $this->container['connectedTicketNumber'] = isset($data['connectedTicketNumber']) ? $data['connectedTicketNumber'] : null;
         $this->container['creditReasonIndicator'] = isset($data['creditReasonIndicator']) ? $data['creditReasonIndicator'] : null;
         $this->container['service'] = isset($data['service']) ? $data['service'] : null;
-        $this->container['feeDescription'] = isset($data['feeDescription']) ? $data['feeDescription'] : null;
     }
 
     /**
@@ -275,7 +269,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
 
     /**
      * Gets service
-     * @return \CyberSource\Model\Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService[]
+     * @return \CyberSource\Model\CommonAncillaryInformationServiceItem[]
      */
     public function getService()
     {
@@ -284,33 +278,12 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
 
     /**
      * Sets service
-     * @param \CyberSource\Model\Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService[] $service
+     * @param \CyberSource\Model\CommonAncillaryInformationServiceItem[] $service
      * @return $this
      */
     public function setService($service)
     {
         $this->container['service'] = $service;
-
-        return $this;
-    }
-
-    /**
-     * Gets feeDescription
-     * @return string
-     */
-    public function getFeeDescription()
-    {
-        return $this->container['feeDescription'];
-    }
-
-    /**
-     * Sets feeDescription
-     * @param string $feeDescription This field contains the fee description for the airline ancillary service provided. Format: Alphanumeric, 100 characters maximum. Optional field for ancillary services.
-     * @return $this
-     */
-    public function setFeeDescription($feeDescription)
-    {
-        $this->container['feeDescription'] = $feeDescription;
 
         return $this;
     }

@@ -46,7 +46,7 @@ class CardProcessingConfigFeatures implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CardProcessingConfig_features';
+    protected static $swaggerModelName = 'CardProcessingConfigFeatures';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class PaymentsProductsECheckSubscriptionInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_eCheck_subscriptionInformation';
+    protected static $swaggerModelName = 'PaymentsProductsECheckSubscriptionInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

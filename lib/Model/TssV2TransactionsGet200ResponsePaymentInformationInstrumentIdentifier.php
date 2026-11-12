@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier impl
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_paymentInformation_instrumentIdentifier';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

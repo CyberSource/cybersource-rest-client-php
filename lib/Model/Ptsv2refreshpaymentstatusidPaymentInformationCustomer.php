@@ -46,7 +46,7 @@ class Ptsv2refreshpaymentstatusidPaymentInformationCustomer implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2refreshpaymentstatusid_paymentInformation_customer';
+    protected static $swaggerModelName = 'Ptsv2refreshpaymentstatusidPaymentInformationCustomer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

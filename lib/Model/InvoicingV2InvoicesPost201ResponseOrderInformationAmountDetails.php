@@ -47,7 +47,7 @@ class InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails implements
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'invoicingV2InvoicesPost201Response_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'InvoicingV2InvoicesPost201ResponseOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

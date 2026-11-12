@@ -46,7 +46,7 @@ class ECheckConfigUnderwriting implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ECheckConfig_underwriting';
+    protected static $swaggerModelName = 'ECheckConfigUnderwriting';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationInvoice implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_paymentInformation_invoice';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponsePaymentInformationInvoice';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

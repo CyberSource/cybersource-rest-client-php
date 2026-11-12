@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponseRecurringPaymentInformation implements Arra
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_recurringPaymentInformation';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponseRecurringPaymentInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

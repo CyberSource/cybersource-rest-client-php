@@ -47,7 +47,7 @@ class UnifiedriskPaymentWire implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_payment_wire';
+    protected static $swaggerModelName = 'UnifiedriskPaymentWire';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

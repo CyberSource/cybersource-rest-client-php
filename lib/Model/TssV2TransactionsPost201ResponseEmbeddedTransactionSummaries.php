@@ -46,7 +46,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsPost201Response__embedded_transactionSummaries';
+    protected static $swaggerModelName = 'TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -72,6 +72,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'processorInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedProcessorInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation',
         'riskInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedRiskInformation',
+        'travelInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseTravelInformation',
         'links' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedLinks'
     ];
 
@@ -99,6 +100,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'processorInformation' => null,
         'pointOfSaleInformation' => null,
         'riskInformation' => null,
+        'travelInformation' => null,
         'links' => null
     ];
 
@@ -136,6 +138,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'processorInformation' => 'processorInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation',
         'riskInformation' => 'riskInformation',
+        'travelInformation' => 'travelInformation',
         'links' => '_links'
     ];
 
@@ -164,6 +167,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'processorInformation' => 'setProcessorInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
         'riskInformation' => 'setRiskInformation',
+        'travelInformation' => 'setTravelInformation',
         'links' => 'setLinks'
     ];
 
@@ -192,6 +196,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'processorInformation' => 'getProcessorInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
         'riskInformation' => 'getRiskInformation',
+        'travelInformation' => 'getTravelInformation',
         'links' => 'getLinks'
     ];
 
@@ -245,6 +250,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
+        $this->container['travelInformation'] = isset($data['travelInformation']) ? $data['travelInformation'] : null;
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
     }
 
@@ -668,6 +674,27 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
     public function setRiskInformation($riskInformation)
     {
         $this->container['riskInformation'] = $riskInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets travelInformation
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseTravelInformation
+     */
+    public function getTravelInformation()
+    {
+        return $this->container['travelInformation'];
+    }
+
+    /**
+     * Sets travelInformation
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseTravelInformation $travelInformation
+     * @return $this
+     */
+    public function setTravelInformation($travelInformation)
+    {
+        $this->container['travelInformation'] = $travelInformation;
 
         return $this;
     }

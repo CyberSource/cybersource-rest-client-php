@@ -47,7 +47,7 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'Riskv1decisionsOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,6 +55,7 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'currency' => 'string',
+        'discountAmount' => 'string',
         'totalAmount' => 'string'
     ];
 
@@ -64,6 +65,7 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'currency' => null,
+        'discountAmount' => null,
         'totalAmount' => null
     ];
 
@@ -83,6 +85,7 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
      */
     protected static $attributeMap = [
         'currency' => 'currency',
+        'discountAmount' => 'discountAmount',
         'totalAmount' => 'totalAmount'
     ];
 
@@ -93,6 +96,7 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
      */
     protected static $setters = [
         'currency' => 'setCurrency',
+        'discountAmount' => 'setDiscountAmount',
         'totalAmount' => 'setTotalAmount'
     ];
 
@@ -103,6 +107,7 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
      */
     protected static $getters = [
         'currency' => 'getCurrency',
+        'discountAmount' => 'getDiscountAmount',
         'totalAmount' => 'getTotalAmount'
     ];
 
@@ -138,6 +143,7 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['discountAmount'] = isset($data['discountAmount']) ? $data['discountAmount'] : null;
         $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
     }
 
@@ -189,6 +195,27 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
     public function setCurrency($currency)
     {
         $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets discountAmount
+     * @return string
+     */
+    public function getDiscountAmount()
+    {
+        return $this->container['discountAmount'];
+    }
+
+    /**
+     * Sets discountAmount
+     * @param string $discountAmount Total discount amount applied to the order
+     * @return $this
+     */
+    public function setDiscountAmount($discountAmount)
+    {
+        $this->container['discountAmount'] = $discountAmount;
 
         return $this;
     }

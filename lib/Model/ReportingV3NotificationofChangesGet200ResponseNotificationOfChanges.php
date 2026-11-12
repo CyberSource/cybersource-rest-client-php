@@ -47,7 +47,7 @@ class ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges implem
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3NotificationofChangesGet200Response_notificationOfChanges';
+    protected static $swaggerModelName = 'ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

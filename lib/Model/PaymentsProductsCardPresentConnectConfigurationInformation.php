@@ -46,7 +46,7 @@ class PaymentsProductsCardPresentConnectConfigurationInformation implements Arra
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_cardPresentConnect_configurationInformation';
+    protected static $swaggerModelName = 'PaymentsProductsCardPresentConnectConfigurationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

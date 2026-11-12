@@ -46,7 +46,7 @@ class UnifiedriskDevicePointOfSale implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_device_pointOfSale';
+    protected static $swaggerModelName = 'UnifiedriskDevicePointOfSale';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

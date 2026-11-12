@@ -46,7 +46,7 @@ class Rbsv1subscriptionsOrderInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'rbsv1subscriptions_orderInformation';
+    protected static $swaggerModelName = 'Rbsv1subscriptionsOrderInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class UnifiedriskMerchantAddress implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_merchant_address';
+    protected static $swaggerModelName = 'UnifiedriskMerchantAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponseOrderInformationShippingDetails implements 
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_orderInformation_shippingDetails';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponseOrderInformationShippingDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

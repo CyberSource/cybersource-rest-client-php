@@ -82,4 +82,39 @@ class Riskv1decisionsProcessingInformationTest extends \PHPUnit\Framework\TestCa
     public function testPropertyActionList()
     {
     }
+
+    /**
+     * Test attribute "businessApplicationId"
+     */
+    public function testPropertyBusinessApplicationId()
+    {
+    }
+
+    /**
+     * Test attribute "purposeOfPayment"
+     */
+    public function testPropertyPurposeOfPayment()
+    {
+    }
+
+    /**
+     * Test attribute "preAuthStatus"
+     */
+    public function testPropertyPreAuthStatus()
+    {
+    }
+
+    /**
+     * Test attribute "preAuthResponseCode"
+     */
+    public function testPropertyPreAuthResponseCode()
+    {
+    }
+
+    /**
+     * Test attribute "authorizationOptions"
+     */
+    public function testPropertyAuthorizationOptions()
+    {
+    }
 }

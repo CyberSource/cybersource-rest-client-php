@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **processorInformation** | [**\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedProcessorInformation**](TssV2TransactionsPost201ResponseEmbeddedProcessorInformation.md) |  | [optional] 
 **pointOfSaleInformation** | [**\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation**](TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation.md) |  | [optional] 
 **riskInformation** | [**\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedRiskInformation**](TssV2TransactionsPost201ResponseEmbeddedRiskInformation.md) |  | [optional] 
+**travelInformation** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseTravelInformation**](TssV2TransactionsGet200ResponseTravelInformation.md) |  | [optional] 
 **links** | [**\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedLinks**](TssV2TransactionsPost201ResponseEmbeddedLinks.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

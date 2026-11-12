@@ -47,7 +47,7 @@ class UcFeatureSubscriptionMultibanco implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucFeatureSubscription_multibanco';
+    protected static $swaggerModelName = 'UcFeatureSubscriptionMultibanco';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

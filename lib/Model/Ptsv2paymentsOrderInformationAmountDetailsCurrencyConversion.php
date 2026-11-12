@@ -46,7 +46,7 @@ class Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_orderInformation_amountDetails_currencyConversion';
+    protected static $swaggerModelName = 'Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

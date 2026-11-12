@@ -77,23 +77,44 @@ class InlineResponse4011Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "links"
      */
-    public function testPropertyId()
+    public function testPropertyLinks()
     {
     }
 
     /**
-     * Test attribute "submitTimeStampUtc"
+     * Test attribute "code"
      */
-    public function testPropertySubmitTimeStampUtc()
+    public function testPropertyCode()
     {
     }
 
     /**
-     * Test attribute "reason"
+     * Test attribute "correlationId"
      */
-    public function testPropertyReason()
+    public function testPropertyCorrelationId()
+    {
+    }
+
+    /**
+     * Test attribute "detail"
+     */
+    public function testPropertyDetail()
+    {
+    }
+
+    /**
+     * Test attribute "fields"
+     */
+    public function testPropertyFields()
+    {
+    }
+
+    /**
+     * Test attribute "localizationKey"
+     */
+    public function testPropertyLocalizationKey()
     {
     }
 

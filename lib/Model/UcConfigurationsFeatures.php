@@ -46,7 +46,7 @@ class UcConfigurationsFeatures implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucConfigurations_features';
+    protected static $swaggerModelName = 'UcConfigurationsFeatures';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

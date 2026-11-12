@@ -46,7 +46,7 @@ class Tmsv2TokenizedCardCardTermsAndConditions implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2TokenizedCard_card_termsAndConditions';
+    protected static $swaggerModelName = 'Tmsv2TokenizedCardCardTermsAndConditions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

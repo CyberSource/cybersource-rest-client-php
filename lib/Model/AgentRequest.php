@@ -60,7 +60,7 @@ class AgentRequest implements ArrayAccess
         'contactEmail' => 'string',
         'tokenRequestorId' => 'string',
         'agentMetadata' => 'object',
-        'keys' => '\CyberSource\Model\Iccv1agentsKeys[]'
+        'keys' => '\CyberSource\Model\AddAgentKeyRequest[]'
     ];
 
     /**
@@ -354,7 +354,7 @@ class AgentRequest implements ArrayAccess
 
     /**
      * Gets keys
-     * @return \CyberSource\Model\Iccv1agentsKeys[]
+     * @return \CyberSource\Model\AddAgentKeyRequest[]
      */
     public function getKeys()
     {
@@ -363,7 +363,7 @@ class AgentRequest implements ArrayAccess
 
     /**
      * Sets keys
-     * @param \CyberSource\Model\Iccv1agentsKeys[] $keys Optional array of public keys to register alongside the agent. Keys are created in ***deactivated*** state and must be activated separately via POST /agents/{agentId}/keys/{keyId}/activate.
+     * @param \CyberSource\Model\AddAgentKeyRequest[] $keys Optional array of public keys to register alongside the agent. Keys are created in ***deactivated*** state and must be activated separately via POST /agents/{agentId}/keys/{keyId}/activate.
      * @return $this
      */
     public function setKeys($keys)

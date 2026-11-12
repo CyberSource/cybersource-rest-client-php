@@ -46,7 +46,7 @@ class DefaultPaymentInstrumentCard implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'defaultPaymentInstrument_card';
+    protected static $swaggerModelName = 'DefaultPaymentInstrumentCard';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

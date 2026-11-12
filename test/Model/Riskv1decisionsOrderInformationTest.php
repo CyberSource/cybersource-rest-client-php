@@ -147,6 +147,13 @@ class Riskv1decisionsOrderInformationTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "vouchers"
+     */
+    public function testPropertyVouchers()
+    {
+    }
+
+    /**
      * Test attribute "totalOffersCount"
      */
     public function testPropertyTotalOffersCount()

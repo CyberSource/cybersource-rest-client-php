@@ -46,7 +46,7 @@ class VirtualTerminalGlobalPaymentSettingsPaymentInformation implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'virtualTerminalGlobalPaymentSettings_paymentInformation';
+    protected static $swaggerModelName = 'VirtualTerminalGlobalPaymentSettingsPaymentInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

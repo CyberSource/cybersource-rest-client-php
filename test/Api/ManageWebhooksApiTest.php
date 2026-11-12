@@ -102,26 +102,6 @@ class ManageWebhooksApiTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test case for notificationSubscriptionsV1WebhooksWebhookIdPost
-     *
-     * Test a Webhook Configuration.
-     *
-     */
-    public function testNotificationSubscriptionsV1WebhooksWebhookIdPost()
-    {
-    }
-
-    /**
-     * Test case for notificationSubscriptionsV2WebhooksWebhookIdPatch
-     *
-     * Update a Webhook Subscription.
-     *
-     */
-    public function testNotificationSubscriptionsV2WebhooksWebhookIdPatch()
-    {
-    }
-
-    /**
      * Test case for notificationSubscriptionsV2WebhooksWebhookIdStatusPut
      *
      * Update a Webhook Status.
@@ -138,6 +118,26 @@ class ManageWebhooksApiTest extends \PHPUnit\Framework\TestCase
      *
      */
     public function testSaveAsymEgressKey()
+    {
+    }
+
+    /**
+     * Test case for testWebhookSubscription
+     *
+     * Test a Webhook Configuration.
+     *
+     */
+    public function testTestWebhookSubscription()
+    {
+    }
+
+    /**
+     * Test case for updateWebhookSubscription
+     *
+     * Update a Webhook Subscription.
+     *
+     */
+    public function testUpdateWebhookSubscription()
     {
     }
 }

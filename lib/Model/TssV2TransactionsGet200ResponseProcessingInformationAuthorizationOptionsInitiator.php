@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsIn
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_processingInformation_authorizationOptions_initiator';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

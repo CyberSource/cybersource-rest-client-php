@@ -47,7 +47,7 @@ class VpriTransactionInsightsAdditionalDataCardBinData implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'VpriTransactionInsightsAdditionalData_cardBinData';
+    protected static $swaggerModelName = 'VpriTransactionInsightsAdditionalDataCardBinData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class UnderwritingConfigurationOrganizationInformationBusinessInformation implem
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'underwritingConfiguration_organizationInformation_businessInformation';
+    protected static $swaggerModelName = 'UnderwritingConfigurationOrganizationInformationBusinessInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -75,7 +75,7 @@ class UnderwritingConfigurationOrganizationInformationBusinessInformation implem
         'tradingAddress' => '\CyberSource\Model\UnderwritingConfigurationOrganizationInformationBusinessInformationTradingAddress',
         'businessContact' => '\CyberSource\Model\UnderwritingConfigurationOrganizationInformationBusinessInformationBusinessContact',
         'businessDetails' => '\CyberSource\Model\UnderwritingConfigurationBusinessDetails',
-        'ownerInformation' => '\CyberSource\Model\UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation[]',
+        'ownerInformation' => '\CyberSource\Model\UnderwritingConfigurationOwnerInformation[]',
         'directorInformation' => '\CyberSource\Model\UnderwritingConfigurationOrganizationInformationBusinessInformationDirectorInformation[]'
     ];
 
@@ -827,7 +827,7 @@ class UnderwritingConfigurationOrganizationInformationBusinessInformation implem
 
     /**
      * Gets ownerInformation
-     * @return \CyberSource\Model\UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation[]
+     * @return \CyberSource\Model\UnderwritingConfigurationOwnerInformation[]
      */
     public function getOwnerInformation()
     {
@@ -836,7 +836,7 @@ class UnderwritingConfigurationOrganizationInformationBusinessInformation implem
 
     /**
      * Sets ownerInformation
-     * @param \CyberSource\Model\UnderwritingConfigurationOrganizationInformationBusinessInformationOwnerInformation[] $ownerInformation
+     * @param \CyberSource\Model\UnderwritingConfigurationOwnerInformation[] $ownerInformation
      * @return $this
      */
     public function setOwnerInformation($ownerInformation)

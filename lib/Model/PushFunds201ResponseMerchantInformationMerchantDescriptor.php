@@ -46,7 +46,7 @@ class PushFunds201ResponseMerchantInformationMerchantDescriptor implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pushFunds201Response_merchantInformation_merchantDescriptor';
+    protected static $swaggerModelName = 'PushFunds201ResponseMerchantInformationMerchantDescriptor';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

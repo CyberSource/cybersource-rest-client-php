@@ -46,7 +46,7 @@ class PushFunds201ResponseRecipientInformationCard implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pushFunds201Response_recipientInformation_card';
+    protected static $swaggerModelName = 'PushFunds201ResponseRecipientInformationCard';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

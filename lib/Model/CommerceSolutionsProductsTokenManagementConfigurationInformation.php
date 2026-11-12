@@ -46,7 +46,7 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformation implement
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'commerceSolutionsProducts_tokenManagement_configurationInformation';
+    protected static $swaggerModelName = 'CommerceSolutionsProductsTokenManagementConfigurationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

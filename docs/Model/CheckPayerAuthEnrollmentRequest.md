@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **tokenInformation** | [**\CyberSource\Model\Riskv1authenticationsetupsTokenInformation**](Riskv1authenticationsetupsTokenInformation.md) |  | [optional] 
 **buyerInformation** | [**\CyberSource\Model\Riskv1authenticationsBuyerInformation**](Riskv1authenticationsBuyerInformation.md) |  | [optional] 
 **deviceInformation** | [**\CyberSource\Model\Riskv1authenticationsDeviceInformation**](Riskv1authenticationsDeviceInformation.md) |  | [optional] 
-**merchantInformation** | [**\CyberSource\Model\Riskv1decisionsMerchantInformation**](Riskv1decisionsMerchantInformation.md) |  | [optional] 
+**merchantInformation** | [**\CyberSource\Model\Riskv1authenticationsMerchantInformation**](Riskv1authenticationsMerchantInformation.md) |  | [optional] 
 **acquirerInformation** | [**\CyberSource\Model\Riskv1decisionsAcquirerInformation**](Riskv1decisionsAcquirerInformation.md) |  | [optional] 
 **recurringPaymentInformation** | [**\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation**](Ptsv2paymentsRecurringPaymentInformation.md) |  | [optional] 
 **consumerAuthenticationInformation** | [**\CyberSource\Model\Riskv1decisionsConsumerAuthenticationInformation**](Riskv1decisionsConsumerAuthenticationInformation.md) |  | [optional] 

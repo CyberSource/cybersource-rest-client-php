@@ -46,7 +46,7 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_orderInformation_shipTo';
+    protected static $swaggerModelName = 'Ptsv2paymentsOrderInformationShipTo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -71,7 +71,8 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'company' => 'string',
         'destinationTypes' => 'string',
         'destinationCode' => 'int',
-        'method' => 'string'
+        'method' => 'string',
+        'carrierName' => 'string'
     ];
 
     /**
@@ -97,7 +98,8 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'company' => null,
         'destinationTypes' => null,
         'destinationCode' => null,
-        'method' => null
+        'method' => null,
+        'carrierName' => null
     ];
 
     public static function swaggerTypes()
@@ -133,7 +135,8 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'company' => 'company',
         'destinationTypes' => 'destinationTypes',
         'destinationCode' => 'destinationCode',
-        'method' => 'method'
+        'method' => 'method',
+        'carrierName' => 'carrierName'
     ];
 
 
@@ -160,7 +163,8 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'company' => 'setCompany',
         'destinationTypes' => 'setDestinationTypes',
         'destinationCode' => 'setDestinationCode',
-        'method' => 'setMethod'
+        'method' => 'setMethod',
+        'carrierName' => 'setCarrierName'
     ];
 
 
@@ -187,7 +191,8 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'company' => 'getCompany',
         'destinationTypes' => 'getDestinationTypes',
         'destinationCode' => 'getDestinationCode',
-        'method' => 'getMethod'
+        'method' => 'getMethod',
+        'carrierName' => 'getCarrierName'
     ];
 
     public static function attributeMap()
@@ -240,6 +245,7 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         $this->container['destinationTypes'] = isset($data['destinationTypes']) ? $data['destinationTypes'] : null;
         $this->container['destinationCode'] = isset($data['destinationCode']) ? $data['destinationCode'] : null;
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
+        $this->container['carrierName'] = isset($data['carrierName']) ? $data['carrierName'] : null;
     }
 
     /**
@@ -662,6 +668,27 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
     public function setMethod($method)
     {
         $this->container['method'] = $method;
+
+        return $this;
+    }
+
+    /**
+     * Gets carrierName
+     * @return string
+     */
+    public function getCarrierName()
+    {
+        return $this->container['carrierName'];
+    }
+
+    /**
+     * Sets carrierName
+     * @param string $carrierName Name of carrier (UPS, FedEx, USPS, etc.)
+     * @return $this
+     */
+    public function setCarrierName($carrierName)
+    {
+        $this->container['carrierName'] = $carrierName;
 
         return $this;
     }

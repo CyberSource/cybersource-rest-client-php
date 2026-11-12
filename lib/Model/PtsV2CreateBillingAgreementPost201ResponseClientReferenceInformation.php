@@ -46,7 +46,7 @@ class PtsV2CreateBillingAgreementPost201ResponseClientReferenceInformation imple
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2CreateBillingAgreementPost201Response_clientReferenceInformation';
+    protected static $swaggerModelName = 'PtsV2CreateBillingAgreementPost201ResponseClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

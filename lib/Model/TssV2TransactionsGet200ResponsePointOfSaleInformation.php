@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_pointOfSaleInformation';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponsePointOfSaleInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

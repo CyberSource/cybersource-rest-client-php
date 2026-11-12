@@ -46,7 +46,7 @@ class Riskv1exportcomplianceinquiriesOrderInformationLineItems implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1exportcomplianceinquiries_orderInformation_lineItems';
+    protected static $swaggerModelName = 'Riskv1exportcomplianceinquiriesOrderInformationLineItems';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

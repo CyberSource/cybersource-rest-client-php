@@ -47,7 +47,7 @@ class UnifiedriskPartner implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_partner';
+    protected static $swaggerModelName = 'UnifiedriskPartner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

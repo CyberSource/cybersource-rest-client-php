@@ -47,7 +47,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3ReportSubscriptionsGet200Response_subscriptions';
+    protected static $swaggerModelName = 'ReportingV3ReportSubscriptionsGet200ResponseSubscriptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class TssV2TransactionsPost201ResponseEmbedded implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsPost201Response__embedded';
+    protected static $swaggerModelName = 'TssV2TransactionsPost201ResponseEmbedded';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

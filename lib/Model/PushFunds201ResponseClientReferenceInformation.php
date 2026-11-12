@@ -46,7 +46,7 @@ class PushFunds201ResponseClientReferenceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pushFunds201Response_clientReferenceInformation';
+    protected static $swaggerModelName = 'PushFunds201ResponseClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

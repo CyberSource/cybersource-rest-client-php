@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **ucpCancelCheckout**
-> \CyberSource\Model\InlineResponse20113 ucpCancelCheckout($sessionId)
+> \CyberSource\Model\UcpCheckoutSessionResponse ucpCancelCheckout($sessionId)
 
 Cancel Checkout UCP
 
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
+[**\CyberSource\Model\UcpCheckoutSessionResponse**](../Model/UcpCheckoutSessionResponse.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **ucpCompleteCheckout**
-> \CyberSource\Model\InlineResponse20113 ucpCompleteCheckout($sessionId, $idempotencyKey, $ucpCompleteCheckoutRequest)
+> \CyberSource\Model\UcpCheckoutSessionResponse ucpCompleteCheckout($sessionId, $idempotencyKey, $ucpCompleteCheckoutRequest)
 
 Complete Checkout UCP
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
+[**\CyberSource\Model\UcpCheckoutSessionResponse**](../Model/UcpCheckoutSessionResponse.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **ucpCreateCheckoutSession**
-> \CyberSource\Model\InlineResponse20113 ucpCreateCheckoutSession($ucpCreateCheckoutSessionRequest, $idempotencyKey)
+> \CyberSource\Model\UcpCheckoutSessionResponse ucpCreateCheckoutSession($ucpCreateCheckoutSessionRequest, $idempotencyKey)
 
 Create Checkout Session UCP
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
+[**\CyberSource\Model\UcpCheckoutSessionResponse**](../Model/UcpCheckoutSessionResponse.md)
 
 ### Authorization
 
@@ -153,7 +153,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **ucpGetCheckoutSession**
-> \CyberSource\Model\InlineResponse20113 ucpGetCheckoutSession($sessionId, $ucpGetCheckoutSessionRequest)
+> \CyberSource\Model\UcpCheckoutSessionResponse ucpGetCheckoutSession($sessionId, $ucpGetCheckoutSessionRequest)
 
 Get Checkout Session UCP
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
+[**\CyberSource\Model\UcpCheckoutSessionResponse**](../Model/UcpCheckoutSessionResponse.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **ucpUpdateCheckoutSession**
-> \CyberSource\Model\InlineResponse20113 ucpUpdateCheckoutSession($sessionId, $ucpUpdateCheckoutSessionRequest, $idempotencyKey)
+> \CyberSource\Model\UcpCheckoutSessionResponse ucpUpdateCheckoutSession($sessionId, $ucpUpdateCheckoutSessionRequest, $idempotencyKey)
 
 Update Checkout Session UCP
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
+[**\CyberSource\Model\UcpCheckoutSessionResponse**](../Model/UcpCheckoutSessionResponse.md)
 
 ### Authorization
 

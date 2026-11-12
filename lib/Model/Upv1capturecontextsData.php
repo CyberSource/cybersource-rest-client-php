@@ -46,7 +46,7 @@ class Upv1capturecontextsData implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_data';
+    protected static $swaggerModelName = 'Upv1capturecontextsData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

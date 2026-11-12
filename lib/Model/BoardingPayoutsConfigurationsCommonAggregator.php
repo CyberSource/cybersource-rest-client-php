@@ -46,7 +46,7 @@ class BoardingPayoutsConfigurationsCommonAggregator implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'boardingPayoutsConfigurations_common_aggregator';
+    protected static $swaggerModelName = 'BoardingPayoutsConfigurationsCommonAggregator';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

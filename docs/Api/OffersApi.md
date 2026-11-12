@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **createOffer**
-> \CyberSource\Model\InlineResponse20111 createOffer($contentType, $xRequestid, $vCMerchantId, $vCCorrelationId, $vCOrganizationId, $offerRequest)
+> \CyberSource\Model\CreateOfferResponse createOffer($contentType, $xRequestid, $vCMerchantId, $vCCorrelationId, $vCOrganizationId, $offerRequest)
 
 Create an Offer
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20111**](../Model/InlineResponse20111.md)
+[**\CyberSource\Model\CreateOfferResponse**](../Model/CreateOfferResponse.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOffer**
-> \CyberSource\Model\InlineResponse20016 getOffer($contentType, $xRequestid, $vCMerchantId, $vCCorrelationId, $vCOrganizationId, $id)
+> \CyberSource\Model\GetOfferResponse getOffer($contentType, $xRequestid, $vCMerchantId, $vCCorrelationId, $vCOrganizationId, $id)
 
 Retrieve an Offer
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\CyberSource\Model\GetOfferResponse**](../Model/GetOfferResponse.md)
 
 ### Authorization
 

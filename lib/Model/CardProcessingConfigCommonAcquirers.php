@@ -46,7 +46,7 @@ class CardProcessingConfigCommonAcquirers implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CardProcessingConfig_common_acquirers';
+    protected static $swaggerModelName = 'CardProcessingConfigCommonAcquirers';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -64,7 +64,7 @@ class CardProcessingConfigCommonAcquirers implements ArrayAccess
         'allowMultipleBills' => 'bool',
         'enableTransactionReferenceNumber' => 'bool',
         'paymentTypes' => 'map[string,\CyberSource\Model\CardProcessingConfigCommonPaymentTypes]',
-        'currencies' => 'map[string,\CyberSource\Model\CardProcessingConfigCommonCurrencies]'
+        'currencies' => 'map[string,\CyberSource\Model\CurrencyConfiguration]'
     ];
 
     /**
@@ -458,7 +458,7 @@ class CardProcessingConfigCommonAcquirers implements ArrayAccess
 
     /**
      * Gets currencies
-     * @return map[string,\CyberSource\Model\CardProcessingConfigCommonCurrencies]
+     * @return map[string,\CyberSource\Model\CurrencyConfiguration]
      */
     public function getCurrencies()
     {
@@ -467,7 +467,7 @@ class CardProcessingConfigCommonAcquirers implements ArrayAccess
 
     /**
      * Sets currencies
-     * @param map[string,\CyberSource\Model\CardProcessingConfigCommonCurrencies] $currencies Three-character [ISO 4217 ALPHA-3 Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)
+     * @param map[string,\CyberSource\Model\CurrencyConfiguration] $currencies Three-character [ISO 4217 ALPHA-3 Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)
      * @return $this
      */
     public function setCurrencies($currencies)

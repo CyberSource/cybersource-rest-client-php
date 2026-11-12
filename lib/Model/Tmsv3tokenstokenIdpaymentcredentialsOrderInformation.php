@@ -46,7 +46,7 @@ class Tmsv3tokenstokenIdpaymentcredentialsOrderInformation implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv3tokenstokenIdpaymentcredentials_orderInformation';
+    protected static $swaggerModelName = 'Tmsv3tokenstokenIdpaymentcredentialsOrderInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

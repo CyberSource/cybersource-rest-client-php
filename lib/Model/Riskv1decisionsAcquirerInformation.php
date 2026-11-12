@@ -46,7 +46,7 @@ class Riskv1decisionsAcquirerInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_acquirerInformation';
+    protected static $swaggerModelName = 'Riskv1decisionsAcquirerInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

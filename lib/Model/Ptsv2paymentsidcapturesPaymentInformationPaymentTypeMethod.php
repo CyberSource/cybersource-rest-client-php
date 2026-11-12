@@ -46,7 +46,7 @@ class Ptsv2paymentsidcapturesPaymentInformationPaymentTypeMethod implements Arra
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentsidcaptures_paymentInformation_paymentType_method';
+    protected static $swaggerModelName = 'Ptsv2paymentsidcapturesPaymentInformationPaymentTypeMethod';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -57,7 +57,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **billingAgreementsIntimation**
-> \CyberSource\Model\PtsV2CreditsPost201Response1 billingAgreementsIntimation($intimateBillingAgreement, $id)
+> \CyberSource\Model\IntimateBillingAgreementResponse billingAgreementsIntimation($intimateBillingAgreement, $id)
 
 Standing Instruction intimation
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\PtsV2CreditsPost201Response1**](../Model/PtsV2CreditsPost201Response1.md)
+[**\CyberSource\Model\IntimateBillingAgreementResponse**](../Model/IntimateBillingAgreementResponse.md)
 
 ### Authorization
 

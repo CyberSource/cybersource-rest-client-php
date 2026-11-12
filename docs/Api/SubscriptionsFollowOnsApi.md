@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **createFollowOnSubscription**
-> \CyberSource\Model\CreateSubscriptionResponse createFollowOnSubscription($requestId, $createSubscriptionRequest)
+> \CyberSource\Model\CreateSubscriptionResponse createFollowOnSubscription($requestId, $createFollowOnSubscriptionRequest)
 
 Create a Follow-On Subscription
 
@@ -22,10 +22,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\SubscriptionsFollowOnsApi();
 $requestId = "requestId_example"; // string | Request Id of an existing successful Transaction
-$createSubscriptionRequest = new \CyberSource\Model\CreateSubscriptionRequest1(); // \CyberSource\Model\CreateSubscriptionRequest1 | 
+$createFollowOnSubscriptionRequest = new \CyberSource\Model\CreateFollowOnSubscriptionRequest(); // \CyberSource\Model\CreateFollowOnSubscriptionRequest | 
 
 try {
-    $result = $api_instance->createFollowOnSubscription($requestId, $createSubscriptionRequest);
+    $result = $api_instance->createFollowOnSubscription($requestId, $createFollowOnSubscriptionRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionsFollowOnsApi->createFollowOnSubscription: ', $e->getMessage(), PHP_EOL;
@@ -38,7 +38,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **requestId** | **string**| Request Id of an existing successful Transaction |
- **createSubscriptionRequest** | [**\CyberSource\Model\CreateSubscriptionRequest1**](../Model/CreateSubscriptionRequest1.md)|  |
+ **createFollowOnSubscriptionRequest** | [**\CyberSource\Model\CreateFollowOnSubscriptionRequest**](../Model/CreateFollowOnSubscriptionRequest.md)|  |
 
 ### Return type
 
@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFollowOnSubscription**
-> \CyberSource\Model\GetSubscriptionResponse1 getFollowOnSubscription($requestId)
+> \CyberSource\Model\GetFollowOnSubscriptionResponse getFollowOnSubscription($requestId)
 
 Get a Follow-On Subscription
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\GetSubscriptionResponse1**](../Model/GetSubscriptionResponse1.md)
+[**\CyberSource\Model\GetFollowOnSubscriptionResponse**](../Model/GetFollowOnSubscriptionResponse.md)
 
 ### Authorization
 

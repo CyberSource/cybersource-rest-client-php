@@ -46,7 +46,7 @@ class IccLineItemAdditionalInfo implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccLineItem_additionalInfo';
+    protected static $swaggerModelName = 'IccLineItemAdditionalInfo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

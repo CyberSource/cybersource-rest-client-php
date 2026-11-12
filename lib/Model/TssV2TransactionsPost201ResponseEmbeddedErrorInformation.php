@@ -46,7 +46,7 @@ class TssV2TransactionsPost201ResponseEmbeddedErrorInformation implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsPost201Response__embedded_errorInformation';
+    protected static $swaggerModelName = 'TssV2TransactionsPost201ResponseEmbeddedErrorInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

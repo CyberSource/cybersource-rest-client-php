@@ -46,7 +46,7 @@ class VasV2PaymentsPost201ResponseTaxInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'vasV2PaymentsPost201Response_taxInformation';
+    protected static $swaggerModelName = 'VasV2PaymentsPost201ResponseTaxInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

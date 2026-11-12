@@ -46,7 +46,7 @@ class PaymentsProductsVirtualTerminal implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_virtualTerminal';
+    protected static $swaggerModelName = 'PaymentsProductsVirtualTerminal';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

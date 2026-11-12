@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponseRiskInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_riskInformation';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponseRiskInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

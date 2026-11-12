@@ -81,7 +81,7 @@ class MLEUtility
         return $isResponseMLEForAPI;
     }
 
-    public static function encryptRequestPayload($merchantConfig, $requestBody)
+    public static function encryptRequestPayload($merchantConfig, $requestBody, $contentType = null)
     {
         if ($requestBody === null || $requestBody === '') {
             return $requestBody;
@@ -114,7 +114,7 @@ class MLEUtility
 
         self::$logger->debug("Request before MLE:\n" . print_r($printRequestBody, true));
 
-        $jweToken = self::generateToken($mleCert, $requestBody);
+        $jweToken = self::generateToken($mleCert, $requestBody, $contentType);
         $mleRequest = json_encode(['encryptedRequest' => $jweToken]);
 
         self::$logger->debug("Request after MLE:\n" . print_r($mleRequest, true));
@@ -177,7 +177,7 @@ class MLEUtility
         }
     }
 
-    private static function generateToken($cert, $requestBody)
+    private static function generateToken($cert, $requestBody, $contentType = null)
     {
         try {
             $serialNumber = self::extractSerialNumber(
@@ -197,12 +197,14 @@ class MLEUtility
             $keySet->add($jwk);
 
             $header = [
-                'alg' => 'RSA-OAEP-256',
+                'alg' => GlobalParameter::RESPONSE_MLE_ALGORITHM,
                 'enc' => 'A256GCM',
-                'cty' => 'JWT',
                 'kid' => $serialNumber,
                 'iat' => time(),
             ];
+            if (is_string($contentType) && trim($contentType) !== '') {
+                $header['cty'] = $contentType;
+            }
 
             $jwe = new JWE($header, $requestBody);
 

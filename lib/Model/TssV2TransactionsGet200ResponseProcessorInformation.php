@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_processorInformation';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponseProcessorInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -65,7 +65,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'cardVerification' => '\CyberSource\Model\Riskv1decisionsProcessorInformationCardVerification',
         'achVerification' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification',
         'electronicVerificationResults' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults',
-        'issuerInformation' => '\CyberSource\Model\PtsV2PaymentsPost201Response1IssuerInformation',
+        'issuerInformation' => '\CyberSource\Model\RefreshPaymentStatusResponseIssuerInformation',
         'eventStatus' => 'string',
         'systemTraceAuditNumber' => 'string',
         'responseCodeSource' => 'string',
@@ -533,7 +533,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Gets issuerInformation
-     * @return \CyberSource\Model\PtsV2PaymentsPost201Response1IssuerInformation
+     * @return \CyberSource\Model\RefreshPaymentStatusResponseIssuerInformation
      */
     public function getIssuerInformation()
     {
@@ -542,7 +542,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets issuerInformation
-     * @param \CyberSource\Model\PtsV2PaymentsPost201Response1IssuerInformation $issuerInformation
+     * @param \CyberSource\Model\RefreshPaymentStatusResponseIssuerInformation $issuerInformation
      * @return $this
      */
     public function setIssuerInformation($issuerInformation)

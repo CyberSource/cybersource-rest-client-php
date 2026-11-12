@@ -47,7 +47,7 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig im
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'notificationsubscriptionsv2webhooks_securityPolicy_config_additionalConfig';
+    protected static $swaggerModelName = 'Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

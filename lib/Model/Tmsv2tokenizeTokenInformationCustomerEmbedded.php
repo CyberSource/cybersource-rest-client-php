@@ -47,7 +47,7 @@ class Tmsv2tokenizeTokenInformationCustomerEmbedded implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2tokenize_tokenInformation_customer__embedded';
+    protected static $swaggerModelName = 'Tmsv2tokenizeTokenInformationCustomerEmbedded';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

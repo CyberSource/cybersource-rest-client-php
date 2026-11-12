@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_paymentInformation_paymentType';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponsePaymentInformationPaymentType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

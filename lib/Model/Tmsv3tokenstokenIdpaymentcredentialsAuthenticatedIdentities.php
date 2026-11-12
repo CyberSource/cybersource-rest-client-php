@@ -46,7 +46,7 @@ class Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv3tokenstokenIdpaymentcredentials_authenticatedIdentities';
+    protected static $swaggerModelName = 'Tmsv3tokenstokenIdpaymentcredentialsAuthenticatedIdentities';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

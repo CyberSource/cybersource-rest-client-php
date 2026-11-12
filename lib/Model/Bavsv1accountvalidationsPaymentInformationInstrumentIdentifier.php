@@ -46,7 +46,7 @@ class Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier implements 
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'bavsv1accountvalidations_paymentInformation_instrumentIdentifier';
+    protected static $swaggerModelName = 'Bavsv1accountvalidationsPaymentInformationInstrumentIdentifier';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

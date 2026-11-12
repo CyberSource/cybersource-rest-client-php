@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **cardVerification** | [**\CyberSource\Model\Riskv1decisionsProcessorInformationCardVerification**](Riskv1decisionsProcessorInformationCardVerification.md) |  | [optional] 
 **achVerification** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification**](PtsV2PaymentsPost201ResponseProcessorInformationAchVerification.md) |  | [optional] 
 **electronicVerificationResults** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults**](TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults.md) |  | [optional] 
-**issuerInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201Response1IssuerInformation**](PtsV2PaymentsPost201Response1IssuerInformation.md) |  | [optional] 
+**issuerInformation** | [**\CyberSource\Model\RefreshPaymentStatusResponseIssuerInformation**](RefreshPaymentStatusResponseIssuerInformation.md) |  | [optional] 
 **eventStatus** | **string** | The event status. | [optional] 
 **systemTraceAuditNumber** | **string** | This field is returned only for **American Express Direct** and **CyberSource through VisaNet**. Returned by authorization and incremental authorization services.  #### American Express Direct  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  #### CyberSource through VisaNet  System trace number that must be printed on the customer&#39;s receipt. | [optional] 
 **responseCodeSource** | **string** | Used by Visa only and contains the response source/reason code that identifies the source of the response decision. | [optional] 

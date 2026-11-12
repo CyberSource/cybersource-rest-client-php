@@ -46,7 +46,7 @@ class Ptsv2paymentsidClientReferenceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentsid_clientReferenceInformation';
+    protected static $swaggerModelName = 'Ptsv2paymentsidClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

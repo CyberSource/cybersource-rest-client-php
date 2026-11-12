@@ -46,7 +46,7 @@ class PullFunds201ResponseProcessorInformationConsumerAuthenticationResponse imp
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pullFunds201Response_processorInformation_consumerAuthenticationResponse';
+    protected static $swaggerModelName = 'PullFunds201ResponseProcessorInformationConsumerAuthenticationResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

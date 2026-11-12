@@ -72,22 +72,22 @@ class CreateNewWebhooksApiTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test case for createWebhookSubscription
+     *
+     * Create a New Webhook Subscription.
+     *
+     */
+    public function testCreateWebhookSubscription()
+    {
+    }
+
+    /**
      * Test case for findProductsToSubscribe
      *
      * Find Products You Can Subscribe To.
      *
      */
     public function testFindProductsToSubscribe()
-    {
-    }
-
-    /**
-     * Test case for notificationSubscriptionsV2WebhooksPost
-     *
-     * Create a New Webhook Subscription.
-     *
-     */
-    public function testNotificationSubscriptionsV2WebhooksPost()
     {
     }
 

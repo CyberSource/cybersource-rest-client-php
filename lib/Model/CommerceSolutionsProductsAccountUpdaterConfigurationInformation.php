@@ -46,7 +46,7 @@ class CommerceSolutionsProductsAccountUpdaterConfigurationInformation implements
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'commerceSolutionsProducts_accountUpdater_configurationInformation';
+    protected static $swaggerModelName = 'CommerceSolutionsProductsAccountUpdaterConfigurationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

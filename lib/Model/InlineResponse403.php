@@ -53,7 +53,11 @@ class InlineResponse403 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'errors' => '\CyberSource\Model\InlineResponse403Errors[]'
+        'submitTimeUtc' => 'string',
+        'status' => 'string',
+        'reason' => 'string',
+        'message' => 'string',
+        'details' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]'
     ];
 
     /**
@@ -61,7 +65,11 @@ class InlineResponse403 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'errors' => null
+        'submitTimeUtc' => null,
+        'status' => null,
+        'reason' => null,
+        'message' => null,
+        'details' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +87,11 @@ class InlineResponse403 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'errors' => 'errors'
+        'submitTimeUtc' => 'submitTimeUtc',
+        'status' => 'status',
+        'reason' => 'reason',
+        'message' => 'message',
+        'details' => 'details'
     ];
 
 
@@ -88,7 +100,11 @@ class InlineResponse403 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'errors' => 'setErrors'
+        'submitTimeUtc' => 'setSubmitTimeUtc',
+        'status' => 'setStatus',
+        'reason' => 'setReason',
+        'message' => 'setMessage',
+        'details' => 'setDetails'
     ];
 
 
@@ -97,7 +113,11 @@ class InlineResponse403 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'errors' => 'getErrors'
+        'submitTimeUtc' => 'getSubmitTimeUtc',
+        'status' => 'getStatus',
+        'reason' => 'getReason',
+        'message' => 'getMessage',
+        'details' => 'getDetails'
     ];
 
     public static function attributeMap()
@@ -131,7 +151,11 @@ class InlineResponse403 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
+        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
     }
 
     /**
@@ -160,22 +184,106 @@ class InlineResponse403 implements ArrayAccess
 
 
     /**
-     * Gets errors
-     * @return \CyberSource\Model\InlineResponse403Errors[]
+     * Gets submitTimeUtc
+     * @return string
      */
-    public function getErrors()
+    public function getSubmitTimeUtc()
     {
-        return $this->container['errors'];
+        return $this->container['submitTimeUtc'];
     }
 
     /**
-     * Sets errors
-     * @param \CyberSource\Model\InlineResponse403Errors[] $errors
+     * Sets submitTimeUtc
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
      * @return $this
      */
-    public function setErrors($errors)
+    public function setSubmitTimeUtc($submitTimeUtc)
     {
-        $this->container['errors'] = $errors;
+        $this->container['submitTimeUtc'] = $submitTimeUtc;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     * @param string $status The status of the submitted transaction. Possible values: - `INVALID_REQUEST`
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets reason
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->container['reason'];
+    }
+
+    /**
+     * Sets reason
+     * @param string $reason The reason of the status. Possible Values: - `ACCESS_DENIED`
+     * @return $this
+     */
+    public function setReason($reason)
+    {
+        $this->container['reason'] = $reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     * @param string $message The request has an authorization failure.
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets details
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]
+     */
+    public function getDetails()
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[] $details
+     * @return $this
+     */
+    public function setDetails($details)
+    {
+        $this->container['details'] = $details;
 
         return $this;
     }

@@ -46,7 +46,7 @@ class TmsIssuerLifeCycleEventSimulationMetadataCardArtCombinedAsset implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsIssuerLifeCycleEventSimulationMetadata_cardArt_combinedAsset';
+    protected static $swaggerModelName = 'TmsIssuerLifeCycleEventSimulationMetadataCardArtCombinedAsset';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

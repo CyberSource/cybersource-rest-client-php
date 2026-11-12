@@ -46,7 +46,7 @@ class PtsV2ModifyBillingAgreementPost201ResponseOrderInformationShipTo implement
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2ModifyBillingAgreementPost201Response_orderInformation_shipTo';
+    protected static $swaggerModelName = 'PtsV2ModifyBillingAgreementPost201ResponseOrderInformationShipTo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class PtsV2ModifyBillingAgreementPost201ResponsePaymentInformation implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2ModifyBillingAgreementPost201Response_paymentInformation';
+    protected static $swaggerModelName = 'PtsV2ModifyBillingAgreementPost201ResponsePaymentInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

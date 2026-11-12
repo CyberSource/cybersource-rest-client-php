@@ -46,7 +46,7 @@ class PaymentsProductsMicroformSubscriptionInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_microform_subscriptionInformation';
+    protected static $swaggerModelName = 'PaymentsProductsMicroformSubscriptionInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class PaymentsProductsMicroformSubscriptionInformation implements ArrayAccess
         'enabled' => 'bool',
         'enablementStatus' => 'string',
         'selfServiceability' => 'string',
-        'features' => 'map[string,\CyberSource\Model\PaymentsProductsCardProcessingSubscriptionInformationFeatures]'
+        'features' => 'map[string,\CyberSource\Model\CardProessingFeatureSubscriptionItem]'
     ];
 
     /**
@@ -242,7 +242,7 @@ class PaymentsProductsMicroformSubscriptionInformation implements ArrayAccess
 
     /**
      * Gets features
-     * @return map[string,\CyberSource\Model\PaymentsProductsCardProcessingSubscriptionInformationFeatures]
+     * @return map[string,\CyberSource\Model\CardProessingFeatureSubscriptionItem]
      */
     public function getFeatures()
     {
@@ -251,7 +251,7 @@ class PaymentsProductsMicroformSubscriptionInformation implements ArrayAccess
 
     /**
      * Sets features
-     * @param map[string,\CyberSource\Model\PaymentsProductsCardProcessingSubscriptionInformationFeatures] $features
+     * @param map[string,\CyberSource\Model\CardProessingFeatureSubscriptionItem] $features
      * @return $this
      */
     public function setFeatures($features)

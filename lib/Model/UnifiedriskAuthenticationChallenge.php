@@ -47,7 +47,7 @@ class UnifiedriskAuthenticationChallenge implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_authentication_challenge';
+    protected static $swaggerModelName = 'UnifiedriskAuthenticationChallenge';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

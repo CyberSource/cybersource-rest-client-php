@@ -46,7 +46,7 @@ class Ptsv2paymentsidreversalsPaymentInformationPaymentTypeMethod implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentsidreversals_paymentInformation_paymentType_method';
+    protected static $swaggerModelName = 'Ptsv2paymentsidreversalsPaymentInformationPaymentTypeMethod';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

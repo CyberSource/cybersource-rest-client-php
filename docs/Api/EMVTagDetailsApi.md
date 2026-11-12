@@ -50,7 +50,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **parseEmvTags**
-> \CyberSource\Model\TssV2PostEmvTags200Response parseEmvTags($body)
+> \CyberSource\Model\TssV2PostEmvTags200Response parseEmvTags($parseEmvTagsRequest)
 
 Parse an EMV String
 
@@ -62,10 +62,10 @@ Pass an EMV Tag-Length-Value (TLV) string for parsing.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\EMVTagDetailsApi();
-$body = new \CyberSource\Model\Body2(); // \CyberSource\Model\Body2 | 
+$parseEmvTagsRequest = new \CyberSource\Model\ParseEmvTagsRequest(); // \CyberSource\Model\ParseEmvTagsRequest | 
 
 try {
-    $result = $api_instance->parseEmvTags($body);
+    $result = $api_instance->parseEmvTags($parseEmvTagsRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EMVTagDetailsApi->parseEmvTags: ', $e->getMessage(), PHP_EOL;
@@ -77,7 +77,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\CyberSource\Model\Body2**](../Model/Body2.md)|  |
+ **parseEmvTagsRequest** | [**\CyberSource\Model\ParseEmvTagsRequest**](../Model/ParseEmvTagsRequest.md)|  |
 
 ### Return type
 

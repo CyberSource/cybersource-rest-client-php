@@ -53,7 +53,6 @@ class GenerateUnifiedCheckoutV1CaptureContextRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientVersion' => 'string',
         'targetOrigins' => 'string[]',
         'allowedCardNetworks' => 'string[]',
         'allowedPaymentTypes' => 'string[]',
@@ -73,7 +72,6 @@ class GenerateUnifiedCheckoutV1CaptureContextRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'clientVersion' => null,
         'targetOrigins' => null,
         'allowedCardNetworks' => null,
         'allowedPaymentTypes' => null,
@@ -103,7 +101,6 @@ class GenerateUnifiedCheckoutV1CaptureContextRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'clientVersion' => 'clientVersion',
         'targetOrigins' => 'targetOrigins',
         'allowedCardNetworks' => 'allowedCardNetworks',
         'allowedPaymentTypes' => 'allowedPaymentTypes',
@@ -124,7 +121,6 @@ class GenerateUnifiedCheckoutV1CaptureContextRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'clientVersion' => 'setClientVersion',
         'targetOrigins' => 'setTargetOrigins',
         'allowedCardNetworks' => 'setAllowedCardNetworks',
         'allowedPaymentTypes' => 'setAllowedPaymentTypes',
@@ -145,7 +141,6 @@ class GenerateUnifiedCheckoutV1CaptureContextRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'clientVersion' => 'getClientVersion',
         'targetOrigins' => 'getTargetOrigins',
         'allowedCardNetworks' => 'getAllowedCardNetworks',
         'allowedPaymentTypes' => 'getAllowedPaymentTypes',
@@ -191,7 +186,6 @@ class GenerateUnifiedCheckoutV1CaptureContextRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['clientVersion'] = isset($data['clientVersion']) ? $data['clientVersion'] : null;
         $this->container['targetOrigins'] = isset($data['targetOrigins']) ? $data['targetOrigins'] : null;
         $this->container['allowedCardNetworks'] = isset($data['allowedCardNetworks']) ? $data['allowedCardNetworks'] : null;
         $this->container['allowedPaymentTypes'] = isset($data['allowedPaymentTypes']) ? $data['allowedPaymentTypes'] : null;
@@ -230,27 +224,6 @@ class GenerateUnifiedCheckoutV1CaptureContextRequest implements ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets clientVersion
-     * @return string
-     */
-    public function getClientVersion()
-    {
-        return $this->container['clientVersion'];
-    }
-
-    /**
-     * Sets clientVersion
-     * @param string $clientVersion This field is used to specify the Unified Checkout API version your integration should use.  The recommended approach is to omit this field from the uc/v1/sessions API request.  When omitted, Unified Checkout automatically uses the latest available version, ensuring access to the most recent enhancements and updates without requiring integration changes. If included, the value must be provided in Major.Minor format (for example, 1.1 or 1.2).<br><br>  Optional field: This field cannot be configured through the Merchant Experience screens in the Business Center but can be provided in the uc/v1/sessions API request.
-     * @return $this
-     */
-    public function setClientVersion($clientVersion)
-    {
-        $this->container['clientVersion'] = $clientVersion;
-
-        return $this;
-    }
 
     /**
      * Gets targetOrigins
@@ -305,7 +278,7 @@ class GenerateUnifiedCheckoutV1CaptureContextRequest implements ArrayAccess
 
     /**
      * Sets allowedPaymentTypes
-     * @param string[] $allowedPaymentTypes The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE    - TMS_TOKEN<br><br>  Unified Checkout supports the following wallet based payment methods:   - PayPal v2: PAYPAL   - Venmo: VENMO <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - Affirm (US): AFFIRM   - Cash App Afterpay (US): AFTERPAY   - Clearpay (GB): AFTERPAY   - Afterpay (CA, AU, NZ): AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE): BANCONTACT   - DragonPay (PH): DRAGONPAY   - iDEAL (NL): IDEAL   - Multibanco (PT): MULTIBANCO   - MyBank (IT, BE, PT, ES): MYBANK    - Przelewy24|P24 (PL): PRZELEWY24   - Tink Pay By Bank (DE, ES, FR, GB, IE, NL): TINKPAYBYBANK<br><br>  Unified Checkout supports the following Post-Pay Reference payment methods:   - Konbini (JP): KONBINI<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY  - PANENTRY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request.
+     * @param string[] $allowedPaymentTypes The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE    - TMS_TOKEN<br><br>  Unified Checkout supports the following wallet based payment methods:   - PayPal v2: PAYPAL   - Venmo: VENMO <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - Affirm (US): AFFIRM   - Cash App Afterpay (US): AFTERPAY   - Clearpay (GB): AFTERPAY   - Afterpay (CA, AU, NZ): AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE): BANCONTACT   - DragonPay (PH): DRAGONPAY   - iDEAL (NL): IDEAL   - Multibanco (PT): MULTIBANCO   - MyBank (IT, BE, PT, ES): MYBANK    - Przelewy24|P24 (PL): PRZELEWY24   - Tink Pay By Bank (DE, ES, FR, GB, IE, NL): TINKPAYBYBANK<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY  - PANENTRY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  Optional field:   This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request.
      * @return $this
      */
     public function setAllowedPaymentTypes($allowedPaymentTypes)

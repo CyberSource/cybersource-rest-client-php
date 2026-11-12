@@ -46,7 +46,7 @@ class ProcessingInfoAuthorizationOptionsInitiator implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'processingInfoAuthorizationOptions_initiator';
+    protected static $swaggerModelName = 'ProcessingInfoAuthorizationOptionsInitiator';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

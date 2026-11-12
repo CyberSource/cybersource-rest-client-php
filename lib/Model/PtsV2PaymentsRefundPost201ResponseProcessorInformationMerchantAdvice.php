@@ -46,7 +46,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice imple
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsRefundPost201Response_processorInformation_merchantAdvice';
+    protected static $swaggerModelName = 'PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

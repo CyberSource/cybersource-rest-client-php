@@ -46,14 +46,15 @@ class TmsMerchantInformationMerchantDescriptor implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'TmsMerchantInformation_merchantDescriptor';
+    protected static $swaggerModelName = 'TmsMerchantInformationMerchantDescriptor';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'alternateName' => 'string'
+        'name' => 'string',
+        'url' => 'string'
     ];
 
     /**
@@ -61,7 +62,8 @@ class TmsMerchantInformationMerchantDescriptor implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'alternateName' => null
+        'name' => null,
+        'url' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +81,8 @@ class TmsMerchantInformationMerchantDescriptor implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'alternateName' => 'alternateName'
+        'name' => 'name',
+        'url' => 'url'
     ];
 
 
@@ -88,7 +91,8 @@ class TmsMerchantInformationMerchantDescriptor implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'alternateName' => 'setAlternateName'
+        'name' => 'setName',
+        'url' => 'setUrl'
     ];
 
 
@@ -97,7 +101,8 @@ class TmsMerchantInformationMerchantDescriptor implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'alternateName' => 'getAlternateName'
+        'name' => 'getName',
+        'url' => 'getUrl'
     ];
 
     public static function attributeMap()
@@ -131,7 +136,8 @@ class TmsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['alternateName'] = isset($data['alternateName']) ? $data['alternateName'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
     }
 
     /**
@@ -160,22 +166,43 @@ class TmsMerchantInformationMerchantDescriptor implements ArrayAccess
 
 
     /**
-     * Gets alternateName
+     * Gets name
      * @return string
      */
-    public function getAlternateName()
+    public function getName()
     {
-        return $this->container['alternateName'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets alternateName
-     * @param string $alternateName Alternate contact information for your business,such as an email address or URL. This value might be displayed on the cardholder's statement. When you do not include this value in your capture or credit request, the merchant URL from your CyberSource account is used. Important This value must consist of English characters
+     * Sets name
+     * @param string $name Merchant's name
      * @return $this
      */
-    public function setAlternateName($alternateName)
+    public function setName($name)
     {
-        $this->container['alternateName'] = $alternateName;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     * @param string $url Address of company's website provided by merchant
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        $this->container['url'] = $url;
 
         return $this;
     }

@@ -46,7 +46,7 @@ class UnifiedriskBrowser implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_browser';
+    protected static $swaggerModelName = 'UnifiedriskBrowser';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

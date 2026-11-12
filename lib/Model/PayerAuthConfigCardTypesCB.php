@@ -46,7 +46,7 @@ class PayerAuthConfigCardTypesCB implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'PayerAuthConfig_cardTypes_CB';
+    protected static $swaggerModelName = 'PayerAuthConfigCardTypesCB';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

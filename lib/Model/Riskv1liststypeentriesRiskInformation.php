@@ -46,7 +46,7 @@ class Riskv1liststypeentriesRiskInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1liststypeentries_riskInformation';
+    protected static $swaggerModelName = 'Riskv1liststypeentriesRiskInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

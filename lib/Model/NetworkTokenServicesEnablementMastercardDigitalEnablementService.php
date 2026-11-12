@@ -46,7 +46,7 @@ class NetworkTokenServicesEnablementMastercardDigitalEnablementService implement
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'NetworkTokenServicesEnablement_mastercardDigitalEnablementService';
+    protected static $swaggerModelName = 'NetworkTokenServicesEnablementMastercardDigitalEnablementService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class ReportingV3ConversionDetailsGet200ResponseConversionDetails implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3ConversionDetailsGet200Response_conversionDetails';
+    protected static $swaggerModelName = 'ReportingV3ConversionDetailsGet200ResponseConversionDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

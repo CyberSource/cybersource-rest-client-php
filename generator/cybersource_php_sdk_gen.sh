@@ -32,7 +32,7 @@ echo "completed the task of replacing the links keyword in PblPaymentLinksAllGet
 
 # PHP method names are case-insensitive, so the qandA alias accessors (getQandA/setQandA) collide with the qAndA ones (getQAndA/setQAndA); rename the exact alias accessor/test-method identifiers only (wire keys and property keys are lowercase 'qandA' and stay unchanged). sed is case-sensitive so the qAndA methods are left alone
 echo "starting of renaming qandA alias accessor methods in product models"
-sed -i -e "s/getQandA/getQ_and_A/g" -e "s/setQandA/setQ_and_A/g" -e "s/testPropertyQandA/testPropertyQ_and_A/g" ../lib/Model/Iccv1productsfeedProducts.php ../lib/Model/InlineResponse20020Products.php ../test/Model/Iccv1productsfeedProductsTest.php ../test/Model/InlineResponse20020ProductsTest.php
+sed -i -e "s/getQandA/getQ_and_A/g" -e "s/setQandA/setQ_and_A/g" -e "s/testPropertyQandA/testPropertyQ_and_A/g" ../lib/Model/Iccv1productsfeedProducts.php ../lib/Model/InlineResponse20020Products.php ../test/Model/Iccv1productsfeedProductsTest.php ../test/Model/InlineResponse20020ProductsTest.php 2>/dev/null || true
 echo "completed the task of renaming qandA alias accessor methods in product models"
 
 git checkout ../README.md

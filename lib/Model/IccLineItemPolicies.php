@@ -47,7 +47,7 @@ class IccLineItemPolicies implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccLineItem_policies';
+    protected static $swaggerModelName = 'IccLineItemPolicies';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

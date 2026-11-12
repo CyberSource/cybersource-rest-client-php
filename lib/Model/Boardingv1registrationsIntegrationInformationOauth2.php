@@ -46,7 +46,7 @@ class Boardingv1registrationsIntegrationInformationOauth2 implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'boardingv1registrations_integrationInformation_oauth2';
+    protected static $swaggerModelName = 'Boardingv1registrationsIntegrationInformationOauth2';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

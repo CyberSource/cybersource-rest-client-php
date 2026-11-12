@@ -105,7 +105,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSessionRequest**
-> \CyberSource\Model\PtsV2PaymentsPost201Response2 createSessionRequest($createSessionReq)
+> \CyberSource\Model\CreateSessionResponse createSessionRequest($createSessionReq)
 
 Create Alternative Payments Sessions Request
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\PtsV2PaymentsPost201Response2**](../Model/PtsV2PaymentsPost201Response2.md)
+[**\CyberSource\Model\CreateSessionResponse**](../Model/CreateSessionResponse.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **refreshPaymentStatus**
-> \CyberSource\Model\PtsV2PaymentsPost201Response1 refreshPaymentStatus($id, $refreshPaymentStatusRequest)
+> \CyberSource\Model\RefreshPaymentStatusResponse refreshPaymentStatus($id, $refreshPaymentStatusRequest)
 
 Check a Payment Status
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\PtsV2PaymentsPost201Response1**](../Model/PtsV2PaymentsPost201Response1.md)
+[**\CyberSource\Model\RefreshPaymentStatusResponse**](../Model/RefreshPaymentStatusResponse.md)
 
 ### Authorization
 
@@ -244,7 +244,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateSessionRequest**
-> \CyberSource\Model\PtsV2PaymentsPost201Response2 updateSessionRequest($createSessionRequest, $id)
+> \CyberSource\Model\CreateSessionResponse updateSessionRequest($createSessionRequest, $id)
 
 Update Alternative Payments Sessions Request
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\PtsV2PaymentsPost201Response2**](../Model/PtsV2PaymentsPost201Response2.md)
+[**\CyberSource\Model\CreateSessionResponse**](../Model/CreateSessionResponse.md)
 
 ### Authorization
 

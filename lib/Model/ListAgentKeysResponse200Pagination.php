@@ -47,7 +47,7 @@ class ListAgentKeysResponse200Pagination implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'listAgentKeysResponse200_pagination';
+    protected static $swaggerModelName = 'ListAgentKeysResponse200Pagination';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

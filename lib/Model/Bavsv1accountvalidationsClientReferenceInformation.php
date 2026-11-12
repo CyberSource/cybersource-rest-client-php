@@ -46,7 +46,7 @@ class Bavsv1accountvalidationsClientReferenceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'bavsv1accountvalidations_clientReferenceInformation';
+    protected static $swaggerModelName = 'Bavsv1accountvalidationsClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

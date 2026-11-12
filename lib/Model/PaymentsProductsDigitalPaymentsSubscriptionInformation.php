@@ -46,7 +46,7 @@ class PaymentsProductsDigitalPaymentsSubscriptionInformation implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_digitalPayments_subscriptionInformation';
+    protected static $swaggerModelName = 'PaymentsProductsDigitalPaymentsSubscriptionInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,7 +55,7 @@ class PaymentsProductsDigitalPaymentsSubscriptionInformation implements ArrayAcc
     protected static $swaggerTypes = [
         'enabled' => 'bool',
         'selfServiceability' => 'string',
-        'features' => 'map[string,\CyberSource\Model\PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures]'
+        'features' => 'map[string,\CyberSource\Model\DigitalPaymentsFeatureSubscriptionItem]'
     ];
 
     /**
@@ -215,7 +215,7 @@ class PaymentsProductsDigitalPaymentsSubscriptionInformation implements ArrayAcc
 
     /**
      * Gets features
-     * @return map[string,\CyberSource\Model\PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures]
+     * @return map[string,\CyberSource\Model\DigitalPaymentsFeatureSubscriptionItem]
      */
     public function getFeatures()
     {
@@ -224,7 +224,7 @@ class PaymentsProductsDigitalPaymentsSubscriptionInformation implements ArrayAcc
 
     /**
      * Sets features
-     * @param map[string,\CyberSource\Model\PaymentsProductsDigitalPaymentsSubscriptionInformationFeatures] $features Allowed values are; <table>    <tr>       <td>visaCheckout</td>    </tr>    <tr>       <td>applePay</td>    </tr>    <tr>       <td>samsungPay</td>    </tr>    <tr>        <td>googlePay</td>     </tr> </table>
+     * @param map[string,\CyberSource\Model\DigitalPaymentsFeatureSubscriptionItem] $features Allowed values are; <table>    <tr>       <td>visaCheckout</td>    </tr>    <tr>       <td>applePay</td>    </tr>    <tr>       <td>samsungPay</td>    </tr>    <tr>        <td>googlePay</td>     </tr> </table>
      * @return $this
      */
     public function setFeatures($features)

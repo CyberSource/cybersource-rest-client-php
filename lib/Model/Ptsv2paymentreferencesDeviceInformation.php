@@ -46,7 +46,7 @@ class Ptsv2paymentreferencesDeviceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentreferences_deviceInformation';
+    protected static $swaggerModelName = 'Ptsv2paymentreferencesDeviceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

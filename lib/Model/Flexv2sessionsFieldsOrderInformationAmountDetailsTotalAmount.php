@@ -46,7 +46,7 @@ class Flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'flexv2sessions_fields_orderInformation_amountDetails_totalAmount';
+    protected static $swaggerModelName = 'Flexv2sessionsFieldsOrderInformationAmountDetailsTotalAmount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

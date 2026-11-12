@@ -46,7 +46,7 @@ class Ucv1sessionsPaymentConfigurationsGOOGLEPAY implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_paymentConfigurations_GOOGLEPAY';
+    protected static $swaggerModelName = 'Ucv1sessionsPaymentConfigurationsGOOGLEPAY';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -47,7 +47,7 @@ class Riskv1decisionsMerchantDefinedInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_merchantDefinedInformation';
+    protected static $swaggerModelName = 'Riskv1decisionsMerchantDefinedInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

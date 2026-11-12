@@ -46,7 +46,7 @@ class ReportingV3ReportDefinitionsNameGet200ResponseAttributes implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3ReportDefinitionsNameGet200Response_attributes';
+    protected static $swaggerModelName = 'ReportingV3ReportDefinitionsNameGet200ResponseAttributes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

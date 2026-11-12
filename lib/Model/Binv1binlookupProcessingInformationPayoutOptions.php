@@ -47,7 +47,7 @@ class Binv1binlookupProcessingInformationPayoutOptions implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'binv1binlookup_processingInformation_payoutOptions';
+    protected static $swaggerModelName = 'Binv1binlookupProcessingInformationPayoutOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

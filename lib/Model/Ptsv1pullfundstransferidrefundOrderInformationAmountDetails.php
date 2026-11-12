@@ -46,7 +46,7 @@ class Ptsv1pullfundstransferidrefundOrderInformationAmountDetails implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pullfundstransferidrefund_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'Ptsv1pullfundstransferidrefundOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

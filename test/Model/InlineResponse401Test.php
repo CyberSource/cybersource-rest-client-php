@@ -77,23 +77,9 @@ class InlineResponse401Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "status"
      */
-    public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "submitTimeStampUtc"
-     */
-    public function testPropertySubmitTimeStampUtc()
-    {
-    }
-
-    /**
-     * Test attribute "reason"
-     */
-    public function testPropertyReason()
+    public function testPropertyStatus()
     {
     }
 
@@ -101,6 +87,20 @@ class InlineResponse401Test extends \PHPUnit\Framework\TestCase
      * Test attribute "message"
      */
     public function testPropertyMessage()
+    {
+    }
+
+    /**
+     * Test attribute "code"
+     */
+    public function testPropertyCode()
+    {
+    }
+
+    /**
+     * Test attribute "submitTimeUtc"
+     */
+    public function testPropertySubmitTimeUtc()
     {
     }
 }

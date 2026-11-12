@@ -46,19 +46,19 @@ class PullFunds201ResponseLinks implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pullFunds201Response__links';
+    protected static $swaggerModelName = 'PullFunds201ResponseLinks';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'self' => '\CyberSource\Model\PullFunds201ResponseLinksSelf',
-        'reversal' => '\CyberSource\Model\PullFunds201ResponseLinksReversal',
-        'refund' => '\CyberSource\Model\PullFunds201ResponseLinksRefund',
-        'customer' => '\CyberSource\Model\PullFunds201ResponseLinksCustomer',
-        'paymentInstrument' => '\CyberSource\Model\PullFunds201ResponseLinksPaymentInstrument',
-        'instrumentIdentifier' => '\CyberSource\Model\PullFunds201ResponseLinksInstrumentIdentifier'
+        'self' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf5',
+        'reversal' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf6',
+        'refund' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf7',
+        'customer' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf8',
+        'paymentInstrument' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf9',
+        'instrumentIdentifier' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf10'
     ];
 
     /**
@@ -191,7 +191,7 @@ class PullFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Gets self
-     * @return \CyberSource\Model\PullFunds201ResponseLinksSelf
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf5
      */
     public function getSelf()
     {
@@ -200,7 +200,7 @@ class PullFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Sets self
-     * @param \CyberSource\Model\PullFunds201ResponseLinksSelf $self
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf5 $self
      * @return $this
      */
     public function setSelf($self)
@@ -212,7 +212,7 @@ class PullFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Gets reversal
-     * @return \CyberSource\Model\PullFunds201ResponseLinksReversal
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf6
      */
     public function getReversal()
     {
@@ -221,7 +221,7 @@ class PullFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Sets reversal
-     * @param \CyberSource\Model\PullFunds201ResponseLinksReversal $reversal
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf6 $reversal
      * @return $this
      */
     public function setReversal($reversal)
@@ -233,7 +233,7 @@ class PullFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Gets refund
-     * @return \CyberSource\Model\PullFunds201ResponseLinksRefund
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf7
      */
     public function getRefund()
     {
@@ -242,7 +242,7 @@ class PullFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Sets refund
-     * @param \CyberSource\Model\PullFunds201ResponseLinksRefund $refund
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf7 $refund
      * @return $this
      */
     public function setRefund($refund)
@@ -254,7 +254,7 @@ class PullFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Gets customer
-     * @return \CyberSource\Model\PullFunds201ResponseLinksCustomer
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf8
      */
     public function getCustomer()
     {
@@ -263,7 +263,7 @@ class PullFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Sets customer
-     * @param \CyberSource\Model\PullFunds201ResponseLinksCustomer $customer
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf8 $customer
      * @return $this
      */
     public function setCustomer($customer)
@@ -275,7 +275,7 @@ class PullFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Gets paymentInstrument
-     * @return \CyberSource\Model\PullFunds201ResponseLinksPaymentInstrument
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf9
      */
     public function getPaymentInstrument()
     {
@@ -284,7 +284,7 @@ class PullFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Sets paymentInstrument
-     * @param \CyberSource\Model\PullFunds201ResponseLinksPaymentInstrument $paymentInstrument
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf9 $paymentInstrument
      * @return $this
      */
     public function setPaymentInstrument($paymentInstrument)
@@ -296,7 +296,7 @@ class PullFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Gets instrumentIdentifier
-     * @return \CyberSource\Model\PullFunds201ResponseLinksInstrumentIdentifier
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf10
      */
     public function getInstrumentIdentifier()
     {
@@ -305,7 +305,7 @@ class PullFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Sets instrumentIdentifier
-     * @param \CyberSource\Model\PullFunds201ResponseLinksInstrumentIdentifier $instrumentIdentifier
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf10 $instrumentIdentifier
      * @return $this
      */
     public function setInstrumentIdentifier($instrumentIdentifier)

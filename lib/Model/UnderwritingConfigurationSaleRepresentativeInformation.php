@@ -46,7 +46,7 @@ class UnderwritingConfigurationSaleRepresentativeInformation implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'underwritingConfiguration_saleRepresentativeInformation';
+    protected static $swaggerModelName = 'UnderwritingConfigurationSaleRepresentativeInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

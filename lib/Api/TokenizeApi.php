@@ -104,7 +104,7 @@ class TokenizeApi
      * @param \CyberSource\Model\PostTokenizeRequest $postTokenizeRequest  (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PostTokenizeResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenize($postTokenizeRequest, $profileId = null)
     {
@@ -123,7 +123,7 @@ class TokenizeApi
      * @param \CyberSource\Model\PostTokenizeRequest $postTokenizeRequest  (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PostTokenizeResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenizeWithHttpInfo($postTokenizeRequest, $profileId = null)
     {
@@ -144,7 +144,8 @@ class TokenizeApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // header params
         if ($profileId !== null) {
@@ -164,6 +165,14 @@ class TokenizeApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -172,7 +181,7 @@ class TokenizeApi
         $inboundMLEStatus = 'mandatory';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "tokenize,tokenizeWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -192,7 +201,7 @@ class TokenizeApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse200");
+        self::$logger->debug("Return Type : \CyberSource\Model\PostTokenizeResponse");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "tokenize,tokenizeWithHttpInfo");
@@ -205,34 +214,34 @@ class TokenizeApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse200',
+                '\CyberSource\Model\PostTokenizeResponse',
                 '/tms/v2/tokenize',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PostTokenizeResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse200', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PostTokenizeResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms400ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms403ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms424ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tms500ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

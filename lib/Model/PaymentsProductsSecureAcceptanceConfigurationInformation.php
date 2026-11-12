@@ -46,7 +46,7 @@ class PaymentsProductsSecureAcceptanceConfigurationInformation implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_secureAcceptance_configurationInformation';
+    protected static $swaggerModelName = 'PaymentsProductsSecureAcceptanceConfigurationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

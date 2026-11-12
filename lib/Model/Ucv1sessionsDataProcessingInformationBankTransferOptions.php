@@ -46,7 +46,7 @@ class Ucv1sessionsDataProcessingInformationBankTransferOptions implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_processingInformation_bankTransferOptions';
+    protected static $swaggerModelName = 'Ucv1sessionsDataProcessingInformationBankTransferOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

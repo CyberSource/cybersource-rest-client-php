@@ -46,7 +46,7 @@ class V1FileDetailsGet200ResponseLinks implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'V1FileDetailsGet200Response__links';
+    protected static $swaggerModelName = 'V1FileDetailsGet200ResponseLinks';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

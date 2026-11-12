@@ -47,7 +47,7 @@ class UnifiedriskTransactionCheckDetailsDepositedCashAmount implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_transaction_checkDetails_depositedCashAmount';
+    protected static $swaggerModelName = 'UnifiedriskTransactionCheckDetailsDepositedCashAmount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

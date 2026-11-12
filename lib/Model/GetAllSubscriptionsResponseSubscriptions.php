@@ -47,7 +47,7 @@ class GetAllSubscriptionsResponseSubscriptions implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'getAllSubscriptionsResponse_subscriptions';
+    protected static $swaggerModelName = 'GetAllSubscriptionsResponseSubscriptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

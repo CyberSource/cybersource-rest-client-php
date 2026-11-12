@@ -47,7 +47,7 @@ class Iccv1instructionsinstructionIdcredentialsClientReferenceInformation implem
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1instructionsinstructionIdcredentials_clientReferenceInformation';
+    protected static $swaggerModelName = 'Iccv1instructionsinstructionIdcredentialsClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

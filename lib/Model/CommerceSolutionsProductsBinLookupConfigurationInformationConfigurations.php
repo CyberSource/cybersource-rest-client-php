@@ -46,7 +46,7 @@ class CommerceSolutionsProductsBinLookupConfigurationInformationConfigurations i
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'commerceSolutionsProducts_binLookup_configurationInformation_configurations';
+    protected static $swaggerModelName = 'CommerceSolutionsProductsBinLookupConfigurationInformationConfigurations';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

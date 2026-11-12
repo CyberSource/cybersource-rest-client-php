@@ -159,4 +159,11 @@ class Ptsv2paymentsSenderInformationTest extends \PHPUnit\Framework\TestCase
     public function testPropertyTaxIdNumber()
     {
     }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
 }

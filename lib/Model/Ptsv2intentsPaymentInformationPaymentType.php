@@ -46,7 +46,7 @@ class Ptsv2intentsPaymentInformationPaymentType implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2intents_paymentInformation_paymentType';
+    protected static $swaggerModelName = 'Ptsv2intentsPaymentInformationPaymentType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

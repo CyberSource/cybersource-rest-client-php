@@ -46,7 +46,7 @@ class ProcessingInfoAuthorizationOptionsInitiatorMerchantInitiatedTransaction im
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'processingInfoAuthorizationOptions_initiator_merchantInitiatedTransaction';
+    protected static $swaggerModelName = 'ProcessingInfoAuthorizationOptionsInitiatorMerchantInitiatedTransaction';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

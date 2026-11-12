@@ -46,7 +46,7 @@ class Iccv1instructionsinstructionIdcredentialsTransactionData implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1instructionsinstructionIdcredentials_transactionData';
+    protected static $swaggerModelName = 'Iccv1instructionsinstructionIdcredentialsTransactionData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

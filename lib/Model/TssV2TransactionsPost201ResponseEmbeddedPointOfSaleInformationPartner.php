@@ -46,7 +46,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner impl
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsPost201Response__embedded_pointOfSaleInformation_partner';
+    protected static $swaggerModelName = 'TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

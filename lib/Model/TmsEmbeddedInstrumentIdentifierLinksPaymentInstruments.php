@@ -46,7 +46,7 @@ class TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsEmbeddedInstrumentIdentifier__links_paymentInstruments';
+    protected static $swaggerModelName = 'TmsEmbeddedInstrumentIdentifierLinksPaymentInstruments';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

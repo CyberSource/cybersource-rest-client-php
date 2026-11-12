@@ -46,7 +46,7 @@ class RiskProductsFraudManagementEssentialsConfigurationInformation implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskProducts_fraudManagementEssentials_configurationInformation';
+    protected static $swaggerModelName = 'RiskProductsFraudManagementEssentialsConfigurationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

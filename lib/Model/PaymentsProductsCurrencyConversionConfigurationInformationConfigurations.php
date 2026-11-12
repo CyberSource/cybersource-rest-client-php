@@ -46,7 +46,7 @@ class PaymentsProductsCurrencyConversionConfigurationInformationConfigurations i
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_currencyConversion_configurationInformation_configurations';
+    protected static $swaggerModelName = 'PaymentsProductsCurrencyConversionConfigurationInformationConfigurations';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

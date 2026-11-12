@@ -46,7 +46,7 @@ class Microformv2sessionsTransientTokenResponseOptions implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'microformv2sessions_transientTokenResponseOptions';
+    protected static $swaggerModelName = 'Microformv2sessionsTransientTokenResponseOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -110,4 +110,18 @@ class Riskv1decisionsPaymentInformationTest extends \PHPUnit\Framework\TestCase
     public function testPropertyMethod()
     {
     }
+
+    /**
+     * Test attribute "paymentType"
+     */
+    public function testPropertyPaymentType()
+    {
+    }
+
+    /**
+     * Test attribute "paymentAccountReference"
+     */
+    public function testPropertyPaymentAccountReference()
+    {
+    }
 }

@@ -46,7 +46,7 @@ class ReportingV3PaymentBatchSummariesGet200ResponsePaymentBatchSummaries implem
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3PaymentBatchSummariesGet200Response_paymentBatchSummaries';
+    protected static $swaggerModelName = 'ReportingV3PaymentBatchSummariesGet200ResponsePaymentBatchSummaries';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

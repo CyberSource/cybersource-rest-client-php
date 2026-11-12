@@ -46,7 +46,7 @@ class Binv1binlookupClientReferenceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'binv1binlookup_clientReferenceInformation';
+    protected static $swaggerModelName = 'Binv1binlookupClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

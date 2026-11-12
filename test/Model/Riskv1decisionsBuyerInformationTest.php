@@ -110,4 +110,11 @@ class Riskv1decisionsBuyerInformationTest extends \PHPUnit\Framework\TestCase
     public function testPropertyPersonalIdentification()
     {
     }
+
+    /**
+     * Test attribute "loyalty"
+     */
+    public function testPropertyLoyalty()
+    {
+    }
 }

@@ -46,14 +46,14 @@ class Riskv1authenticationsRiskInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1authentications_riskInformation';
+    protected static $swaggerModelName = 'Riskv1authenticationsRiskInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'buyerHistory' => '\CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistory'
+        'buyerHistory' => '\CyberSource\Model\Riskv1decisionsRiskInformationBuyerHistory'
     ];
 
     /**
@@ -161,7 +161,7 @@ class Riskv1authenticationsRiskInformation implements ArrayAccess
 
     /**
      * Gets buyerHistory
-     * @return \CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistory
+     * @return \CyberSource\Model\Riskv1decisionsRiskInformationBuyerHistory
      */
     public function getBuyerHistory()
     {
@@ -170,7 +170,7 @@ class Riskv1authenticationsRiskInformation implements ArrayAccess
 
     /**
      * Sets buyerHistory
-     * @param \CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistory $buyerHistory
+     * @param \CyberSource\Model\Riskv1decisionsRiskInformationBuyerHistory $buyerHistory
      * @return $this
      */
     public function setBuyerHistory($buyerHistory)

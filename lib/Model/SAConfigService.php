@@ -46,7 +46,7 @@ class SAConfigService implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'SAConfig_service';
+    protected static $swaggerModelName = 'SAConfigService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

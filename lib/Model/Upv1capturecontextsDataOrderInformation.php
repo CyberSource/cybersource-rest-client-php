@@ -46,7 +46,7 @@ class Upv1capturecontextsDataOrderInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_data_orderInformation';
+    protected static $swaggerModelName = 'Upv1capturecontextsDataOrderInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

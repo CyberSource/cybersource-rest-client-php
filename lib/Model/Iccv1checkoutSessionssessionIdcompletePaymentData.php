@@ -47,7 +47,7 @@ class Iccv1checkoutSessionssessionIdcompletePaymentData implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1checkout_sessionssession_idcomplete_payment_data';
+    protected static $swaggerModelName = 'Iccv1checkoutSessionssessionIdcompletePaymentData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class Iccv1checkoutSessionssessionIdcompletePaymentData implements ArrayAccess
     protected static $swaggerTypes = [
         'token' => 'string',
         'provider' => 'string',
-        'billingAddress' => '\CyberSource\Model\Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress'
+        'billingAddress' => '\CyberSource\Model\Iccv1checkoutSessionsPaymentDataBillingAddress'
     ];
 
     /**
@@ -228,7 +228,7 @@ class Iccv1checkoutSessionssessionIdcompletePaymentData implements ArrayAccess
 
     /**
      * Gets billingAddress
-     * @return \CyberSource\Model\Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress
+     * @return \CyberSource\Model\Iccv1checkoutSessionsPaymentDataBillingAddress
      */
     public function getBillingAddress()
     {
@@ -237,7 +237,7 @@ class Iccv1checkoutSessionssessionIdcompletePaymentData implements ArrayAccess
 
     /**
      * Sets billingAddress
-     * @param \CyberSource\Model\Iccv1checkoutSessionssessionIdcompletePaymentDataBillingAddress $billingAddress
+     * @param \CyberSource\Model\Iccv1checkoutSessionsPaymentDataBillingAddress $billingAddress
      * @return $this
      */
     public function setBillingAddress($billingAddress)

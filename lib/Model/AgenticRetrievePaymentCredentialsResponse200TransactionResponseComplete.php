@@ -46,7 +46,7 @@ class AgenticRetrievePaymentCredentialsResponse200TransactionResponseComplete im
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'agenticRetrievePaymentCredentialsResponse200_TransactionResponseComplete';
+    protected static $swaggerModelName = 'AgenticRetrievePaymentCredentialsResponse200TransactionResponseComplete';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

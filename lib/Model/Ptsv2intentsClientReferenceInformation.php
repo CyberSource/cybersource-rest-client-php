@@ -46,7 +46,7 @@ class Ptsv2intentsClientReferenceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2intents_clientReferenceInformation';
+    protected static $swaggerModelName = 'Ptsv2intentsClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

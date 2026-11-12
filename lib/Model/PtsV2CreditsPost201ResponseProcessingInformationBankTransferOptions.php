@@ -46,7 +46,7 @@ class PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions implem
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2CreditsPost201Response_processingInformation_bankTransferOptions';
+    protected static $swaggerModelName = 'PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

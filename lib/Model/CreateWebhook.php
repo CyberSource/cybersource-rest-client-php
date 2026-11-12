@@ -56,7 +56,7 @@ class CreateWebhook implements ArrayAccess
         'name' => 'string',
         'description' => 'string',
         'organizationId' => 'string',
-        'products' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksProducts1[]',
+        'products' => '\CyberSource\Model\CreateWebhookRequestProductItem[]',
         'webhookUrl' => 'string',
         'healthCheckUrl' => 'string',
         'retryPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksRetryPolicy',
@@ -272,7 +272,7 @@ class CreateWebhook implements ArrayAccess
 
     /**
      * Gets products
-     * @return \CyberSource\Model\Notificationsubscriptionsv2webhooksProducts1[]
+     * @return \CyberSource\Model\CreateWebhookRequestProductItem[]
      */
     public function getProducts()
     {
@@ -281,7 +281,7 @@ class CreateWebhook implements ArrayAccess
 
     /**
      * Sets products
-     * @param \CyberSource\Model\Notificationsubscriptionsv2webhooksProducts1[] $products To see the valid productId and eventTypes, call the \"Create and Manage Webhooks - Retrieve a list of event types\" endpoint.
+     * @param \CyberSource\Model\CreateWebhookRequestProductItem[] $products To see the valid productId and eventTypes, call the \"Create and Manage Webhooks - Retrieve a list of event types\" endpoint.
      * @return $this
      */
     public function setProducts($products)

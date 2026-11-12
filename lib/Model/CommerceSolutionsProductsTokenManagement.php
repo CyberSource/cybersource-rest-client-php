@@ -46,7 +46,7 @@ class CommerceSolutionsProductsTokenManagement implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'commerceSolutionsProducts_tokenManagement';
+    protected static $swaggerModelName = 'CommerceSolutionsProductsTokenManagement';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

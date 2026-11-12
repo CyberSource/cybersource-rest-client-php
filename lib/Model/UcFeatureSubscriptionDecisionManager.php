@@ -47,7 +47,7 @@ class UcFeatureSubscriptionDecisionManager implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucFeatureSubscription_decisionManager';
+    protected static $swaggerModelName = 'UcFeatureSubscriptionDecisionManager';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

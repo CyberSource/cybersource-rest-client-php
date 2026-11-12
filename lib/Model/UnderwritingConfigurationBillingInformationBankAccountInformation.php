@@ -46,7 +46,7 @@ class UnderwritingConfigurationBillingInformationBankAccountInformation implemen
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'underwritingConfiguration_billingInformation_bankAccountInformation';
+    protected static $swaggerModelName = 'UnderwritingConfigurationBillingInformationBankAccountInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

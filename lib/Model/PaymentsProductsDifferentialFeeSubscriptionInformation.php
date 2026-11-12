@@ -46,7 +46,7 @@ class PaymentsProductsDifferentialFeeSubscriptionInformation implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_differentialFee_subscriptionInformation';
+    protected static $swaggerModelName = 'PaymentsProductsDifferentialFeeSubscriptionInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

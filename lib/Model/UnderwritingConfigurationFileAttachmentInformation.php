@@ -46,7 +46,7 @@ class UnderwritingConfigurationFileAttachmentInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'underwritingConfiguration_fileAttachmentInformation';
+    protected static $swaggerModelName = 'UnderwritingConfigurationFileAttachmentInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

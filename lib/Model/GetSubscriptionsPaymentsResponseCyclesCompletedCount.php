@@ -47,7 +47,7 @@ class GetSubscriptionsPaymentsResponseCyclesCompletedCount implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'getSubscriptionsPaymentsResponse_cyclesCompletedCount';
+    protected static $swaggerModelName = 'GetSubscriptionsPaymentsResponseCyclesCompletedCount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

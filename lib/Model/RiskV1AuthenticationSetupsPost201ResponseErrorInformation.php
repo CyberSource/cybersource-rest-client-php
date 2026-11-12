@@ -46,7 +46,7 @@ class RiskV1AuthenticationSetupsPost201ResponseErrorInformation implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskV1AuthenticationSetupsPost201Response_errorInformation';
+    protected static $swaggerModelName = 'RiskV1AuthenticationSetupsPost201ResponseErrorInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

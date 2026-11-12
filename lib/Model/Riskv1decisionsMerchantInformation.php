@@ -46,13 +46,14 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_merchantInformation';
+    protected static $swaggerModelName = 'Riskv1decisionsMerchantInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'categoryCode' => 'string',
         'merchantDescriptor' => '\CyberSource\Model\Riskv1decisionsMerchantInformationMerchantDescriptor',
         'merchantName' => 'string'
     ];
@@ -62,6 +63,7 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'categoryCode' => null,
         'merchantDescriptor' => null,
         'merchantName' => null
     ];
@@ -81,6 +83,7 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'categoryCode' => 'categoryCode',
         'merchantDescriptor' => 'merchantDescriptor',
         'merchantName' => 'merchantName'
     ];
@@ -91,6 +94,7 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'categoryCode' => 'setCategoryCode',
         'merchantDescriptor' => 'setMerchantDescriptor',
         'merchantName' => 'setMerchantName'
     ];
@@ -101,6 +105,7 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'categoryCode' => 'getCategoryCode',
         'merchantDescriptor' => 'getMerchantDescriptor',
         'merchantName' => 'getMerchantName'
     ];
@@ -136,6 +141,7 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['categoryCode'] = isset($data['categoryCode']) ? $data['categoryCode'] : null;
         $this->container['merchantDescriptor'] = isset($data['merchantDescriptor']) ? $data['merchantDescriptor'] : null;
         $this->container['merchantName'] = isset($data['merchantName']) ? $data['merchantName'] : null;
     }
@@ -164,6 +170,27 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets categoryCode
+     * @return string
+     */
+    public function getCategoryCode()
+    {
+        return $this->container['categoryCode'];
+    }
+
+    /**
+     * Sets categoryCode
+     * @param string $categoryCode MCC code of the merchant or transaction
+     * @return $this
+     */
+    public function setCategoryCode($categoryCode)
+    {
+        $this->container['categoryCode'] = $categoryCode;
+
+        return $this;
+    }
 
     /**
      * Gets merchantDescriptor

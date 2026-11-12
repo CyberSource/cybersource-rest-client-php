@@ -46,7 +46,7 @@ class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'invoicingV2InvoicesPost201Response_merchantDefinedFieldValuesWithDefinition';
+    protected static $swaggerModelName = 'InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

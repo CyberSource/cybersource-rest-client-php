@@ -154,6 +154,13 @@ class Riskv1decisionsOrderInformationLineItemsTest extends \PHPUnit\Framework\Te
     }
 
     /**
+     * Test attribute "productType"
+     */
+    public function testPropertyProductType()
+    {
+    }
+
+    /**
      * Test attribute "passenger"
      */
     public function testPropertyPassenger()

@@ -47,7 +47,7 @@ class TmsCardArtBrandLogoAsset implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'TmsCardArt_brandLogoAsset';
+    protected static $swaggerModelName = 'TmsCardArtBrandLogoAsset';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

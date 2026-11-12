@@ -46,7 +46,7 @@ class PaymentsConfigurationSetupCardProcessing implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsConfigurationSetup_cardProcessing';
+    protected static $swaggerModelName = 'PaymentsConfigurationSetupCardProcessing';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

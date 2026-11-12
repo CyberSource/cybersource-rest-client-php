@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **account** | [**\CyberSource\Model\Ptsv2paymentsSenderInformationAccount**](Ptsv2paymentsSenderInformationAccount.md) |  | [optional] 
 **postalCode** | **string** | Postal code of sender. | [optional] 
 **taxIdNumber** | **float** | CPF or CNPJ of the cash-in recipient. \&quot;Cadastro de Pessoas Físicas\&quot;, which translates to the \&quot;Natural Persons Register.\&quot; It is the individual taxpayer registry identification number in Brazil, similar to a Social Security Number (SSN) in the United States or a National Insurance Number in the UK. | [optional] 
+**email** | **string** | Sender&#39;s email address, including the full domain name. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

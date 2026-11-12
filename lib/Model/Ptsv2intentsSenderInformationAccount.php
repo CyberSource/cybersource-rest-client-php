@@ -46,7 +46,7 @@ class Ptsv2intentsSenderInformationAccount implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2intents_senderInformation_account';
+    protected static $swaggerModelName = 'Ptsv2intentsSenderInformationAccount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

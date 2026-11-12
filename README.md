@@ -1,6 +1,16 @@
 
 # PHP Client SDK for CyberSource REST APIs
 
+## Important: PHP security notice
+
+> ### PHP released security updates on October 21, 2026, addressing critical vulnerabilities in PHP itself. 
+>
+> ### Cybersource advises its customers to upgrade their PHP installation to the patched releases: PHP 8.5.12, 8.4.27, 8.3.36, or 8.2.35 — or a later patched release. 
+>
+> ### PHP 8.1 and earlier are no longer supported upstream; upgrade to a supported branch or check with your operating-system or hosting provider for a patched build. 
+>
+> ### This advisory concerns the PHP runtime, not this library. (Source: *[Security advisory: Critical remote code execution vulnerabilities, update now](https://www.php.net/archive/2026.php#2026-10-21-5)*)
+
 ## Description
 
 The CyberSource PHP client provides convenient access to the [CyberSource REST API](https://developer.cybersource.com/api/reference/api-reference.html) from your PHP application.
@@ -31,7 +41,7 @@ override the new secure-http default setting)*.
 {
   "require": {
     "php": ">=8.0.0", 
-    "cybersource/rest-client-php": "0.0.77"
+    "cybersource/rest-client-php": "0.0.78"
   }
 }
 ```

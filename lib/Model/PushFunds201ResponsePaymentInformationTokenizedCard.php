@@ -46,7 +46,7 @@ class PushFunds201ResponsePaymentInformationTokenizedCard implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pushFunds201Response_paymentInformation_tokenizedCard';
+    protected static $swaggerModelName = 'PushFunds201ResponsePaymentInformationTokenizedCard';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

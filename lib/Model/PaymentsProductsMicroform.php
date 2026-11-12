@@ -46,7 +46,7 @@ class PaymentsProductsMicroform implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_microform';
+    protected static $swaggerModelName = 'PaymentsProductsMicroform';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

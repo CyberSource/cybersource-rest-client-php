@@ -77,6 +77,13 @@ class InlineResponse4006Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
+
+    /**
      * Test attribute "submitTimeUtc"
      */
     public function testPropertySubmitTimeUtc()

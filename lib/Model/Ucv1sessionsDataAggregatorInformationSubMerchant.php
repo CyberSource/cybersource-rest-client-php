@@ -46,7 +46,7 @@ class Ucv1sessionsDataAggregatorInformationSubMerchant implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_aggregatorInformation_subMerchant';
+    protected static $swaggerModelName = 'Ucv1sessionsDataAggregatorInformationSubMerchant';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -251,7 +251,7 @@ class Ucv1sessionsDataAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id The ID you assigned to your sub-merchant. CyberSource through VisaNet: For American Express transaction, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCRB - Position: 65-84 - Field: American Express Seller ID For  Mastercard transactions, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 117-131 - Field: Sub-Merchant ID FDC Compass: This value must consist of uppercase characters.  American Express Direct: String (20) CyberSource through VisaNet with American Express: String (20) CyberSource through VisaNet with Visa,Mastercard and Discover: String (15) FDC Compass: String (20) FDC Nashville Global: String (14)
+     * @param string $id The ID you assigned to your sub-merchant.  American Express Direct: String (20)
      * @return $this
      */
     public function setId($id)
@@ -272,7 +272,7 @@ class Ucv1sessionsDataAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name Sub-merchant's business name.  #### American Express Direct The maximum length of the sub-merchant name depends on the length of the aggregator name. The combined length for both values must not exceed 36 characters.  #### CyberSource through VisaNet With American Express, the maximum length of the sub-merchant name depends on the length of the aggregator name. The combined length for both values must not exceed 36 characters. The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.  #### FDC Nashville Global With Mastercard, the maximum length of the sub-merchant name depends on the length of the aggregator name: - If aggregator name length is 1 through 3, maximum sub-merchant name length is 21. - If aggregator name length is 4 through 7, maximum sub-merchant name length is 17. - If aggregator name length is 8 through 12, maximum sub-merchant name length is 12.
+     * @param string $name Sub-merchant's business name.  #### American Express Direct The maximum length of the sub-merchant name depends on the length of the aggregator name. The combined length for both values must not exceed 36 characters.
      * @return $this
      */
     public function setName($name)
@@ -293,7 +293,7 @@ class Ucv1sessionsDataAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets address1
-     * @param string $address1 First line of the sub-merchant's street address.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $address1 First line of the sub-merchant's street address.
      * @return $this
      */
     public function setAddress1($address1)
@@ -314,7 +314,7 @@ class Ucv1sessionsDataAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets locality
-     * @param string $locality Sub-merchant's city.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $locality Sub-merchant's city.
      * @return $this
      */
     public function setLocality($locality)
@@ -335,7 +335,7 @@ class Ucv1sessionsDataAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea Sub-merchant's state or province.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $administrativeArea Sub-merchant's state or province.
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
@@ -377,7 +377,7 @@ class Ucv1sessionsDataAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets postalCode
-     * @param string $postalCode Partial postal code for the sub-merchant's address.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $postalCode Partial postal code for the sub-merchant's address.
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -398,7 +398,7 @@ class Ucv1sessionsDataAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country Sub-merchant's country. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $country Sub-merchant's country. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).
      * @return $this
      */
     public function setCountry($country)
@@ -419,7 +419,7 @@ class Ucv1sessionsDataAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets email
-     * @param string $email Sub-merchant's email address.  **Maximum length for processors**   - American Express Direct: 40  - CyberSource through VisaNet: 40  - FDC Compass: 40  - FDC Nashville Global: 19  #### CyberSource through VisaNet With American Express, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCRB - Position: 25-64 - Field: American Express Seller E-mail Address  **Note** The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant's acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies.
+     * @param string $email Sub-merchant's email address.  **Maximum length for processors**   - American Express Direct: 40
      * @return $this
      */
     public function setEmail($email)
@@ -440,7 +440,7 @@ class Ucv1sessionsDataAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets phoneNumber
-     * @param string $phoneNumber Sub-merchant's telephone number.  **Maximum length for procesors**   - American Express Direct: 20  - CyberSource through VisaNet: 20  - FDC Compass: 13  - FDC Nashville Global: 10  #### CyberSource through VisaNet With American Express, the value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCRB - Position: 5-24 - Field: American Express Seller Telephone Number  **FDC Compass**\\ This value must consist of uppercase characters. Use one of these recommended formats:\\ `NNN-NNN-NNNN`\\ `NNN-AAAAAAA`
+     * @param string $phoneNumber Sub-merchant's telephone number.  **Maximum length for procesors**   - American Express Direct: 20
      * @return $this
      */
     public function setPhoneNumber($phoneNumber)

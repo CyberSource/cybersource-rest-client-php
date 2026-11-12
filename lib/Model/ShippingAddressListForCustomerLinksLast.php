@@ -46,7 +46,7 @@ class ShippingAddressListForCustomerLinksLast implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ShippingAddressListForCustomer__links_last';
+    protected static $swaggerModelName = 'ShippingAddressListForCustomerLinksLast';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

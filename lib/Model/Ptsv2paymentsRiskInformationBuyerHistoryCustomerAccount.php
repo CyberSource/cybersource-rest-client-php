@@ -46,7 +46,7 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_riskInformation_buyerHistory_customerAccount';
+    protected static $swaggerModelName = 'Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,13 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
         'modificationHistory' => 'string',
         'passwordHistory' => 'string',
         'createDate' => 'string',
-        'passwordChangeDate' => 'string'
+        'passwordChangeDate' => 'string',
+        'previousLogin' => '\CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousLogin',
+        'previousOrder' => '\CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousOrder',
+        'paymentMethodsCount' => 'float',
+        'totalOrdersCount' => 'float',
+        'proofOfIdReceived' => 'bool',
+        'lastEmailChangeDate' => 'string'
     ];
 
     /**
@@ -71,7 +77,13 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
         'modificationHistory' => null,
         'passwordHistory' => null,
         'createDate' => null,
-        'passwordChangeDate' => null
+        'passwordChangeDate' => null,
+        'previousLogin' => null,
+        'previousOrder' => null,
+        'paymentMethodsCount' => null,
+        'totalOrdersCount' => null,
+        'proofOfIdReceived' => null,
+        'lastEmailChangeDate' => null
     ];
 
     public static function swaggerTypes()
@@ -94,7 +106,13 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
         'modificationHistory' => 'modificationHistory',
         'passwordHistory' => 'passwordHistory',
         'createDate' => 'createDate',
-        'passwordChangeDate' => 'passwordChangeDate'
+        'passwordChangeDate' => 'passwordChangeDate',
+        'previousLogin' => 'previousLogin',
+        'previousOrder' => 'previousOrder',
+        'paymentMethodsCount' => 'paymentMethodsCount',
+        'totalOrdersCount' => 'totalOrdersCount',
+        'proofOfIdReceived' => 'proofOfIdReceived',
+        'lastEmailChangeDate' => 'lastEmailChangeDate'
     ];
 
 
@@ -108,7 +126,13 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
         'modificationHistory' => 'setModificationHistory',
         'passwordHistory' => 'setPasswordHistory',
         'createDate' => 'setCreateDate',
-        'passwordChangeDate' => 'setPasswordChangeDate'
+        'passwordChangeDate' => 'setPasswordChangeDate',
+        'previousLogin' => 'setPreviousLogin',
+        'previousOrder' => 'setPreviousOrder',
+        'paymentMethodsCount' => 'setPaymentMethodsCount',
+        'totalOrdersCount' => 'setTotalOrdersCount',
+        'proofOfIdReceived' => 'setProofOfIdReceived',
+        'lastEmailChangeDate' => 'setLastEmailChangeDate'
     ];
 
 
@@ -122,7 +146,13 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
         'modificationHistory' => 'getModificationHistory',
         'passwordHistory' => 'getPasswordHistory',
         'createDate' => 'getCreateDate',
-        'passwordChangeDate' => 'getPasswordChangeDate'
+        'passwordChangeDate' => 'getPasswordChangeDate',
+        'previousLogin' => 'getPreviousLogin',
+        'previousOrder' => 'getPreviousOrder',
+        'paymentMethodsCount' => 'getPaymentMethodsCount',
+        'totalOrdersCount' => 'getTotalOrdersCount',
+        'proofOfIdReceived' => 'getProofOfIdReceived',
+        'lastEmailChangeDate' => 'getLastEmailChangeDate'
     ];
 
     public static function attributeMap()
@@ -162,6 +192,12 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
         $this->container['passwordHistory'] = isset($data['passwordHistory']) ? $data['passwordHistory'] : null;
         $this->container['createDate'] = isset($data['createDate']) ? $data['createDate'] : null;
         $this->container['passwordChangeDate'] = isset($data['passwordChangeDate']) ? $data['passwordChangeDate'] : null;
+        $this->container['previousLogin'] = isset($data['previousLogin']) ? $data['previousLogin'] : null;
+        $this->container['previousOrder'] = isset($data['previousOrder']) ? $data['previousOrder'] : null;
+        $this->container['paymentMethodsCount'] = isset($data['paymentMethodsCount']) ? $data['paymentMethodsCount'] : null;
+        $this->container['totalOrdersCount'] = isset($data['totalOrdersCount']) ? $data['totalOrdersCount'] : null;
+        $this->container['proofOfIdReceived'] = isset($data['proofOfIdReceived']) ? $data['proofOfIdReceived'] : null;
+        $this->container['lastEmailChangeDate'] = isset($data['lastEmailChangeDate']) ? $data['lastEmailChangeDate'] : null;
     }
 
     /**
@@ -311,6 +347,132 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
     public function setPasswordChangeDate($passwordChangeDate)
     {
         $this->container['passwordChangeDate'] = $passwordChangeDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets previousLogin
+     * @return \CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousLogin
+     */
+    public function getPreviousLogin()
+    {
+        return $this->container['previousLogin'];
+    }
+
+    /**
+     * Sets previousLogin
+     * @param \CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousLogin $previousLogin
+     * @return $this
+     */
+    public function setPreviousLogin($previousLogin)
+    {
+        $this->container['previousLogin'] = $previousLogin;
+
+        return $this;
+    }
+
+    /**
+     * Gets previousOrder
+     * @return \CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousOrder
+     */
+    public function getPreviousOrder()
+    {
+        return $this->container['previousOrder'];
+    }
+
+    /**
+     * Sets previousOrder
+     * @param \CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountPreviousOrder $previousOrder
+     * @return $this
+     */
+    public function setPreviousOrder($previousOrder)
+    {
+        $this->container['previousOrder'] = $previousOrder;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentMethodsCount
+     * @return float
+     */
+    public function getPaymentMethodsCount()
+    {
+        return $this->container['paymentMethodsCount'];
+    }
+
+    /**
+     * Sets paymentMethodsCount
+     * @param float $paymentMethodsCount Number of Payment methods (all types) created on customer account
+     * @return $this
+     */
+    public function setPaymentMethodsCount($paymentMethodsCount)
+    {
+        $this->container['paymentMethodsCount'] = $paymentMethodsCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalOrdersCount
+     * @return float
+     */
+    public function getTotalOrdersCount()
+    {
+        return $this->container['totalOrdersCount'];
+    }
+
+    /**
+     * Sets totalOrdersCount
+     * @param float $totalOrdersCount Number of total orders made by this customer account
+     * @return $this
+     */
+    public function setTotalOrdersCount($totalOrdersCount)
+    {
+        $this->container['totalOrdersCount'] = $totalOrdersCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets proofOfIdReceived
+     * @return bool
+     */
+    public function getProofOfIdReceived()
+    {
+        return $this->container['proofOfIdReceived'];
+    }
+
+    /**
+     * Sets proofOfIdReceived
+     * @param bool $proofOfIdReceived True if the customer provided a proof of any id
+     * @return $this
+     */
+    public function setProofOfIdReceived($proofOfIdReceived)
+    {
+        $this->container['proofOfIdReceived'] = $proofOfIdReceived;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastEmailChangeDate
+     * @return string
+     */
+    public function getLastEmailChangeDate()
+    {
+        return $this->container['lastEmailChangeDate'];
+    }
+
+    /**
+     * Sets lastEmailChangeDate
+     * @param string $lastEmailChangeDate Date of last email change. Format: 'YYYYMMDD'
+     * @return $this
+     */
+    public function setLastEmailChangeDate($lastEmailChangeDate)
+    {
+        $this->container['lastEmailChangeDate'] = $lastEmailChangeDate;
 
         return $this;
     }

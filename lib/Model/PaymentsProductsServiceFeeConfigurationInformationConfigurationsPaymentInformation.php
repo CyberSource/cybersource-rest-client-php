@@ -46,7 +46,7 @@ class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInf
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_serviceFee_configurationInformation_configurations_paymentInformation';
+    protected static $swaggerModelName = 'PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

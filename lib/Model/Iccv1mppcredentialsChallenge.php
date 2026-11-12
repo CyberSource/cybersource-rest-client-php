@@ -47,7 +47,7 @@ class Iccv1mppcredentialsChallenge implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1mppcredentials_challenge';
+    protected static $swaggerModelName = 'Iccv1mppcredentialsChallenge';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

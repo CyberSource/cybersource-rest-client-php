@@ -53,9 +53,10 @@ class InlineResponse4044 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'reason' => 'string',
+        'status' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\InlineResponse4044Details[]'
+        'code' => 'string',
+        'submitTimeUtc' => 'string'
     ];
 
     /**
@@ -63,9 +64,10 @@ class InlineResponse4044 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'reason' => null,
+        'status' => null,
         'message' => null,
-        'details' => null
+        'code' => null,
+        'submitTimeUtc' => null
     ];
 
     public static function swaggerTypes()
@@ -83,9 +85,10 @@ class InlineResponse4044 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'reason' => 'reason',
+        'status' => 'status',
         'message' => 'message',
-        'details' => 'details'
+        'code' => 'code',
+        'submitTimeUtc' => 'submitTimeUtc'
     ];
 
 
@@ -94,9 +97,10 @@ class InlineResponse4044 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'reason' => 'setReason',
+        'status' => 'setStatus',
         'message' => 'setMessage',
-        'details' => 'setDetails'
+        'code' => 'setCode',
+        'submitTimeUtc' => 'setSubmitTimeUtc'
     ];
 
 
@@ -105,9 +109,10 @@ class InlineResponse4044 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'reason' => 'getReason',
+        'status' => 'getStatus',
         'message' => 'getMessage',
-        'details' => 'getDetails'
+        'code' => 'getCode',
+        'submitTimeUtc' => 'getSubmitTimeUtc'
     ];
 
     public static function attributeMap()
@@ -141,9 +146,10 @@ class InlineResponse4044 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
     }
 
     /**
@@ -172,22 +178,22 @@ class InlineResponse4044 implements ArrayAccess
 
 
     /**
-     * Gets reason
+     * Gets status
      * @return string
      */
-    public function getReason()
+    public function getStatus()
     {
-        return $this->container['reason'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets reason
-     * @param string $reason
+     * Sets status
+     * @param string $status The status of the submitted request.   Possible values: - NOT_FOUND
      * @return $this
      */
-    public function setReason($reason)
+    public function setStatus($status)
     {
-        $this->container['reason'] = $reason;
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -203,7 +209,7 @@ class InlineResponse4044 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message
+     * @param string $message The detail message related to the status and reason listed above.
      * @return $this
      */
     public function setMessage($message)
@@ -214,22 +220,43 @@ class InlineResponse4044 implements ArrayAccess
     }
 
     /**
-     * Gets details
-     * @return \CyberSource\Model\InlineResponse4044Details[]
+     * Gets code
+     * @return string
      */
-    public function getDetails()
+    public function getCode()
     {
-        return $this->container['details'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets details
-     * @param \CyberSource\Model\InlineResponse4044Details[] $details
+     * Sets code
+     * @param string $code An optional short string which identifies the exact error.
      * @return $this
      */
-    public function setDetails($details)
+    public function setCode($code)
     {
-        $this->container['details'] = $details;
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets submitTimeUtc
+     * @return string
+     */
+    public function getSubmitTimeUtc()
+    {
+        return $this->container['submitTimeUtc'];
+    }
+
+    /**
+     * Sets submitTimeUtc
+     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @return $this
+     */
+    public function setSubmitTimeUtc($submitTimeUtc)
+    {
+        $this->container['submitTimeUtc'] = $submitTimeUtc;
 
         return $this;
     }

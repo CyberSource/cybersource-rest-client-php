@@ -47,7 +47,7 @@ class Upv1capturecontextsDataMerchantDefinedInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_data_merchantDefinedInformation';
+    protected static $swaggerModelName = 'Upv1capturecontextsDataMerchantDefinedInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

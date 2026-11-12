@@ -47,7 +47,7 @@ class UnifiedRiskPost201ResponseResults implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedRiskPost201Response_results';
+    protected static $swaggerModelName = 'UnifiedRiskPost201ResponseResults';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

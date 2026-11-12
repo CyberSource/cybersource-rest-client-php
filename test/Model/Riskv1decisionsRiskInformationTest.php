@@ -103,4 +103,32 @@ class Riskv1decisionsRiskInformationTest extends \PHPUnit\Framework\TestCase
     public function testPropertyAuxiliaryData()
     {
     }
+
+    /**
+     * Test attribute "store"
+     */
+    public function testPropertyStore()
+    {
+    }
+
+    /**
+     * Test attribute "authenticationType"
+     */
+    public function testPropertyAuthenticationType()
+    {
+    }
+
+    /**
+     * Test attribute "pickupDays"
+     */
+    public function testPropertyPickupDays()
+    {
+    }
+
+    /**
+     * Test attribute "externalScore"
+     */
+    public function testPropertyExternalScore()
+    {
+    }
 }

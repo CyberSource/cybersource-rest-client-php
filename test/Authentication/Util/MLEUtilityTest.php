@@ -236,12 +236,12 @@ class MLEUtilityTest extends TestCase
     }
 
     /** Invokes the private static MLEUtility::generateToken via reflection. */
-    private function invokeGenerateToken(string $certPem, string $body): string
+    private function invokeGenerateToken(string $certPem, string $body, ?string $contentType = null): string
     {
         $this->ensureLogger();
         $method = new \ReflectionMethod(MLEUtility::class, 'generateToken');
         $method->setAccessible(true);
-        return $method->invoke(null, $certPem, $body);
+        return $method->invoke(null, $certPem, $body, $contentType);
     }
 
     private function decodeProtectedHeader(string $compactJwe): array
@@ -259,13 +259,87 @@ class MLEUtilityTest extends TestCase
         $serial = '7000000000000000123456';
         $cert = $this->makeSelfSignedCertWithSerial($serial);
 
-        $token  = $this->invokeGenerateToken($cert, '{"amount":"100"}');
+        $token  = $this->invokeGenerateToken($cert, '{"amount":"100"}', 'application/json');
         $header = $this->decodeProtectedHeader($token);
 
         $this->assertSame($serial, $header['kid'], 'JWE kid must equal the certificate serial number');
         $this->assertSame('RSA-OAEP-256', $header['alg']);
         $this->assertSame('A256GCM', $header['enc']);
-        $this->assertSame('JWT', $header['cty']);
+    }
+
+    // -----------------------------------------------------------------------
+    // generateToken — JWE 'cty' header must describe the actual request
+    // Content-Type selected for the API operation, not a hardcoded value.
+    // -----------------------------------------------------------------------
+
+    /**
+     * @dataProvider contentTypeProvider
+     */
+    public function testGenerateTokenSetsCtyToExactContentType(string $contentType): void
+    {
+        $cert = $this->makeSelfSignedCertWithSerial('8000000000000000111222');
+
+        $token  = $this->invokeGenerateToken($cert, '{"amount":"100"}', $contentType);
+        $header = $this->decodeProtectedHeader($token);
+
+        $this->assertSame($contentType, $header['cty'],
+            "The JWE 'cty' header must equal the exact Content-Type selected by the API operation.");
+    }
+
+    public function contentTypeProvider(): array
+    {
+        return [
+            'plain json' => ['application/json'],
+            'hal json' => ['application/hal+json'],
+            'json with charset' => ['application/json; charset=utf-8'],
+        ];
+    }
+
+    public function testGenerateTokenOmitsCtyWhenContentTypeNotSupplied(): void
+    {
+        $cert = $this->makeSelfSignedCertWithSerial('8000000000000000333444');
+
+        $token  = $this->invokeGenerateToken($cert, '{"amount":"100"}');
+        $header = $this->decodeProtectedHeader($token);
+
+        $this->assertArrayNotHasKey('cty', $header,
+            "No 'cty' header should be present when the caller does not supply a content type.");
+    }
+
+    public function testGenerateTokenOmitsCtyWhenContentTypeIsBlank(): void
+    {
+        $cert = $this->makeSelfSignedCertWithSerial('8000000000000000555666');
+
+        $token  = $this->invokeGenerateToken($cert, '{"amount":"100"}', '   ');
+        $header = $this->decodeProtectedHeader($token);
+
+        $this->assertArrayNotHasKey('cty', $header);
+    }
+
+    public function testEncryptRequestPayloadThreadsContentTypeIntoCty(): void
+    {
+        $serial = '8000000000000000777888';
+        $cert = $this->makeSelfSignedCertWithSerial($serial);
+        $certPath = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'mle-cty-test-' . bin2hex(random_bytes(8)) . '.pem';
+        file_put_contents($certPath, $cert);
+
+        try {
+            $config = new MerchantConfiguration();
+            $config->setAuthenticationType('HTTP_SIGNATURE');
+            $config->setRunEnvironment('apitest.cybersource.com');
+            $config->setMerchantID('test_merchant');
+            $config->setMleForRequestPublicCertPath($certPath);
+
+            $result = MLEUtility::encryptRequestPayload($config, '{"amount":"100"}', 'application/hal+json');
+            $decoded = json_decode($result, true);
+            $this->assertArrayHasKey('encryptedRequest', $decoded);
+
+            $header = $this->decodeProtectedHeader($decoded['encryptedRequest']);
+            $this->assertSame('application/hal+json', $header['cty']);
+            $this->assertSame($serial, $header['kid']);
+        } finally {
+            @unlink($certPath);
+        }
     }
 
     public function testGenerateTokenKidTracksDifferentSerials(): void

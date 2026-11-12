@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **getCardArtAsset**
-> \CyberSource\Model\InlineResponse2002 getCardArtAsset($instrumentIdentifierId, $tokenProvider, $assetType)
+> \CyberSource\Model\CardArtAssetResponse getCardArtAsset($instrumentIdentifierId, $tokenProvider, $assetType)
 
 Retrieve Card Art
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\CyberSource\Model\CardArtAssetResponse**](../Model/CardArtAssetResponse.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTokenizedCard**
-> \CyberSource\Model\InlineResponse2001 getTokenizedCard($tokenizedCardId, $profileId)
+> \CyberSource\Model\GetTokenizedCardResponse getTokenizedCard($tokenizedCardId, $profileId)
 
 Retrieve a Tokenized Card
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\CyberSource\Model\GetTokenizedCardResponse**](../Model/GetTokenizedCardResponse.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\NetworkTokensApi();
 $tokenId = "tokenId_example"; // string | The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
-$postPaymentCredentialsRequest = new \CyberSource\Model\PostPaymentCredentialsRequest1(); // \CyberSource\Model\PostPaymentCredentialsRequest1 | 
+$postPaymentCredentialsRequest = new \CyberSource\Model\PostPaymentCredentialsRequest(); // \CyberSource\Model\PostPaymentCredentialsRequest | 
 $profileId = "profileId_example"; // string | The Id of a profile containing user specific TMS configuration.
 
 try {
@@ -188,7 +188,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | **string**| The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. |
- **postPaymentCredentialsRequest** | [**\CyberSource\Model\PostPaymentCredentialsRequest1**](../Model/PostPaymentCredentialsRequest1.md)|  |
+ **postPaymentCredentialsRequest** | [**\CyberSource\Model\PostPaymentCredentialsRequest**](../Model/PostPaymentCredentialsRequest.md)|  |
  **profileId** | **string**| The Id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type
@@ -207,7 +207,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postTokenPaymentCredentialsV3**
-> \CyberSource\Model\InlineResponse2011 postTokenPaymentCredentialsV3($tokenId, $postPaymentCredentialsRequest, $profileId)
+> \CyberSource\Model\PostPaymentCredentialsResponse postTokenPaymentCredentialsV3($tokenId, $postPaymentCredentialsV3Request, $profileId)
 
 Generate Payment Credentials Latest Version v3
 
@@ -220,11 +220,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\NetworkTokensApi();
 $tokenId = "tokenId_example"; // string | The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
-$postPaymentCredentialsRequest = new \CyberSource\Model\PostPaymentCredentialsRequest(); // \CyberSource\Model\PostPaymentCredentialsRequest | 
+$postPaymentCredentialsV3Request = new \CyberSource\Model\PostPaymentCredentialsV3Request(); // \CyberSource\Model\PostPaymentCredentialsV3Request | 
 $profileId = "profileId_example"; // string | The Id of a profile containing user specific TMS configuration.
 
 try {
-    $result = $api_instance->postTokenPaymentCredentialsV3($tokenId, $postPaymentCredentialsRequest, $profileId);
+    $result = $api_instance->postTokenPaymentCredentialsV3($tokenId, $postPaymentCredentialsV3Request, $profileId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NetworkTokensApi->postTokenPaymentCredentialsV3: ', $e->getMessage(), PHP_EOL;
@@ -237,12 +237,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | **string**| The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. |
- **postPaymentCredentialsRequest** | [**\CyberSource\Model\PostPaymentCredentialsRequest**](../Model/PostPaymentCredentialsRequest.md)|  |
+ **postPaymentCredentialsV3Request** | [**\CyberSource\Model\PostPaymentCredentialsV3Request**](../Model/PostPaymentCredentialsV3Request.md)|  |
  **profileId** | **string**| The Id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2011**](../Model/InlineResponse2011.md)
+[**\CyberSource\Model\PostPaymentCredentialsResponse**](../Model/PostPaymentCredentialsResponse.md)
 
 ### Authorization
 
@@ -256,7 +256,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postTokenizedCard**
-> \CyberSource\Model\InlineResponse2001 postTokenizedCard($postTokenizedCardRequest, $profileId)
+> \CyberSource\Model\GetTokenizedCardResponse postTokenizedCard($postTokenizedCardRequest, $profileId)
 
 Create a Tokenized Card
 
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\CyberSource\Model\GetTokenizedCardResponse**](../Model/GetTokenizedCardResponse.md)
 
 ### Authorization
 

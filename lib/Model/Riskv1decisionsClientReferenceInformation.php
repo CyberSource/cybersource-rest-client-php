@@ -46,7 +46,7 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_clientReferenceInformation';
+    protected static $swaggerModelName = 'Riskv1decisionsClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

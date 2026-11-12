@@ -47,7 +47,7 @@ class AgentRegistrationResponse201Keys implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'agentRegistrationResponse201_keys';
+    protected static $swaggerModelName = 'AgentRegistrationResponse201Keys';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

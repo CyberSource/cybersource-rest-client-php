@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **merchantInformation** | [**\CyberSource\Model\TmsMerchantInformation**](TmsMerchantInformation.md) |  | [optional] 
 **instrumentIdentifier** | [**\CyberSource\Model\DefaultPaymentInstrumentInstrumentIdentifier**](DefaultPaymentInstrumentInstrumentIdentifier.md) |  | [optional] 
 **metadata** | [**\CyberSource\Model\DefaultPaymentInstrumentMetadata**](DefaultPaymentInstrumentMetadata.md) |  | [optional] 
-**embedded** | [**\CyberSource\Model\Tmsv1paymentinstrumentsEmbedded**](Tmsv1paymentinstrumentsEmbedded.md) |  | [optional] 
+**embedded** | [**\CyberSource\Model\PaymentInstrumentEmbedded2**](PaymentInstrumentEmbedded2.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

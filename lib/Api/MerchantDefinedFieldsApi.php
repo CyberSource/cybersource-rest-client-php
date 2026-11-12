@@ -104,7 +104,7 @@ class MerchantDefinedFieldsApi
      * @param string $referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
      * @param \CyberSource\Model\MerchantDefinedFieldDefinitionRequest $merchantDefinedFieldDefinitionRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\MerchantDefinedFieldWithIdResponse[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createMerchantDefinedFieldDefinition($referenceType, $merchantDefinedFieldDefinitionRequest)
     {
@@ -123,7 +123,7 @@ class MerchantDefinedFieldsApi
      * @param string $referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
      * @param \CyberSource\Model\MerchantDefinedFieldDefinitionRequest $merchantDefinedFieldDefinitionRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\MerchantDefinedFieldWithIdResponse[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createMerchantDefinedFieldDefinitionWithHttpInfo($referenceType, $merchantDefinedFieldDefinitionRequest)
     {
@@ -149,7 +149,8 @@ class MerchantDefinedFieldsApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($referenceType !== null) {
@@ -173,6 +174,14 @@ class MerchantDefinedFieldsApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -181,7 +190,7 @@ class MerchantDefinedFieldsApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "createMerchantDefinedFieldDefinition,createMerchantDefinedFieldDefinitionWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -201,7 +210,7 @@ class MerchantDefinedFieldsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2004[]");
+        self::$logger->debug("Return Type : \CyberSource\Model\MerchantDefinedFieldWithIdResponse[]");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createMerchantDefinedFieldDefinition,createMerchantDefinedFieldDefinitionWithHttpInfo");
@@ -214,30 +223,30 @@ class MerchantDefinedFieldsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2004[]',
+                '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]',
                 '/invoicing/v2/{referenceType}/merchantDefinedFields',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2004[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2004[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 412:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -253,14 +262,14 @@ class MerchantDefinedFieldsApi
      * Create a PayByLink merchant defined field for a given reference type
      *
      * @param string $referenceType The reference type for which the merchant defined field is to be created. Available values are Purchase and Donation (required)
-     * @param \CyberSource\Model\MerchantDefinedFieldDefinitionRequest1 $merchantDefinedFieldDefinitionRequest  (required)
+     * @param \CyberSource\Model\PblMerchantDefinedFieldDefinitionRequest $pblMerchantDefinedFieldDefinitionRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\MerchantDefinedFieldWithIdResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function createPblMerchantDefinedFieldDefinition($referenceType, $merchantDefinedFieldDefinitionRequest)
+    public function createPblMerchantDefinedFieldDefinition($referenceType, $pblMerchantDefinedFieldDefinitionRequest)
     {
         self::$logger->info('CALL TO METHOD createPblMerchantDefinedFieldDefinition STARTED');
-        list($response, $statusCode, $httpHeader) = $this->createPblMerchantDefinedFieldDefinitionWithHttpInfo($referenceType, $merchantDefinedFieldDefinitionRequest);
+        list($response, $statusCode, $httpHeader) = $this->createPblMerchantDefinedFieldDefinitionWithHttpInfo($referenceType, $pblMerchantDefinedFieldDefinitionRequest);
         self::$logger->info('CALL TO METHOD createPblMerchantDefinedFieldDefinition ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -272,21 +281,21 @@ class MerchantDefinedFieldsApi
      * Create a PayByLink merchant defined field for a given reference type
      *
      * @param string $referenceType The reference type for which the merchant defined field is to be created. Available values are Purchase and Donation (required)
-     * @param \CyberSource\Model\MerchantDefinedFieldDefinitionRequest1 $merchantDefinedFieldDefinitionRequest  (required)
+     * @param \CyberSource\Model\PblMerchantDefinedFieldDefinitionRequest $pblMerchantDefinedFieldDefinitionRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\MerchantDefinedFieldWithIdResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function createPblMerchantDefinedFieldDefinitionWithHttpInfo($referenceType, $merchantDefinedFieldDefinitionRequest)
+    public function createPblMerchantDefinedFieldDefinitionWithHttpInfo($referenceType, $pblMerchantDefinedFieldDefinitionRequest)
     {
         // verify the required parameter 'referenceType' is set
         if ($referenceType === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $referenceType when calling createPblMerchantDefinedFieldDefinition");
             throw new \InvalidArgumentException('Missing the required parameter $referenceType when calling createPblMerchantDefinedFieldDefinition');
         }
-        // verify the required parameter 'merchantDefinedFieldDefinitionRequest' is set
-        if ($merchantDefinedFieldDefinitionRequest === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $merchantDefinedFieldDefinitionRequest when calling createPblMerchantDefinedFieldDefinition");
-            throw new \InvalidArgumentException('Missing the required parameter $merchantDefinedFieldDefinitionRequest when calling createPblMerchantDefinedFieldDefinition');
+        // verify the required parameter 'pblMerchantDefinedFieldDefinitionRequest' is set
+        if ($pblMerchantDefinedFieldDefinitionRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $pblMerchantDefinedFieldDefinitionRequest when calling createPblMerchantDefinedFieldDefinition");
+            throw new \InvalidArgumentException('Missing the required parameter $pblMerchantDefinedFieldDefinitionRequest when calling createPblMerchantDefinedFieldDefinition');
         }
         // parse inputs
         $resourcePath = "/ipl/v2/{referenceType}/merchantDefinedFields";
@@ -300,7 +309,8 @@ class MerchantDefinedFieldsApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($referenceType !== null) {
@@ -312,18 +322,26 @@ class MerchantDefinedFieldsApi
         }
         // body params
         $_tempBody = null;
-        if (isset($merchantDefinedFieldDefinitionRequest)) {
-            $_tempBody = $merchantDefinedFieldDefinitionRequest;
+        if (isset($pblMerchantDefinedFieldDefinitionRequest)) {
+            $_tempBody = $pblMerchantDefinedFieldDefinitionRequest;
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $modelClassLocation = explode('\\', '\CyberSource\Model\MerchantDefinedFieldDefinitionRequest1');
+        $modelClassLocation = explode('\\', '\CyberSource\Model\PblMerchantDefinedFieldDefinitionRequest');
 
         $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -332,7 +350,7 @@ class MerchantDefinedFieldsApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "createPblMerchantDefinedFieldDefinition,createPblMerchantDefinedFieldDefinitionWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -352,7 +370,7 @@ class MerchantDefinedFieldsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2004[]");
+        self::$logger->debug("Return Type : \CyberSource\Model\MerchantDefinedFieldWithIdResponse[]");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createPblMerchantDefinedFieldDefinition,createPblMerchantDefinedFieldDefinitionWithHttpInfo");
@@ -365,30 +383,30 @@ class MerchantDefinedFieldsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2004[]',
+                '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]',
                 '/ipl/v2/{referenceType}/merchantDefinedFields',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2004[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2004[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 412:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -451,7 +469,8 @@ class MerchantDefinedFieldsApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($referenceType !== null) {
@@ -476,6 +495,14 @@ class MerchantDefinedFieldsApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -484,7 +511,7 @@ class MerchantDefinedFieldsApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "deleteMerchantDefinedFieldsDefinitions,deleteMerchantDefinedFieldsDefinitionsWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -587,7 +614,8 @@ class MerchantDefinedFieldsApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($referenceType !== null) {
@@ -612,6 +640,14 @@ class MerchantDefinedFieldsApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -620,7 +656,7 @@ class MerchantDefinedFieldsApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "deletePblMerchantDefinedFieldsDefinitions,deletePblMerchantDefinedFieldsDefinitionsWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -677,7 +713,7 @@ class MerchantDefinedFieldsApi
      *
      * @param string $referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\MerchantDefinedFieldWithIdResponse[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getMerchantDefinedFieldsDefinitions($referenceType)
     {
@@ -695,7 +731,7 @@ class MerchantDefinedFieldsApi
      *
      * @param string $referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\MerchantDefinedFieldWithIdResponse[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType)
     {
@@ -716,7 +752,8 @@ class MerchantDefinedFieldsApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($referenceType !== null) {
@@ -733,6 +770,14 @@ class MerchantDefinedFieldsApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -741,7 +786,7 @@ class MerchantDefinedFieldsApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getMerchantDefinedFieldsDefinitions,getMerchantDefinedFieldsDefinitionsWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -761,7 +806,7 @@ class MerchantDefinedFieldsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2004[]");
+        self::$logger->debug("Return Type : \CyberSource\Model\MerchantDefinedFieldWithIdResponse[]");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getMerchantDefinedFieldsDefinitions,getMerchantDefinedFieldsDefinitionsWithHttpInfo");
@@ -774,22 +819,22 @@ class MerchantDefinedFieldsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2004[]',
+                '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]',
                 '/invoicing/v2/{referenceType}/merchantDefinedFields',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2004[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2004[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -806,7 +851,7 @@ class MerchantDefinedFieldsApi
      *
      * @param string $referenceType The reference type for which merchant defined fields are to be fetched. Available values are Purchase, Donation and PayByLink. PayByLink returns the merchant defined fields for both Purchase and Donation combined. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\MerchantDefinedFieldWithIdResponse[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getPblMerchantDefinedFieldsDefinitions($referenceType)
     {
@@ -824,7 +869,7 @@ class MerchantDefinedFieldsApi
      *
      * @param string $referenceType The reference type for which merchant defined fields are to be fetched. Available values are Purchase, Donation and PayByLink. PayByLink returns the merchant defined fields for both Purchase and Donation combined. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\MerchantDefinedFieldWithIdResponse[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getPblMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType)
     {
@@ -845,7 +890,8 @@ class MerchantDefinedFieldsApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($referenceType !== null) {
@@ -862,6 +908,14 @@ class MerchantDefinedFieldsApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -870,7 +924,7 @@ class MerchantDefinedFieldsApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getPblMerchantDefinedFieldsDefinitions,getPblMerchantDefinedFieldsDefinitionsWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -890,7 +944,7 @@ class MerchantDefinedFieldsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2004[]");
+        self::$logger->debug("Return Type : \CyberSource\Model\MerchantDefinedFieldWithIdResponse[]");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getPblMerchantDefinedFieldsDefinitions,getPblMerchantDefinedFieldsDefinitionsWithHttpInfo");
@@ -903,22 +957,22 @@ class MerchantDefinedFieldsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2004[]',
+                '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]',
                 '/ipl/v2/{referenceType}/merchantDefinedFields',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2004[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2004[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -935,14 +989,14 @@ class MerchantDefinedFieldsApi
      *
      * @param string $referenceType  (required)
      * @param int $id  (required)
-     * @param \CyberSource\Model\MerchantDefinedFieldCore $merchantDefinedFieldCore  (required)
+     * @param \CyberSource\Model\UpdateMerchantDefinedFieldCoreByIdRequest $updateMerchantDefinedFieldCoreByIdRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\MerchantDefinedFieldWithIdResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function putMerchantDefinedFieldsDefinitions($referenceType, $id, $merchantDefinedFieldCore)
+    public function putMerchantDefinedFieldsDefinitions($referenceType, $id, $updateMerchantDefinedFieldCoreByIdRequest)
     {
         self::$logger->info('CALL TO METHOD putMerchantDefinedFieldsDefinitions STARTED');
-        list($response, $statusCode, $httpHeader) = $this->putMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id, $merchantDefinedFieldCore);
+        list($response, $statusCode, $httpHeader) = $this->putMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id, $updateMerchantDefinedFieldCoreByIdRequest);
         self::$logger->info('CALL TO METHOD putMerchantDefinedFieldsDefinitions ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -955,11 +1009,11 @@ class MerchantDefinedFieldsApi
      *
      * @param string $referenceType  (required)
      * @param int $id  (required)
-     * @param \CyberSource\Model\MerchantDefinedFieldCore $merchantDefinedFieldCore  (required)
+     * @param \CyberSource\Model\UpdateMerchantDefinedFieldCoreByIdRequest $updateMerchantDefinedFieldCoreByIdRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\MerchantDefinedFieldWithIdResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function putMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id, $merchantDefinedFieldCore)
+    public function putMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id, $updateMerchantDefinedFieldCoreByIdRequest)
     {
         // verify the required parameter 'referenceType' is set
         if ($referenceType === null) {
@@ -971,10 +1025,10 @@ class MerchantDefinedFieldsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling putMerchantDefinedFieldsDefinitions");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling putMerchantDefinedFieldsDefinitions');
         }
-        // verify the required parameter 'merchantDefinedFieldCore' is set
-        if ($merchantDefinedFieldCore === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $merchantDefinedFieldCore when calling putMerchantDefinedFieldsDefinitions");
-            throw new \InvalidArgumentException('Missing the required parameter $merchantDefinedFieldCore when calling putMerchantDefinedFieldsDefinitions');
+        // verify the required parameter 'updateMerchantDefinedFieldCoreByIdRequest' is set
+        if ($updateMerchantDefinedFieldCoreByIdRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $updateMerchantDefinedFieldCoreByIdRequest when calling putMerchantDefinedFieldsDefinitions");
+            throw new \InvalidArgumentException('Missing the required parameter $updateMerchantDefinedFieldCoreByIdRequest when calling putMerchantDefinedFieldsDefinitions');
         }
         // parse inputs
         $resourcePath = "/invoicing/v2/{referenceType}/merchantDefinedFields/{id}";
@@ -988,7 +1042,8 @@ class MerchantDefinedFieldsApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($referenceType !== null) {
@@ -1008,18 +1063,26 @@ class MerchantDefinedFieldsApi
         }
         // body params
         $_tempBody = null;
-        if (isset($merchantDefinedFieldCore)) {
-            $_tempBody = $merchantDefinedFieldCore;
+        if (isset($updateMerchantDefinedFieldCoreByIdRequest)) {
+            $_tempBody = $updateMerchantDefinedFieldCoreByIdRequest;
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $modelClassLocation = explode('\\', '\CyberSource\Model\MerchantDefinedFieldCore');
+        $modelClassLocation = explode('\\', '\CyberSource\Model\UpdateMerchantDefinedFieldCoreByIdRequest');
 
         $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -1028,7 +1091,7 @@ class MerchantDefinedFieldsApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "putMerchantDefinedFieldsDefinitions,putMerchantDefinedFieldsDefinitionsWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -1048,7 +1111,7 @@ class MerchantDefinedFieldsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2004[]");
+        self::$logger->debug("Return Type : \CyberSource\Model\MerchantDefinedFieldWithIdResponse[]");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "putMerchantDefinedFieldsDefinitions,putMerchantDefinedFieldsDefinitionsWithHttpInfo");
@@ -1061,26 +1124,26 @@ class MerchantDefinedFieldsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2004[]',
+                '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]',
                 '/invoicing/v2/{referenceType}/merchantDefinedFields/{id}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2004[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2004[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1097,14 +1160,14 @@ class MerchantDefinedFieldsApi
      *
      * @param string $referenceType  (required)
      * @param int $id  (required)
-     * @param \CyberSource\Model\MerchantDefinedFieldCore1 $merchantDefinedFieldCore  (required)
+     * @param \CyberSource\Model\UpdatePblMerchantDefinedFieldCoreByIdRequest $updatePblMerchantDefinedFieldCoreByIdRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\MerchantDefinedFieldWithIdResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function putPblMerchantDefinedFieldsDefinitions($referenceType, $id, $merchantDefinedFieldCore)
+    public function putPblMerchantDefinedFieldsDefinitions($referenceType, $id, $updatePblMerchantDefinedFieldCoreByIdRequest)
     {
         self::$logger->info('CALL TO METHOD putPblMerchantDefinedFieldsDefinitions STARTED');
-        list($response, $statusCode, $httpHeader) = $this->putPblMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id, $merchantDefinedFieldCore);
+        list($response, $statusCode, $httpHeader) = $this->putPblMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id, $updatePblMerchantDefinedFieldCoreByIdRequest);
         self::$logger->info('CALL TO METHOD putPblMerchantDefinedFieldsDefinitions ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -1117,11 +1180,11 @@ class MerchantDefinedFieldsApi
      *
      * @param string $referenceType  (required)
      * @param int $id  (required)
-     * @param \CyberSource\Model\MerchantDefinedFieldCore1 $merchantDefinedFieldCore  (required)
+     * @param \CyberSource\Model\UpdatePblMerchantDefinedFieldCoreByIdRequest $updatePblMerchantDefinedFieldCoreByIdRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\MerchantDefinedFieldWithIdResponse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function putPblMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id, $merchantDefinedFieldCore)
+    public function putPblMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id, $updatePblMerchantDefinedFieldCoreByIdRequest)
     {
         // verify the required parameter 'referenceType' is set
         if ($referenceType === null) {
@@ -1133,10 +1196,10 @@ class MerchantDefinedFieldsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling putPblMerchantDefinedFieldsDefinitions");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling putPblMerchantDefinedFieldsDefinitions');
         }
-        // verify the required parameter 'merchantDefinedFieldCore' is set
-        if ($merchantDefinedFieldCore === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $merchantDefinedFieldCore when calling putPblMerchantDefinedFieldsDefinitions");
-            throw new \InvalidArgumentException('Missing the required parameter $merchantDefinedFieldCore when calling putPblMerchantDefinedFieldsDefinitions');
+        // verify the required parameter 'updatePblMerchantDefinedFieldCoreByIdRequest' is set
+        if ($updatePblMerchantDefinedFieldCoreByIdRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $updatePblMerchantDefinedFieldCoreByIdRequest when calling putPblMerchantDefinedFieldsDefinitions");
+            throw new \InvalidArgumentException('Missing the required parameter $updatePblMerchantDefinedFieldCoreByIdRequest when calling putPblMerchantDefinedFieldsDefinitions');
         }
         // parse inputs
         $resourcePath = "/ipl/v2/{referenceType}/merchantDefinedFields/{id}";
@@ -1150,7 +1213,8 @@ class MerchantDefinedFieldsApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($referenceType !== null) {
@@ -1170,18 +1234,26 @@ class MerchantDefinedFieldsApi
         }
         // body params
         $_tempBody = null;
-        if (isset($merchantDefinedFieldCore)) {
-            $_tempBody = $merchantDefinedFieldCore;
+        if (isset($updatePblMerchantDefinedFieldCoreByIdRequest)) {
+            $_tempBody = $updatePblMerchantDefinedFieldCoreByIdRequest;
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $modelClassLocation = explode('\\', '\CyberSource\Model\MerchantDefinedFieldCore1');
+        $modelClassLocation = explode('\\', '\CyberSource\Model\UpdatePblMerchantDefinedFieldCoreByIdRequest');
 
         $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -1190,7 +1262,7 @@ class MerchantDefinedFieldsApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "putPblMerchantDefinedFieldsDefinitions,putPblMerchantDefinedFieldsDefinitionsWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -1210,7 +1282,7 @@ class MerchantDefinedFieldsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2004[]");
+        self::$logger->debug("Return Type : \CyberSource\Model\MerchantDefinedFieldWithIdResponse[]");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "putPblMerchantDefinedFieldsDefinitions,putPblMerchantDefinedFieldsDefinitionsWithHttpInfo");
@@ -1223,26 +1295,26 @@ class MerchantDefinedFieldsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2004[]',
+                '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]',
                 '/ipl/v2/{referenceType}/merchantDefinedFields/{id}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2004[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2004[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\MerchantDefinedFieldWithIdResponse[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

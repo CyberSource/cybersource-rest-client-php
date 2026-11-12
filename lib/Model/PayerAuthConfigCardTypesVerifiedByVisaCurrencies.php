@@ -46,7 +46,7 @@ class PayerAuthConfigCardTypesVerifiedByVisaCurrencies implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'PayerAuthConfig_cardTypes_verifiedByVisa_currencies';
+    protected static $swaggerModelName = 'PayerAuthConfigCardTypesVerifiedByVisaCurrencies';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

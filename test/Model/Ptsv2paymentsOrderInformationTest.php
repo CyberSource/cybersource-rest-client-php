@@ -119,6 +119,13 @@ class Ptsv2paymentsOrderInformationTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "vouchers"
+     */
+    public function testPropertyVouchers()
+    {
+    }
+
+    /**
      * Test attribute "shippingDetails"
      */
     public function testPropertyShippingDetails()

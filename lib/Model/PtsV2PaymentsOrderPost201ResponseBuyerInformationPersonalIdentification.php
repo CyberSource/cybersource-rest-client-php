@@ -46,7 +46,7 @@ class PtsV2PaymentsOrderPost201ResponseBuyerInformationPersonalIdentification im
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsOrderPost201Response_buyerInformation_personalIdentification';
+    protected static $swaggerModelName = 'PtsV2PaymentsOrderPost201ResponseBuyerInformationPersonalIdentification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

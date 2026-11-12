@@ -46,7 +46,7 @@ class Ptsv2creditsProcessingInformationJapanPaymentOptions implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2credits_processingInformation_japanPaymentOptions';
+    protected static $swaggerModelName = 'Ptsv2creditsProcessingInformationJapanPaymentOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

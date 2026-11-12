@@ -46,7 +46,7 @@ class Upv1capturecontextsOrderInformationBillTo implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_orderInformation_billTo';
+    protected static $swaggerModelName = 'Upv1capturecontextsOrderInformationBillTo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -656,7 +656,7 @@ class Upv1capturecontextsOrderInformationBillTo implements ArrayAccess
 
     /**
      * Sets phoneType
-     * @param string $phoneType Customer's phone number type.  #### For Payouts: This field may be sent only for FDC Compass.  Possible Values: * day * home * night * work
+     * @param string $phoneType Customer's phone number type.  Possible Values: * day * home * night * work
      * @return $this
      */
     public function setPhoneType($phoneType)

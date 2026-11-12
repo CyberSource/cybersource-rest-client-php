@@ -46,7 +46,7 @@ class TmsNetworkTokenServicesPaymentCredentials implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsNetworkTokenServices_paymentCredentials';
+    protected static $swaggerModelName = 'TmsNetworkTokenServicesPaymentCredentials';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

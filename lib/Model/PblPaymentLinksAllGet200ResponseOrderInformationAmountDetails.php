@@ -47,7 +47,7 @@ class PblPaymentLinksAllGet200ResponseOrderInformationAmountDetails implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pblPaymentLinksAllGet200Response_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'PblPaymentLinksAllGet200ResponseOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

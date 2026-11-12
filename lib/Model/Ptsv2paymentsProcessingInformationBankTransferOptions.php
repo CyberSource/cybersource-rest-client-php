@@ -46,7 +46,7 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_processingInformation_bankTransferOptions';
+    protected static $swaggerModelName = 'Ptsv2paymentsProcessingInformationBankTransferOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

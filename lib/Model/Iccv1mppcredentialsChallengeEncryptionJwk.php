@@ -47,7 +47,7 @@ class Iccv1mppcredentialsChallengeEncryptionJwk implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1mppcredentials_challenge_encryption_jwk';
+    protected static $swaggerModelName = 'Iccv1mppcredentialsChallengeEncryptionJwk';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class Ucv1sessionsTransientTokenResponseOptions implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_transientTokenResponseOptions';
+    protected static $swaggerModelName = 'Ucv1sessionsTransientTokenResponseOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

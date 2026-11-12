@@ -46,7 +46,7 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiator 
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_data_processingInformation_authorizationOptions_initiator';
+    protected static $swaggerModelName = 'Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiator';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -47,7 +47,7 @@ class UcFeatureSubscriptionAfterPay implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucFeatureSubscription_afterPay';
+    protected static $swaggerModelName = 'UcFeatureSubscriptionAfterPay';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

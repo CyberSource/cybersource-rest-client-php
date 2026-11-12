@@ -47,7 +47,7 @@ class Iccv1merchantsWebIntegrations implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1merchants_webIntegrations';
+    protected static $swaggerModelName = 'Iccv1merchantsWebIntegrations';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

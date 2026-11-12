@@ -46,7 +46,7 @@ class Ptsv1pullfundstransferRecipientInformationPersonalIdentification implement
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pullfundstransfer_recipientInformation_personalIdentification';
+    protected static $swaggerModelName = 'Ptsv1pullfundstransferRecipientInformationPersonalIdentification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

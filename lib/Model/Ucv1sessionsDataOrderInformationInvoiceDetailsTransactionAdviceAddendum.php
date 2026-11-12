@@ -46,7 +46,7 @@ class Ucv1sessionsDataOrderInformationInvoiceDetailsTransactionAdviceAddendum im
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_orderInformation_invoiceDetails_transactionAdviceAddendum';
+    protected static $swaggerModelName = 'Ucv1sessionsDataOrderInformationInvoiceDetailsTransactionAdviceAddendum';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

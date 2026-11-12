@@ -47,7 +47,7 @@ class UnifiedriskMerchantMerchantDescriptorHierarchy implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_merchant_merchantDescriptor_hierarchy';
+    protected static $swaggerModelName = 'UnifiedriskMerchantMerchantDescriptorHierarchy';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

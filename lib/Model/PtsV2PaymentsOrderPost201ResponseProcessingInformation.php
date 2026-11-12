@@ -46,7 +46,7 @@ class PtsV2PaymentsOrderPost201ResponseProcessingInformation implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsOrderPost201Response_processingInformation';
+    protected static $swaggerModelName = 'PtsV2PaymentsOrderPost201ResponseProcessingInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

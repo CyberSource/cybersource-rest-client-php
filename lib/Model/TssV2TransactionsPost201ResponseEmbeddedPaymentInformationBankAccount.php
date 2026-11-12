@@ -46,7 +46,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBankAccount impl
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsPost201Response__embedded_paymentInformation_bank_account';
+    protected static $swaggerModelName = 'TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBankAccount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

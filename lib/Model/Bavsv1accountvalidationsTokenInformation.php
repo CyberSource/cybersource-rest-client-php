@@ -47,7 +47,7 @@ class Bavsv1accountvalidationsTokenInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'bavsv1accountvalidations_tokenInformation';
+    protected static $swaggerModelName = 'Bavsv1accountvalidationsTokenInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

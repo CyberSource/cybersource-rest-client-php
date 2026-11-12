@@ -46,7 +46,7 @@ class Ucv1sessionsDataOrderInformationAmountDetailsTaxDetails implements ArrayAc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_orderInformation_amountDetails_taxDetails';
+    protected static $swaggerModelName = 'Ucv1sessionsDataOrderInformationAmountDetailsTaxDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -47,7 +47,7 @@ class Iccv1instructionsMandates implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1instructions_mandates';
+    protected static $swaggerModelName = 'Iccv1instructionsMandates';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

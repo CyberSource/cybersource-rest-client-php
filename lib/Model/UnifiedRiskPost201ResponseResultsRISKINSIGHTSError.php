@@ -47,7 +47,7 @@ class UnifiedRiskPost201ResponseResultsRISKINSIGHTSError implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedRiskPost201Response_results_RISK_INSIGHTS_error';
+    protected static $swaggerModelName = 'UnifiedRiskPost201ResponseResultsRISKINSIGHTSError';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

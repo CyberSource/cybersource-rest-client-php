@@ -47,7 +47,7 @@ class Upv1capturecontextsCompleteMandateTms implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_completeMandate_tms';
+    protected static $swaggerModelName = 'Upv1capturecontextsCompleteMandateTms';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

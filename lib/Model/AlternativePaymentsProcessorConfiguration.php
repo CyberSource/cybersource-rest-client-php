@@ -54,7 +54,7 @@ class AlternativePaymentsProcessorConfiguration implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'paymentMethods' => 'map[string,\CyberSource\Model\PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods]'
+        'paymentMethods' => 'map[string,\CyberSource\Model\AlternativePaymentsPaymentMethodConfiguration]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class AlternativePaymentsProcessorConfiguration implements ArrayAccess
 
     /**
      * Gets paymentMethods
-     * @return map[string,\CyberSource\Model\PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods]
+     * @return map[string,\CyberSource\Model\AlternativePaymentsPaymentMethodConfiguration]
      */
     public function getPaymentMethods()
     {
@@ -171,7 +171,7 @@ class AlternativePaymentsProcessorConfiguration implements ArrayAccess
 
     /**
      * Sets paymentMethods
-     * @param map[string,\CyberSource\Model\PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsPaymentMethods] $paymentMethods Payment methods supported by the processor. The following values are supported: - klarna - CREDIT_CARD - DEBIT_CARD
+     * @param map[string,\CyberSource\Model\AlternativePaymentsPaymentMethodConfiguration] $paymentMethods Payment methods supported by the processor. The following values are supported: - klarna - CREDIT_CARD - DEBIT_CARD
      * @return $this
      */
     public function setPaymentMethods($paymentMethods)

@@ -46,7 +46,7 @@ class Upv1capturecontextsDataDeviceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_data_deviceInformation';
+    protected static $swaggerModelName = 'Upv1capturecontextsDataDeviceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

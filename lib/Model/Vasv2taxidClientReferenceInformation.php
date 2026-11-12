@@ -46,7 +46,7 @@ class Vasv2taxidClientReferenceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'vasv2taxid_clientReferenceInformation';
+    protected static $swaggerModelName = 'Vasv2taxidClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

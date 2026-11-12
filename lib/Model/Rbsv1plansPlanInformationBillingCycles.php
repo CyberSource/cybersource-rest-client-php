@@ -47,7 +47,7 @@ class Rbsv1plansPlanInformationBillingCycles implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'rbsv1plans_planInformation_billingCycles';
+    protected static $swaggerModelName = 'Rbsv1plansPlanInformationBillingCycles';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class RiskV1DecisionsPost201ResponseOrderInformationAmountDetails implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskV1DecisionsPost201Response_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'RiskV1DecisionsPost201ResponseOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
